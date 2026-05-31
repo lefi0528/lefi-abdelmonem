@@ -1755,6 +1755,7 @@ textarea.form-control {
 .footer-links {
   display: flex;
   gap: 24px;
+  flex-wrap: wrap;
 }
 
 .footer-link:hover {
@@ -2213,6 +2214,16 @@ textarea.form-control {
   .nav-btn {
     margin-left: 0;
     margin-top: 1rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+  }
+  .footer-links {
+    justify-content: center;
+    gap: 12px 24px;
   }
 }
 
