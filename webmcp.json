@@ -1,0 +1,65 @@
+{
+  "$schema": "https://webmcp.org/schemas/webmcp.json",
+  "name": "Lefi Abdelmonem - Expert Portfolio Tools",
+  "description": "Exposes e-commerce contact forms, pricing plan selections, and SEO audit tools to browser-based AI agents.",
+  "version": "1.0.0",
+  "tools": [
+    {
+      "name": "submitContactForm",
+      "description": "Sends a secure project inquiry or maintenance hire request directly to Lefi Abdelmonem.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the client or company."
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "The client's contact email address."
+          },
+          "subject": {
+            "type": "string",
+            "description": "The subject of the inquiry (e.g., General Inquiry, PrestaShop Development, Natural SEO Strategy, Platform Security Audit, AI & Automation Workflow, Standard/Professional/Enterprise Care Maintenance Plan)."
+          },
+          "message": {
+            "type": "string",
+            "description": "A description of the project requirements, constraints, budget, or timeline."
+          }
+        },
+        "required": ["name", "email", "message"]
+      }
+    },
+    {
+      "name": "analyzeSeoMetadata",
+      "description": "Performs a real-time natural SEO audit, evaluates char limits, and calculates keyword density.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "The page title to test in the simulated Google SERP snippet."
+          },
+          "url": {
+            "type": "string",
+            "description": "The target website URL."
+          },
+          "description": {
+            "type": "string",
+            "description": "The page meta description to test."
+          },
+          "keyword": {
+            "type": "string",
+            "description": "The targeted natural SEO focus keyword."
+          },
+          "content": {
+            "type": "string",
+            "description": "A sample text snippet of the website page content to calculate density."
+          }
+        },
+        "required": ["title", "description", "keyword"]
+      }
+    }
+  ]
+}
