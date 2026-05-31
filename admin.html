@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🔐 Console d'Administration | Lefi Abdelmonem</title>
+  <title>🔐 Administrative Console | Lefi Abdelmonem</title>
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔐</text></svg>">
@@ -140,24 +140,24 @@
   <div class="admin-wrapper">
     
     <a href="./" class="back-btn-home">
-      &larr; Retour au site principal
+      &larr; Back to main website
     </a>
     
     <div class="glass-card admin-card">
       
       <!-- Screen 1: Login Screen -->
       <div id="loginScreen">
-        <h2 class="admin-title">🔐 Connexion Administrative</h2>
-        <p class="admin-subtitle">Saisissez votre mot de passe de sécurité pour accéder au panneau de veille et d'édition.</p>
+        <h2 class="admin-title">🔐 Administrative Login</h2>
+        <p class="admin-subtitle">Enter your security password to access the monitoring and publishing panel.</p>
         
         <form id="loginForm" onsubmit="return false;">
           <div class="form-group">
-            <label for="adminPassword">Mot de passe secret</label>
+            <label for="adminPassword">Secret Password</label>
             <input type="password" id="adminPassword" class="form-control" placeholder="••••••••" required style="letter-spacing: 0.25em;">
           </div>
           
           <button type="submit" class="btn-primary" style="margin-top: 24px; width: 100%; justify-content: center; font-size: 1rem; padding: 14px;">
-            Connexion au Panel
+            Login to Panel
           </button>
           
           <div id="loginFeedback" class="form-feedback-message" style="margin-top: 16px; display: none;"></div>
@@ -168,21 +168,21 @@
       <div id="dashboardScreen" style="display: none;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
           <div>
-            <h2 class="admin-title" style="margin-bottom: 4px;">🔐 Administration - Veille Actus</h2>
-            <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">Gérer les articles de veille automatique et manuelle.</p>
+            <h2 class="admin-title" style="margin-bottom: 4px;">🔐 Administration - Tech Watch</h2>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">Manage automated and manual tech watch articles.</p>
           </div>
           <button class="btn-outline" id="btnLogout" style="padding: 8px 16px; font-size: 0.85rem; border-color: var(--text-muted); color: var(--text-secondary);">
-            Déconnexion
+            Logout
           </button>
         </div>
         
         <!-- Actions bar -->
         <div style="display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap;">
           <button class="btn-primary" id="btnAdminAddArticle" style="font-size: 0.9rem; padding: 10px 20px;">
-            ➕ Ajouter un Article Manuel
+            ➕ Add Manual Article
           </button>
           <button class="btn-outline" id="btnAdminTriggerVeille" style="font-size: 0.9rem; padding: 9px 20px; border-color: var(--accent-ai); color: var(--accent-ai);">
-            🤖 Lancer la Veille IA (24h)
+            🤖 Run AI Tech Watch (24h)
           </button>
         </div>
 
@@ -192,8 +192,8 @@
             <thead>
               <tr>
                 <th>Date</th>
-                <th>Catégorie</th>
-                <th>Titre</th>
+                <th>Category</th>
+                <th>Title</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -206,36 +206,36 @@
 
       <!-- Screen 3: Add/Edit Article Form (Hidden by default) -->
       <div id="formScreen" style="display: none;">
-        <h4 id="articleFormTitle" style="font-family: var(--font-title); font-size: 1.4rem; margin-bottom: 20px; color: var(--text-primary);">Ajouter un Article</h4>
+        <h4 id="articleFormTitle" style="font-family: var(--font-title); font-size: 1.4rem; margin-bottom: 20px; color: var(--text-primary);">Add/Edit Article</h4>
         
         <form id="articleForm" onsubmit="return false;">
           <input type="hidden" id="editArticleId">
           
           <div class="form-group">
-            <label for="articleCategory">Catégorie</label>
+            <label for="articleCategory">Category</label>
             <select id="articleCategory" class="form-control" style="background-color: #060913;">
-              <option value="ai">🤖 Intelligence Artificielle</option>
+              <option value="ai">🤖 Artificial Intelligence</option>
               <option value="prestashop">🛒 PrestaShop</option>
-              <option value="seo">📈 SEO & Référencement</option>
+              <option value="seo">📈 SEO & Marketing</option>
             </select>
           </div>
           
           <div class="form-group" style="margin-top: 20px;">
-            <label for="articleTitle">Titre de l'Article</label>
-            <input type="text" id="articleTitle" class="form-control" required placeholder="Saisir un titre accrocheur...">
+            <label for="articleTitle">Article Title</label>
+            <input type="text" id="articleTitle" class="form-control" required placeholder="Enter a catchy title...">
           </div>
           
           <div class="form-group" style="margin-top: 20px;">
-            <label for="articleContent">Contenu de l'Article</label>
-            <textarea id="articleContent" class="form-control" required placeholder="Contenu de la nouvelle, incluant des détails pertinents..." style="min-height: 200px; line-height: 1.6;"></textarea>
+            <label for="articleContent">Article Content</label>
+            <textarea id="articleContent" class="form-control" required placeholder="Article content, including actionable insights..." style="min-height: 200px; line-height: 1.6;"></textarea>
           </div>
           
           <div style="margin-top: 30px; display: flex; gap: 12px; justify-content: flex-end;">
             <button type="button" class="btn-outline" id="btnArticleFormCancel" style="padding: 11px 24px;">
-              Annuler
+              Cancel
             </button>
             <button type="submit" class="btn-primary" id="btnArticleFormSubmit" style="padding: 12px 24px;">
-              Sauvegarder
+              Save
             </button>
           </div>
         </form>

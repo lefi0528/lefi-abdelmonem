@@ -865,7 +865,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (filtered.length === 0) {
       newsGrid.innerHTML = `
         <div class="glass-card" style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-secondary);">
-          <p>Aucun article disponible pour cette catégorie.</p>
+          <p>No articles available for this category.</p>
         </div>
       `;
       return;
@@ -878,7 +878,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       if (art.category === 'ai') {
         badgeClass = "badge-ai";
-        categoryName = "IA & Automation";
+        categoryName = "AI & Automation";
         cardHoverClass = "card-ai";
       } else if (art.category === 'prestashop') {
         badgeClass = "badge-prestashop";
@@ -891,14 +891,14 @@ document.addEventListener('DOMContentLoaded', () => {
       card.innerHTML = `
         <div class="news-card-meta">
           <span class="news-card-badge ${badgeClass}">${categoryName}</span>
-          <span class="news-card-freshness">${art.freshness || 'Fraîcheur : < 24h'}</span>
+          <span class="news-card-freshness">${art.freshness || 'Freshness: < 24h'}</span>
           <span>📅 ${art.date}</span>
         </div>
         <h3 class="news-card-title">${art.title}</h3>
         <p class="news-card-excerpt">${art.content.substring(0, 200)}${art.content.length > 200 ? '...' : ''}</p>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
           <a href="article.html?id=${art.id}" class="news-card-readmore">
-            Lire l'article &rarr;
+            Read Article &rarr;
           </a>
         </div>
       `;

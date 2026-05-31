@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (art.category === 'ai') {
       badgeClass = "badge-ai";
-      categoryName = "IA & Automation";
+      categoryName = "AI & Automation";
       glowClass = "glow-ai";
       glowColor = "var(--accent-ai)";
     } else if (art.category === 'prestashop') {
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
       badgeEl.textContent = categoryName;
     }
     if (freshnessEl) {
-      freshnessEl.textContent = art.freshness || "Fraîcheur : < 24h";
+      freshnessEl.textContent = art.freshness || "Freshness: < 24h";
     }
     if (dateEl) {
       dateEl.textContent = art.date;
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (remarkText) {
         const remarkBlock = document.createElement('div');
         remarkBlock.className = 'article-remark-block';
-        remarkBlock.innerHTML = `💡 <strong>Exploitation PrestaShop :</strong> ${remarkText}`;
+        remarkBlock.innerHTML = `💡 <strong>PrestaShop Actionable Insight:</strong> ${remarkText}`;
         bodyEl.appendChild(remarkBlock);
       }
     }
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "author": {
         "@type": "Person",
         "name": "Lefi Abdelmonem",
-        "jobTitle": "Expert PrestaShop, SEO & Sécurité Web",
+        "jobTitle": "PrestaShop, SEO & Web Security Expert",
         "url": "https://lefi-abdelmonem.com/"
       },
       "publisher": {

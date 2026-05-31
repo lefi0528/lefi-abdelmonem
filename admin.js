@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         loginFeedback.style.display = 'block';
         loginFeedback.className = "form-feedback-message error";
-        loginFeedback.textContent = "Mot de passe incorrect. Veuillez réessayer.";
+        loginFeedback.textContent = "Incorrect password. Please try again.";
       }
     });
   }
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
       adminArticlesTableBody.innerHTML = `
         <tr>
           <td colspan="4" style="text-align: center; color: var(--text-secondary); padding: 30px;">
-            Aucun article présent dans la base de données.
+            No articles present in the database.
           </td>
         </tr>
       `;
@@ -129,8 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
     articles.forEach(art => {
       const isDraft = art.status === 'draft';
       const statusBadge = isDraft 
-        ? `<span style="background: rgba(239, 68, 68, 0.15); color: #EF4444; border: 1px solid rgba(239, 68, 68, 0.3); padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">Brouillon</span>`
-        : `<span style="background: rgba(0, 255, 133, 0.15); color: var(--accent-sec); border: 1px solid rgba(0, 255, 133, 0.3); padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">Publié</span>`;
+        ? `<span style="background: rgba(239, 68, 68, 0.15); color: #EF4444; border: 1px solid rgba(239, 68, 68, 0.3); padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">Draft</span>`
+        : `<span style="background: rgba(0, 255, 133, 0.15); color: var(--accent-sec); border: 1px solid rgba(0, 255, 133, 0.3); padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">Published</span>`;
 
       const row = document.createElement('tr');
       row.innerHTML = `
@@ -138,9 +138,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <td><span class="news-card-badge badge-${art.category}">${art.category.toUpperCase()}</span></td>
         <td style="font-weight: 500; color: var(--text-primary);">${art.title}</td>
         <td style="white-space: nowrap;">
-          <button class="btn-admin-edit" onclick="togglePublish('${art.id}')" title="${isDraft ? 'Publier en ligne' : 'Passer en brouillon'}">${isDraft ? '👁️ Publier' : '🙈 Brouillon'}</button>
-          <button class="btn-admin-edit" onclick="editArticle('${art.id}')" style="border-color: var(--accent-dev); color: #D8B4FE;">✏️ Modifier</button>
-          <button class="btn-admin-delete" onclick="deleteArticle('${art.id}')">🗑️ Supprimer</button>
+          <button class="btn-admin-edit" onclick="togglePublish('${art.id}')" title="${isDraft ? 'Publish online' : 'Set as draft'}">${isDraft ? '👁️ Publish' : '🙈 Draft'}</button>
+          <button class="btn-admin-edit" onclick="editArticle('${art.id}')" style="border-color: var(--accent-dev); color: #D8B4FE;">✏️ Edit</button>
+          <button class="btn-admin-delete" onclick="deleteArticle('${art.id}')">🗑️ Delete</button>
         </td>
       `;
       adminArticlesTableBody.appendChild(row);
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dashboardScreen.style.display = 'none';
     formScreen.style.display = 'block';
     
-    articleFormTitle.textContent = "Modifier l'Article";
+    articleFormTitle.textContent = "Edit Article";
     editArticleIdInput.value = art.id;
     articleCategorySelect.value = art.category;
     articleTitleInput.value = art.title;
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Trigger Delete article
   window.deleteArticle = function(id) {
-    if (confirm("Voulez-vous vraiment supprimer définitivement cet article de veille ?")) {
+    if (confirm("Do you really want to permanently delete this watch article?")) {
       let articles = getArticles();
       articles = articles.filter(a => a.id !== id);
       saveArticles(articles);
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
       formScreen.style.display = 'block';
       articleForm.reset();
       editArticleIdInput.value = '';
-      articleFormTitle.textContent = "Ajouter un Article Manuel";
+      articleFormTitle.textContent = "Add Manual Article";
     });
   }
 
@@ -228,8 +228,8 @@ document.addEventListener('DOMContentLoaded', () => {
           id: 'art-' + Date.now() + '-' + category,
           category: category,
           title: title,
-          date: new Date().toLocaleDateString('fr-FR'),
-          freshness: "Fraîcheur : Manuelle",
+          date: new Date().toLocaleDateString('en-US'),
+          freshness: "Freshness: Manual",
           content: content,
           status: "published"
         };
@@ -248,20 +248,20 @@ document.addEventListener('DOMContentLoaded', () => {
     btnAdminTriggerVeille.addEventListener('click', () => {
       btnAdminTriggerVeille.disabled = true;
       const originalText = btnAdminTriggerVeille.innerHTML;
-      btnAdminTriggerVeille.innerHTML = '<span class="spin-loader">🔄</span> Scraping des flux mondiaux & génération IA...';
+      btnAdminTriggerVeille.innerHTML = '<span class="spin-loader">🔄</span> Scraping global feeds & running AI compile...';
       btnAdminTriggerVeille.style.opacity = '0.7';
 
       setTimeout(() => {
         // Mock new aggregated AI articles with the requested PrestaShop Remarks
         const aiTitles = [
-          "Google I/O 2026 standardise WebMCP : Révolution de l'automatisation par agent IA",
-          "Alerte Sécurité Web : Vague d'attaques XSS critiques sur les e-boutiques",
-          "Voice SEO 2026 : Optimiser la sémantique de son catalogue produits"
+          "Google I/O 2026 standardizes WebMCP: AI Agent Automation Revolution",
+          "Web Security Alert: Critical XSS Attacks Surge on E-commerce Storefronts",
+          "Voice SEO 2026: Optimizing E-commerce Product Catalogs Semantically"
         ];
         const aiContents = [
-          "Le protocole WebMCP est officiellement validé, permettant aux IA d'acheter directement sur le web. Les boutiques doivent restructurer leurs formulaires de checkout pour que les crawlers puissent exécuter les transactions de manière sécurisée.\n\nPrestaShop Remark: Intégrez des modules compatibles avec le protocole WebMCP pour préparer vos tunnels d'achats à la commande autonome par agents IA.",
-          "Des experts en sécurité informatique signalent l'exploitation de trois failles zero-day affectant d'anciens modules de paiement. Une vérification immédiate des bases de données et la mise à jour des pare-feux applicatifs sont fortement préconisées.\n\nPrestaShop Remark: Lancez immédiatement un audit de sécurité de vos modules e-commerce obsolètes et mettez à jour votre Core système pour éviter les injections.",
-          "Les requêtes vocales représentent plus de 45% du trafic internet mondial en 2026. L'indexation Google Search repose désormais entièrement sur des correspondances sémantiques robustes et un balisage structuré (JSON-LD) impeccable.\n\nPrestaShop Remark: Enrichissez les microdonnées structurées de vos produits dans PrestaShop et synchronisez votre contenu avec FexaAI pour maximiser votre visibilité vocale."
+          "The WebMCP protocol is officially validated, allowing AI agents to buy directly from the web. Stores must restructure checkout forms so that crawlers can securely execute transactions.\n\nPrestaShop Remark: Integrate modules compatible with the WebMCP protocol to prepare your purchase funnels for autonomous ordering by AI agents.",
+          "Web security experts report zero-day vulnerabilities affecting older payment modules. Immediate verification of databases and updating firewalls is strongly advised.\n\nPrestaShop Remark: Run an immediate security audit of your legacy modules and update your Core system to avoid injections.",
+          "Voice queries represent over 45% of global internet traffic in 2026. Google Search indexing is now entirely based on robust semantic matching and flawless structured markup (JSON-LD).\n\nPrestaShop Remark: Enrich your structured product microdata in PrestaShop and sync your catalog with FexaAI to maximize voice search visibility."
         ];
         const aiCategories = ["ai", "prestashop", "seo"];
 
@@ -271,8 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
           id: 'art-' + Date.now() + '-' + aiCategories[pickIdx],
           category: aiCategories[pickIdx],
           title: aiTitles[pickIdx],
-          date: new Date().toLocaleDateString('fr-FR'),
-          freshness: "Fraîcheur : < 24h",
+          date: new Date().toLocaleDateString('en-US'),
+          freshness: "Freshness: < 24h",
           content: aiContents[pickIdx],
           status: "draft" // Automatic articles drafted as brouillon
         };
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnAdminTriggerVeille.innerHTML = originalText;
         btnAdminTriggerVeille.style.opacity = '1';
 
-        alert(`🤖 [VEILLE IA COMPLÉTÉE]\n\nUn nouvel article chaud de veille a été rédigé en mode Brouillon ! Vérifiez-le dans le tableau ci-dessous et cliquez sur 👁️ Publier pour le mettre en ligne.`);
+        alert(`🤖 [AI TECH WATCH COMPLETED]\n\nA new hot watch article has been compiled as a Draft! Check it in the table below and click on 👁️ Publish to make it live.`);
         renderAdminDashboard();
       }, 3000);
     });
