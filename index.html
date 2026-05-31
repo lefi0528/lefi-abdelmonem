@@ -1003,6 +1003,27 @@
     </div>
   </section>
 
+  <!-- Premium Glassmorphic Article Reader Modal -->
+  <div id="articleModal" class="article-modal-overlay">
+    <div class="article-modal-card glass-card" id="articleModalCard">
+      <button class="article-modal-close" id="closeArticleModal" aria-label="Fermer le modal">&times;</button>
+      <div class="article-modal-content-wrapper">
+        <div class="article-modal-meta">
+          <span class="news-card-badge" id="modalArticleBadge">Badge</span>
+          <span class="news-card-freshness" id="modalArticleFreshness">Fraîcheur</span>
+          <span class="article-modal-date-wrapper">📅 <span id="modalArticleDate">Date</span></span>
+        </div>
+        <h2 class="article-modal-title" id="modalArticleTitle">Titre de l'article</h2>
+        <div class="article-modal-body" id="modalArticleBody">
+          <!-- Le contenu de l'article sera injecté dynamiquement -->
+        </div>
+        <div class="article-modal-footer" id="modalArticleFooter" style="display: none;">
+          <!-- Le lien vers la source originale sera injecté dynamiquement -->
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Backoffice Glassmorphic Modal overlay -->
   <div class="backoffice-overlay" id="backofficeOverlay" style="display: none; position: fixed; inset: 0; background: rgba(6, 9, 19, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 1000; align-items: center; justify-content: center; padding: 24px;">
     <div class="glass-card backoffice-modal" style="width: 100%; max-width: 680px; max-height: 90vh; overflow-y: auto; background: var(--bg-secondary); border: 1px solid var(--border-hover); box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); padding: 32px;">

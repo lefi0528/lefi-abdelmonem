@@ -1056,13 +1056,121 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Premium Article Modal logic
+  const articleModal = document.getElementById('articleModal');
+  const articleModalCard = document.getElementById('articleModalCard');
+  const closeArticleModalBtn = document.getElementById('closeArticleModal');
+  const modalArticleBadge = document.getElementById('modalArticleBadge');
+  const modalArticleFreshness = document.getElementById('modalArticleFreshness');
+  const modalArticleDate = document.getElementById('modalArticleDate');
+  const modalArticleTitle = document.getElementById('modalArticleTitle');
+  const modalArticleBody = document.getElementById('modalArticleBody');
+  const modalArticleFooter = document.getElementById('modalArticleFooter');
+
+  function closeArticleModal() {
+    if (articleModal) {
+      articleModal.classList.remove('active');
+      document.body.style.overflow = ''; // Restore page scrolling
+    }
+  }
+
+  if (closeArticleModalBtn) {
+    closeArticleModalBtn.addEventListener('click', closeArticleModal);
+  }
+
+  if (articleModal) {
+    articleModal.addEventListener('click', (e) => {
+      // Close only if clicked on overlay directly, not on card
+      if (e.target === articleModal) {
+        closeArticleModal();
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && articleModal && articleModal.classList.contains('active')) {
+      closeArticleModal();
+    }
+  });
+
   window.showFullArticle = function(id) {
     const articles = getArticles();
     const art = articles.find(a => a.id === id);
     if (!art) return;
     
-    alert(`📖 [READ ARTICLE]\n\nTitle: ${art.title}\nCategory: ${art.category.toUpperCase()}\nDate: ${art.date}\n\n${art.content}`);
+    if (!articleModal) {
+      // Fallback if modal HTML is missing for some reason
+      alert(`📖 [READ ARTICLE]\n\nTitle: ${art.title}\nCategory: ${art.category.toUpperCase()}\nDate: ${art.date}\n\n${art.content}`);
+      return;
+    }
+
+    // Determine category styling & text
+    let badgeClass = "badge-seo";
+    let categoryName = "SEO";
+    let glowClass = "glow-seo";
+    
+    if (art.category === 'ai') {
+      badgeClass = "badge-ai";
+      categoryName = "IA & Automation";
+      glowClass = "glow-ai";
+    } else if (art.category === 'prestashop') {
+      badgeClass = "badge-prestashop";
+      categoryName = "PrestaShop";
+      glowClass = "glow-prestashop";
+    }
+
+    // Reset glow classes and add matching one
+    if (articleModalCard) {
+      articleModalCard.className = `article-modal-card glass-card ${glowClass}`;
+    }
+
+    // Populate dynamic contents
+    if (modalArticleBadge) {
+      modalArticleBadge.className = `news-card-badge ${badgeClass}`;
+      modalArticleBadge.textContent = categoryName;
+    }
+    if (modalArticleFreshness) {
+      modalArticleFreshness.textContent = art.freshness || 'Fraîcheur : < 24h';
+    }
+    if (modalArticleDate) {
+      modalArticleDate.textContent = art.date;
+    }
+    if (modalArticleTitle) {
+      modalArticleTitle.textContent = art.title;
+    }
+
+    // Split text content by newlines into beautiful paragraphs
+    if (modalArticleBody) {
+      modalArticleBody.innerHTML = '';
+      const paragraphs = art.content.split(/\n\s*\n/);
+      paragraphs.forEach(pText => {
+        if (pText.trim()) {
+          const p = document.createElement('p');
+          p.textContent = pText.trim();
+          modalArticleBody.appendChild(p);
+        }
+      });
+    }
+
+    // Setup source footer if present
+    if (modalArticleFooter) {
+      if (art.sourceUrl) {
+        modalArticleFooter.style.display = 'flex';
+        modalArticleFooter.innerHTML = `
+          <a href="${art.sourceUrl}" target="_blank" rel="noopener" class="article-modal-source-btn">
+            Lire l'article d'origine ↗ <span style="font-size: 0.8rem; color: var(--text-secondary); font-weight: normal; margin-left: 5px;">(${art.sourceName || 'Source'})</span>
+          </a>
+        `;
+      } else {
+        modalArticleFooter.style.display = 'none';
+      }
+    }
+
+    // Display modal and disable outer page scrolling
+    articleModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
   };
+
 
   // Add Article UI display
   const btnAdminAddArticle = document.getElementById('btnAdminAddArticle');
