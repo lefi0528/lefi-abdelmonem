@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔐 Console d'Administration | Lefi Abdelmonem</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔐</text></svg>">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    
+    .admin-wrapper {
+      width: 100%;
+      max-width: 900px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .admin-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(173, 0, 255, 0.05);
+      padding: 40px;
+      border-radius: var(--border-radius-lg);
+    }
+    
+    .admin-title {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .admin-subtitle {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 30px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      background: #060913;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      transition: var(--transition-smooth);
+    }
+    
+    .form-control:focus {
+      border-color: var(--accent-dev);
+      outline: none;
+      box-shadow: 0 0 10px rgba(173, 0, 255, 0.15);
+    }
+    
+    .articles-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+    
+    .articles-table th, .articles-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: middle;
+    }
+    
+    .articles-table th {
+      color: var(--text-secondary);
+      font-family: var(--font-title);
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    
+    .articles-table tr:hover {
+      background: rgba(255, 255, 255, 0.01);
+    }
+    
+    .back-btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+      transition: var(--transition-smooth);
+    }
+    
+    .back-btn-home:hover {
+      color: var(--text-primary);
+      transform: translateX(-4px);
+    }
+    
+    /* Responsive admin layout */
+    @media (max-width: 768px) {
+      .admin-card {
+        padding: 30px 20px;
+      }
+      .admin-title {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Glows -->
+  <div class="ambient-glows">
+    <div class="glow-orb orb-1" style="background: var(--accent-dev); top: -10%; left: -10%;"></div>
+    <div class="glow-orb orb-2" style="background: var(--accent-ai); bottom: -10%; right: -10%;"></div>
+  </div>
+
+  <div class="admin-wrapper">
+    
+    <a href="index.html" class="back-btn-home">
+      &larr; Retour au site principal
+    </a>
+    
+    <div class="glass-card admin-card">
+      
+      <!-- Screen 1: Login Screen -->
+      <div id="loginScreen">
+        <h2 class="admin-title">🔐 Connexion Administrative</h2>
+        <p class="admin-subtitle">Saisissez votre mot de passe de sécurité pour accéder au panneau de veille et d'édition.</p>
+        
+        <form id="loginForm" onsubmit="return false;">
+          <div class="form-group">
+            <label for="adminPassword">Mot de passe secret</label>
+            <input type="password" id="adminPassword" class="form-control" placeholder="••••••••" required style="letter-spacing: 0.25em;">
+          </div>
+          
+          <button type="submit" class="btn-primary" style="margin-top: 24px; width: 100%; justify-content: center; font-size: 1rem; padding: 14px;">
+            Connexion au Panel
+          </button>
+          
+          <div id="loginFeedback" class="form-feedback-message" style="margin-top: 16px; display: none;"></div>
+        </form>
+      </div>
+
+      <!-- Screen 2: Admin Dashboard (Hidden by default) -->
+      <div id="dashboardScreen" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <h2 class="admin-title" style="margin-bottom: 4px;">🔐 Administration - Veille Actus</h2>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">Gérer les articles de veille automatique et manuelle.</p>
+          </div>
+          <button class="btn-outline" id="btnLogout" style="padding: 8px 16px; font-size: 0.85rem; border-color: var(--text-muted); color: var(--text-secondary);">
+            Déconnexion
+          </button>
+        </div>
+        
+        <!-- Actions bar -->
+        <div style="display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap;">
+          <button class="btn-primary" id="btnAdminAddArticle" style="font-size: 0.9rem; padding: 10px 20px;">
+            ➕ Ajouter un Article Manuel
+          </button>
+          <button class="btn-outline" id="btnAdminTriggerVeille" style="font-size: 0.9rem; padding: 9px 20px; border-color: var(--accent-ai); color: var(--accent-ai);">
+            🤖 Lancer la Veille IA (24h)
+          </button>
+        </div>
+
+        <!-- Articles Table -->
+        <div class="articles-table-wrapper" style="overflow-x: auto; margin-bottom: 16px; border: 1px solid var(--border-color); border-radius: 8px;">
+          <table class="articles-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Catégorie</th>
+                <th>Titre</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="adminArticlesTableBody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Screen 3: Add/Edit Article Form (Hidden by default) -->
+      <div id="formScreen" style="display: none;">
+        <h4 id="articleFormTitle" style="font-family: var(--font-title); font-size: 1.4rem; margin-bottom: 20px; color: var(--text-primary);">Ajouter un Article</h4>
+        
+        <form id="articleForm" onsubmit="return false;">
+          <input type="hidden" id="editArticleId">
+          
+          <div class="form-group">
+            <label for="articleCategory">Catégorie</label>
+            <select id="articleCategory" class="form-control" style="background-color: #060913;">
+              <option value="ai">🤖 Intelligence Artificielle</option>
+              <option value="prestashop">🛒 PrestaShop</option>
+              <option value="seo">📈 SEO & Référencement</option>
+            </select>
+          </div>
+          
+          <div class="form-group" style="margin-top: 20px;">
+            <label for="articleTitle">Titre de l'Article</label>
+            <input type="text" id="articleTitle" class="form-control" required placeholder="Saisir un titre accrocheur...">
+          </div>
+          
+          <div class="form-group" style="margin-top: 20px;">
+            <label for="articleContent">Contenu de l'Article</label>
+            <textarea id="articleContent" class="form-control" required placeholder="Contenu de la nouvelle, incluant des détails pertinents..." style="min-height: 200px; line-height: 1.6;"></textarea>
+          </div>
+          
+          <div style="margin-top: 30px; display: flex; gap: 12px; justify-content: flex-end;">
+            <button type="button" class="btn-outline" id="btnArticleFormCancel" style="padding: 11px 24px;">
+              Annuler
+            </button>
+            <button type="submit" class="btn-primary" id="btnArticleFormSubmit" style="padding: 12px 24px;">
+              Sauvegarder
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="admin.js"></script>
+</body>
+</html>

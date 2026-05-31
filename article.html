@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Dynamic Title - will be overwritten by JS -->
+  <title>Actualités Veille & Tech | Lefi Abdelmonem</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📰</text></svg>">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .article-page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .article-container {
+      flex-grow: 1;
+      width: 100%;
+      max-width: 860px;
+      margin: 120px auto 80px auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .article-view-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 50px 48px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+    
+    /* Category-specific card glow shadows */
+    .article-view-card.glow-ai {
+      border-color: rgba(255, 0, 122, 0.3);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 0, 122, 0.15);
+    }
+    
+    .article-view-card.glow-prestashop {
+      border-color: rgba(173, 0, 255, 0.3);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(173, 0, 255, 0.15);
+    }
+    
+    .article-view-card.glow-seo {
+      border-color: rgba(0, 240, 255, 0.3);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 240, 255, 0.15);
+    }
+    
+    .article-nav-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+    }
+    
+    .article-title-main {
+      font-family: var(--font-title);
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text-primary);
+      margin-bottom: 30px;
+      letter-spacing: -0.02em;
+    }
+    
+    .article-content-body {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.85;
+      font-family: var(--font-body);
+    }
+    
+    .article-content-body p {
+      margin-bottom: 24px;
+    }
+    
+    .article-content-body p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .article-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      font-family: var(--font-title);
+      font-weight: 500;
+      margin-bottom: 32px;
+      transition: var(--transition-smooth);
+      border-bottom: 1px solid transparent;
+      width: fit-content;
+    }
+    
+    .article-back-link:hover {
+      color: var(--text-primary);
+      border-color: var(--text-primary);
+      transform: translateX(-4px);
+    }
+    
+    /* Special PrestaShop exploit remark typography */
+    .article-remark-block {
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 3px solid var(--accent-dev);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 32px;
+      color: var(--text-primary);
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+    
+    .article-view-card.glow-ai .article-remark-block {
+      border-left-color: var(--accent-ai);
+      background: rgba(255, 0, 122, 0.02);
+    }
+    
+    .article-view-card.glow-prestashop .article-remark-block {
+      border-left-color: var(--accent-dev);
+      background: rgba(173, 0, 255, 0.02);
+    }
+    
+    .article-view-card.glow-seo .article-remark-block {
+      border-left-color: var(--accent-seo);
+      background: rgba(0, 240, 255, 0.02);
+    }
+    
+    @media (max-width: 768px) {
+      .article-container {
+        margin-top: 100px;
+        margin-bottom: 40px;
+      }
+      .article-view-card {
+        padding: 32px 24px;
+      }
+      .article-title-main {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+      .article-content-body {
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="article-page-wrapper">
+    
+    <!-- Navbar (Static Header) -->
+    <header class="main-header" style="position: fixed; top: 0; width: 100%; z-index: 100;">
+      <div class="container header-container">
+        <a href="index.html" class="logo">
+          LEFI <span class="logo-accent">.ABDELMONEM</span>
+        </a>
+        <nav class="nav-menu" style="display: flex; gap: 20px;">
+          <a href="index.html#home" class="nav-link">Accueil</a>
+          <a href="index.html#about" class="nav-link">À Propos</a>
+          <a href="index.html#services" class="nav-link">Services</a>
+          <a href="index.html#news" class="nav-link active">Veille & Tech</a>
+          <a href="index.html#contact" class="nav-link nav-btn" style="background: linear-gradient(135deg, var(--accent-dev), var(--accent-seo)); border: none; padding: 8px 20px; border-radius: 9999px; color: var(--text-primary);">Contacter</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Ambient Glowing Orbs -->
+    <div class="ambient-glows">
+      <div class="glow-orb" id="dynamicOrb" style="width: 500px; height: 500px; top: 15%; left: 50%; transform: translateX(-50%); filter: blur(140px); opacity: 0.12;"></div>
+    </div>
+
+    <!-- Article Content Container -->
+    <div class="article-container">
+      
+      <a href="index.html#news" class="article-back-link">
+        &larr; Retour aux actualités
+      </a>
+      
+      <article class="glass-card article-view-card" id="articleCard">
+        
+        <div class="article-nav-header">
+          <span class="news-card-badge" id="articleBadge">Badge</span>
+          <span class="news-card-freshness" id="articleFreshness">Fraîcheur</span>
+          <span>📅 <span id="articleDate">Date</span></span>
+        </div>
+        
+        <h1 class="article-title-main" id="articleTitle">Titre de l'actualité</h1>
+        
+        <div class="article-content-body" id="articleBody">
+          <!-- Dynamically generated paragraphs go here -->
+        </div>
+        
+      </article>
+      
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer" style="margin-top: auto; border-top: 1px solid var(--border-color);">
+      <div class="container footer-container">
+        <div class="footer-copy">
+          <p>&copy; 2026 Lefi Abdelmonem. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html#home" class="footer-link">Accueil</a>
+          <a href="index.html#news" class="footer-link">Actualités</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="article.js"></script>
+</body>
+</html>

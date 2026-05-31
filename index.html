@@ -983,9 +983,6 @@
             Un flux d'actualités autonome rédigé et mis à jour toutes les 24 heures par notre IA de veille locale.
           </p>
         </div>
-        <button class="btn-outline btn-admin-access" id="btnAdminAccess" style="font-size: 0.85rem; padding: 8px 18px;">
-          🔑 Admin Access
-        </button>
       </div>
 
       <!-- Filters -->
@@ -1003,105 +1000,7 @@
     </div>
   </section>
 
-  <!-- Premium Glassmorphic Article Reader Modal -->
-  <div id="articleModal" class="article-modal-overlay">
-    <div class="article-modal-card glass-card" id="articleModalCard">
-      <button class="article-modal-close" id="closeArticleModal" aria-label="Fermer le modal">&times;</button>
-      <div class="article-modal-content-wrapper">
-        <div class="article-modal-meta">
-          <span class="news-card-badge" id="modalArticleBadge">Badge</span>
-          <span class="news-card-freshness" id="modalArticleFreshness">Fraîcheur</span>
-          <span class="article-modal-date-wrapper">📅 <span id="modalArticleDate">Date</span></span>
-        </div>
-        <h2 class="article-modal-title" id="modalArticleTitle">Titre de l'article</h2>
-        <div class="article-modal-body" id="modalArticleBody">
-          <!-- Le contenu de l'article sera injecté dynamiquement -->
-        </div>
-        <div class="article-modal-footer" id="modalArticleFooter" style="display: none;">
-          <!-- Le lien vers la source originale sera injecté dynamiquement -->
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Backoffice Glassmorphic Modal overlay -->
-  <div class="backoffice-overlay" id="backofficeOverlay" style="display: none; position: fixed; inset: 0; background: rgba(6, 9, 19, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); z-index: 1000; align-items: center; justify-content: center; padding: 24px;">
-    <div class="glass-card backoffice-modal" style="width: 100%; max-width: 680px; max-height: 90vh; overflow-y: auto; background: var(--bg-secondary); border: 1px solid var(--border-hover); box-shadow: 0 0 40px rgba(0, 0, 0, 0.5); padding: 32px;">
-      <div class="backoffice-modal-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px;">
-        <h3 style="font-family: var(--font-title); font-size: 1.3rem; margin: 0;">🔐 Console d'Administration - Veille Actualités</h3>
-        <button class="backoffice-close-btn" id="btnBackofficeClose" style="background: transparent; border: none; font-size: 2rem; color: var(--text-secondary); cursor: pointer; line-height: 1;">&times;</button>
-      </div>
-      
-      <!-- Login Screen -->
-      <div class="backoffice-login-section" id="backofficeLoginSection">
-        <p style="margin-bottom: 20px; color: var(--text-secondary);">Saisissez votre mot de passe pour gérer les articles et forcer la veille IA.</p>
-        <form id="backofficeLoginForm" onsubmit="return false;">
-          <div class="form-group">
-            <label for="backofficePassword" style="display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-secondary);">Mot de passe de sécurité</label>
-            <input type="password" id="backofficePassword" class="form-control" placeholder="••••••••" required style="width: 100%; padding: 12px 16px; background: #0C101F; border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-primary); letter-spacing: 0.2em;">
-          </div>
-          <button type="submit" class="btn-primary" style="margin-top: 20px; width: 100%; justify-content: center;">Connexion</button>
-          <div id="loginFeedback" class="form-feedback-message" style="margin-top: 12px; display: none;"></div>
-        </form>
-      </div>
-
-      <!-- Admin Panel Dashboard (Hidden by default) -->
-      <div class="backoffice-dashboard-section" id="backofficeDashboardSection" style="display: none;">
-        <div class="backoffice-actions-bar" style="display: flex; gap: 16px; margin-bottom: 24px;">
-          <button class="btn-primary" id="btnAdminAddArticle" style="font-size: 0.9rem; padding: 10px 20px;">
-            ➕ Ajouter un Article
-          </button>
-          <button class="btn-outline" id="btnAdminTriggerVeille" style="font-size: 0.9rem; padding: 9px 20px; border-color: var(--accent-ai); color: var(--accent-ai);">
-            🤖 Lancer la Veille IA (24h)
-          </button>
-        </div>
-
-        <div class="articles-table-wrapper" style="overflow-x: auto; margin-bottom: 16px; border: 1px solid var(--border-color); border-radius: 8px;">
-          <table class="articles-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
-            <thead>
-              <tr style="background: rgba(255, 255, 255, 0.02); border-bottom: 1px solid var(--border-color);">
-                <th style="padding: 12px 16px; color: var(--text-secondary);">Date</th>
-                <th style="padding: 12px 16px; color: var(--text-secondary);">Catégorie</th>
-                <th style="padding: 12px 16px; color: var(--text-secondary);">Titre</th>
-                <th style="padding: 12px 16px; color: var(--text-secondary);">Actions</th>
-              </tr>
-            </thead>
-            <tbody id="adminArticlesTableBody">
-              <!-- Rendered dynamically -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Add/Edit Article Form (Hidden by default) -->
-      <div class="backoffice-form-section" id="backofficeFormSection" style="display: none;">
-        <h4 id="articleFormTitle" style="font-family: var(--font-title); font-size: 1.2rem; margin-bottom: 20px;">Ajouter un Article</h4>
-        <form id="articleForm" onsubmit="return false;">
-          <input type="hidden" id="editArticleId">
-          <div class="form-group">
-            <label for="articleCategory" style="display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-secondary);">Catégorie</label>
-            <select id="articleCategory" class="form-control" style="width: 100%; padding: 12px 16px; background-color: #0C101F; border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-primary);">
-              <option value="ai">🤖 Intelligence Artificielle</option>
-              <option value="prestashop">🛒 PrestaShop</option>
-              <option value="seo">📈 SEO & Référencement</option>
-            </select>
-          </div>
-          <div class="form-group" style="margin-top: 16px;">
-            <label for="articleTitle" style="display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-secondary);">Titre de l'Article</label>
-            <input type="text" id="articleTitle" class="form-control" required placeholder="Titre percutant..." style="width: 100%; padding: 12px 16px; background: #0C101F; border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-primary);">
-          </div>
-          <div class="form-group" style="margin-top: 16px;">
-            <label for="articleContent" style="display: block; margin-bottom: 8px; font-size: 0.85rem; text-transform: uppercase; color: var(--text-secondary);">Contenu de l'Article</label>
-            <textarea id="articleContent" class="form-control" required placeholder="Contenu de la nouvelle du jour..." style="width: 100%; padding: 12px 16px; background: #0C101F; border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-primary); min-height: 180px; font-family: var(--font-body); line-height: 1.6;"></textarea>
-          </div>
-          <div class="backoffice-form-buttons" style="margin-top: 24px; display: flex; gap: 12px;">
-            <button type="submit" class="btn-primary" id="btnArticleFormSubmit" style="padding: 12px 24px;">Sauvegarder</button>
-            <button type="button" class="btn-outline" id="btnArticleFormCancel" style="padding: 11px 24px;">Annuler</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
 
   <!-- Contact Form Section -->
   <section class="contact-section" id="contact">
