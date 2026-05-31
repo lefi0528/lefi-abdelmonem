@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function redirectToHome() {
-    window.location.href = 'index.html#news';
+    window.location.href = './#news';
   }
 
   function injectJsonLdSchema(art, categoryName) {
