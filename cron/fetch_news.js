@@ -157,13 +157,14 @@ function generateSimulatedArticle(category, newsItems) {
 // Master workflow
 async function run() {
   console.log("Starting strictly age-gated multi-source tech news aggregation with RSS Parser...");
-  const newArticles = [];
   const maxAgeMs = 24 * 60 * 60 * 1000; // Strictly 24 hours
   const now = Date.now();
+  
+  // Array to gather all fresh articles across all categories
+  let allFreshItems = [];
 
   for (const [category, urls] of Object.entries(FEEDS)) {
-    let aggregatedItems = [];
-    console.log(`Processing category "${category}" from ${urls.length} prominent feeds...`);
+    console.log(`Scanning category "${category}" from ${urls.length} prominent feeds...`);
 
     for (const url of urls) {
       try {
@@ -171,7 +172,6 @@ async function run() {
         const feed = await parser.parseURL(url);
         const feedTitle = feed.title || new URL(url).hostname;
         
-        let validItems = [];
         feed.items.forEach(item => {
           let pubDate = item.pubDate || item.isoDate;
           if (pubDate) {
@@ -184,7 +184,8 @@ async function run() {
                 const cleanDesc = rawDesc.replace(/<[^>]*>/g, '').substring(0, 400).trim();
                 const cleanTitle = (item.title || '').replace(/<[^>]*>/g, '').trim();
                 
-                validItems.push({
+                allFreshItems.push({
+                  category: category,
                   title: cleanTitle,
                   link: item.link || '',
                   description: cleanDesc,
@@ -195,35 +196,35 @@ async function run() {
             }
           }
         });
-        aggregatedItems = [...aggregatedItems, ...validItems];
-        console.log(`Fetched ${validItems.length} fresh articles under 24h from ${feedTitle}.`);
       } catch (err) {
         console.error(`Error fetching feed ${url}:`, err.message);
       }
     }
-
-    if (aggregatedItems.length === 0) {
-      console.log(`[Veille] Category "${category}": No fresh articles under 24h found across all feeds. Skipping category.`);
-      continue;
-    }
-
-    // Sort by pubDate descending to get the newest articles first
-    aggregatedItems.sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime());
-    
-    // Select top 3 newest articles to feed to the AI
-    const topItems = aggregatedItems.slice(0, 3);
-
-    console.log(`Drafting optimized "${category}" news article from top ${topItems.length} news entries...`);
-    const article = await generateArticleWithGemini(category, topItems);
-    newArticles.push(article);
   }
 
-  if (newArticles.length === 0) {
-    console.log("No new articles drafted in the last 24 hours. news.json remains unchanged.");
+  if (allFreshItems.length === 0) {
+    console.log("[Veille] No fresh articles under 24h found across all categories. Skipping today's generation.");
     return;
   }
 
-  // Load existing articles or create structure
+  // Sort ALL fresh items by date descending to find the single freshest item overall
+  allFreshItems.sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime());
+  
+  // The category of the single freshest item wins the day!
+  const freshestOverall = allFreshItems[0];
+  const selectedCategory = freshestOverall.category;
+  console.log(`Freshest item overall is in category "${selectedCategory}": "${freshestOverall.title}" published at ${freshestOverall.publishedAt}`);
+
+  // Now filter the gathered items to find all items of this winning category
+  const categoryItems = allFreshItems.filter(item => item.category === selectedCategory);
+  
+  // Select top 3 items of this category to build our article
+  const topItems = categoryItems.slice(0, 3);
+
+  console.log(`Drafting exactly ONE optimized "${selectedCategory}" article from top ${topItems.length} news entries...`);
+  const article = await generateArticleWithGemini(selectedCategory, topItems);
+
+  // Load existing articles
   let existingArticles = [];
   if (fs.existsSync(OUTPUT_FILE)) {
     try {
@@ -233,11 +234,11 @@ async function run() {
     }
   }
 
-  // Merge new articles in front, keeping max 15 articles to avoid heavy page loads
-  const merged = [...newArticles, ...existingArticles].slice(0, 15);
+  // Merge new article at the beginning, keeping max 15 articles
+  const merged = [article, ...existingArticles].slice(0, 15);
   
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(merged, null, 2), 'utf8');
-  console.log(`Successfully drafted ${newArticles.length} new aggregated articles inside 'news.json'!`);
+  console.log(`Successfully drafted 1 fresh AI article inside 'news.json' under category "${selectedCategory}"!`);
 }
 
 run();
