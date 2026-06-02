@@ -1026,9 +1026,36 @@ document.addEventListener('DOMContentLoaded', () => {
           };
         } catch (err) {
           return { success: false, error: err.message };
-        }
       }
     }
   };
+
+  /* ===================================================
+     8c. FAQ ACCORDION LOGIC (VOICE SEARCH OPTIMIZATION)
+     =================================================== */
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    const icon = item.querySelector('.faq-icon');
+    
+    question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('active');
+      
+      // Close all other FAQ items for clean UX
+      faqItems.forEach(otherItem => {
+        otherItem.classList.remove('active');
+        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+        otherItem.querySelector('.faq-icon').textContent = '+';
+      });
+      
+      if (!isOpen) {
+        item.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        icon.textContent = '−';
+      }
+    });
+  });
 
 });

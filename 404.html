@@ -122,7 +122,7 @@
         <div class="countdown-bar"></div>
       </div>
       
-      <a href="./" class="btn-primary" style="justify-content: center;">
+      <a href="/" class="btn-primary" style="justify-content: center;">
         Go to Main Terminal &rarr;
       </a>
     </div>
@@ -135,57 +135,69 @@
       
       // Detailed slug mappings to maintain search equity
       const mappings = {
-        'portfolio': './#experience',
-        'optimisation-wordpress-aeo-agents-ia-autonomes': './#news',
-        'maintenance-ia-cms-auto-reparateur-seo': './#news',
-        'wordpress-securite-ia-bots-polymorphes-immunite-numerique': './#news',
-        'ia-locale-wordpress-prestashop-inference-serveur': './#news',
-        'seo-zero-clic-strategie-autorite-ia': './#news',
-        'eco-seo-empreinte-carbone-serveur-algorithme-google': './#news',
-        'securite-wordpress-cryptographie-post-quantique-nist': './#news',
-        'seo-webxr-prestashop-indexation-spatiale': './#news',
-        'seo-wordpress-indexation-multi-modale-ia': './#news',
-        'google-gemini-3-release': './#news',
-        'google-nano-banana-pro-ai': './#news',
-        'seo-identite-wordpress-protection-ia': './#news',
-        'passeport-numerique-produit-seo-prestashop': './#news',
-        'seo-predictif-prestashop-anthropic-claude-6': './#news',
-        'sxo-the-future-of-seo': './#news',
-        'medusa-js-self-hosted': './#services',
-        'medusajs-self-hosted': './#services',
-        'seo-en-2026-comment-lia-revolutionne-prestashop': './#news',
-        'zero-party-data-prestashop': './#news',
-        'maintenance-wordpress-ia': './#news',
-        'prestashop-webassembly-seo': './#news',
-        'wordpress-multilingue-natif': './#news',
-        'knowledge-graph-enhanced-llms': './#news',
-        'contrastive-learning-ai': './#news'
+        'portfolio': '/#experience',
+        'optimisation-wordpress-aeo-agents-ia-autonomes': '/#news',
+        'maintenance-ia-cms-auto-reparateur-seo': '/#news',
+        'wordpress-securite-ia-bots-polymorphes-immunite-numerique': '/#news',
+        'ia-locale-wordpress-prestashop-inference-serveur': '/#news',
+        'seo-zero-clic-strategie-autorite-ia': '/#news',
+        'eco-seo-empreinte-carbone-serveur-algorithme-google': '/#news',
+        'securite-wordpress-cryptographie-post-quantique-nist': '/#news',
+        'seo-webxr-prestashop-indexation-spatiale': '/#news',
+        'seo-wordpress-indexation-multi-modale-ia': '/#news',
+        'google-gemini-3-release': '/#news',
+        'google-nano-banana-pro-ai': '/#news',
+        'seo-identite-wordpress-protection-ia': '/#news',
+        'passeport-numerique-produit-seo-prestashop': '/#news',
+        'seo-predictif-prestashop-anthropic-claude-6': '/#news',
+        'sxo-the-future-of-seo': '/#news',
+        'medusa-js-self-hosted': '/#services',
+        'medusajs-self-hosted': '/#services',
+        'seo-en-2026-comment-lia-revolutionne-prestashop': '/#news',
+        'zero-party-data-prestashop': '/#news',
+        'maintenance-wordpress-ia': '/#news',
+        'prestashop-webassembly-seo': '/#news',
+        'wordpress-multilingue-natif': '/#news',
+        'knowledge-graph-enhanced-llms': '/#news',
+        'contrastive-learning-ai': '/#news'
       };
 
-      let targetUrl = './';
+      let targetUrl = '/';
+      let isKnownSlug = false;
 
       // Check explicit slug matches
       for (const [slug, newPath] of Object.entries(mappings)) {
         if (pathname.includes(slug)) {
           targetUrl = newPath;
+          isKnownSlug = true;
           break;
         }
       }
 
       // Context-aware fallback routing
-      if (targetUrl === './') {
+      if (!isKnownSlug) {
         if (pathname.includes('prestashop')) {
-          targetUrl = './#services';
+          targetUrl = '/#services';
+          isKnownSlug = true;
         } else if (pathname.includes('wordpress')) {
-          targetUrl = './#services';
+          targetUrl = '/#services';
+          isKnownSlug = true;
         } else if (pathname.includes('seo') || pathname.includes('sxo')) {
-          targetUrl = './#seo-tool';
+          targetUrl = '/#seo-tool';
+          isKnownSlug = true;
         } else if (pathname.includes('security') || pathname.includes('securite')) {
-          targetUrl = './#services';
+          targetUrl = '/#services';
+          isKnownSlug = true;
         }
       }
 
-      // Apply countdown & redirect
+      // If it is a known slug, redirect immediately to prevent poor UX
+      if (isKnownSlug) {
+        window.location.replace(targetUrl);
+        return;
+      }
+
+      // Otherwise, apply countdown & redirect to home after 5s for unknown 404s
       let count = 5;
       const timerEl = document.getElementById('countdownTimer');
       
