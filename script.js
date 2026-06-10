@@ -192,22 +192,24 @@ document.addEventListener('DOMContentLoaded', () => {
      =================================================== */
   const statNumbers = document.querySelectorAll('.stat-number');
   
-  const countStats = (entry) => {
-    const target = parseInt(entry.getAttribute('data-target'));
-    const countTo = target;
-    const duration = 1800; // Total duration in ms
+  // Targets that get a '+' suffix
+  const plusTargets = [198, 427, 35];
+
+  const countStats = (el) => {
+    const target = parseInt(el.getAttribute('data-target'));
+    const hasSuffix = plusTargets.includes(target);
+    const duration = 1800;
     let start = 0;
-    
+
     const step = (timestamp) => {
       if (!start) start = timestamp;
       const progress = timestamp - start;
-      const current = Math.min(Math.floor((progress / duration) * countTo), countTo);
-      entry.textContent = current.toLocaleString() + (target === 198 || target === 427 || target === 35 ? '+' : '');
-      
+      const current = Math.min(Math.floor((progress / duration) * target), target);
+      el.textContent = current.toLocaleString() + (hasSuffix ? '+' : '');
       if (progress < duration) {
         requestAnimationFrame(step);
       } else {
-        entry.textContent = countTo.toLocaleString() + (target === 198 || target === 427 || target === 35 ? '+' : '');
+        el.textContent = target.toLocaleString() + (hasSuffix ? '+' : '');
       }
     };
     requestAnimationFrame(step);
@@ -217,13 +219,19 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         countStats(entry.target);
-        observer.unobserve(entry.target); // Run once
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.1 });
 
   statNumbers.forEach(num => {
-    statsObserver.observe(num);
+    // Si déjà visible au chargement, lancer immédiatement
+    const rect = num.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      countStats(num);
+    } else {
+      statsObserver.observe(num);
+    }
   });
 
 
