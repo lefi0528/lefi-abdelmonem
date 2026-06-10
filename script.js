@@ -188,52 +188,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ===================================================
-     3. SCROLL-TRIGGERED STATS COUNTER
+     3. STATS COUNTER (SIMPLE & RELIABLE)
      =================================================== */
-  const statNumbers = document.querySelectorAll('.stat-number');
+  function animateStatCounters() {
+    var statEls = document.querySelectorAll('.stat-number');
+    var plusTargets = [198, 427, 35];
 
-  // Targets that get a '+' suffix
-  const plusTargets = [198, 427, 35];
-  const animatedStats = new Set();
+    statEls.forEach(function(el) {
+      var target = parseInt(el.getAttribute('data-target'), 10);
+      var hasSuffix = plusTargets.indexOf(target) !== -1;
+      var duration = 1600;
+      var startTime = null;
 
-  const countStats = (el) => {
-    if (animatedStats.has(el)) return; // Éviter double animation
-    animatedStats.add(el);
-    const target = parseInt(el.getAttribute('data-target'));
-    const hasSuffix = plusTargets.includes(target);
-    const duration = 1800;
-    let start = null;
-
-    const step = (timestamp) => {
-      if (!start) start = timestamp;
-      const progress = timestamp - start;
-      const current = Math.min(Math.floor((progress / duration) * target), target);
-      el.textContent = current.toLocaleString() + (hasSuffix ? '+' : '');
-      if (progress < duration) {
-        requestAnimationFrame(step);
-      } else {
-        el.textContent = target.toLocaleString() + (hasSuffix ? '+' : '');
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        var current = Math.floor(progress * target);
+        el.textContent = current.toLocaleString() + (hasSuffix ? '+' : '');
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target.toLocaleString() + (hasSuffix ? '+' : '');
+        }
       }
-    };
-    requestAnimationFrame(step);
-  };
-
-  // Lancer directement après chargement (stats toujours visibles sans scroll)
-  setTimeout(() => {
-    statNumbers.forEach(num => countStats(num));
-  }, 400);
-
-  // Observer pour les cas où les stats seraient hors écran
-  const statsObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        countStats(entry.target);
-        observer.unobserve(entry.target);
-      }
+      requestAnimationFrame(step);
     });
-  }, { threshold: 0.1 });
+  }
 
-  statNumbers.forEach(num => statsObserver.observe(num));
+  // Lancer après chargement complet
+  if (document.readyState === 'complete') {
+    setTimeout(animateStatCounters, 300);
+  } else {
+    window.addEventListener('load', function() {
+      setTimeout(animateStatCounters, 300);
+    });
+  }
+
+
 
 
   /* ===================================================
