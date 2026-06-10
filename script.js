@@ -191,15 +191,18 @@ document.addEventListener('DOMContentLoaded', () => {
      3. SCROLL-TRIGGERED STATS COUNTER
      =================================================== */
   const statNumbers = document.querySelectorAll('.stat-number');
-  
+
   // Targets that get a '+' suffix
   const plusTargets = [198, 427, 35];
+  const animatedStats = new Set();
 
   const countStats = (el) => {
+    if (animatedStats.has(el)) return; // Éviter double animation
+    animatedStats.add(el);
     const target = parseInt(el.getAttribute('data-target'));
     const hasSuffix = plusTargets.includes(target);
     const duration = 1800;
-    let start = 0;
+    let start = null;
 
     const step = (timestamp) => {
       if (!start) start = timestamp;
@@ -215,6 +218,12 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(step);
   };
 
+  // Lancer directement après chargement (stats toujours visibles sans scroll)
+  setTimeout(() => {
+    statNumbers.forEach(num => countStats(num));
+  }, 400);
+
+  // Observer pour les cas où les stats seraient hors écran
   const statsObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -224,15 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.1 });
 
-  statNumbers.forEach(num => {
-    // Si déjà visible au chargement, lancer immédiatement
-    const rect = num.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      countStats(num);
-    } else {
-      statsObserver.observe(num);
-    }
-  });
+  statNumbers.forEach(num => statsObserver.observe(num));
 
 
   /* ===================================================
