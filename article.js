@@ -76,9 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 3.5 Semantic filter: Redirect if article is off-topic to protect site SEO
-    const coreTopics = ['prestashop', 'seo', 'sxo', 'ecommerce', 'e-commerce', 'security', 'cybersecurity', 'ai', 'artificial intelligence', 'agentic', 'webmcp', 'llm', 'google', 'lighthouse', 'core web vitals', 'ranking', 'search engine', 'automation'];
-    const articleText = (art.title + ' ' + art.content).toLowerCase();
-    const isRelevant = coreTopics.some(topic => articleText.includes(topic));
+    const coreTopicsPattern = /\b(prestashop|seo|sxo|ecommerce|e-commerce|security|cybersecurity|ai|artificial intelligence|agentic|webmcp|llms?|google|lighthouse|core web vitals|ranking|search engine|automation)\b/i;
+    const isRelevant = coreTopicsPattern.test(art.title + ' ' + (art.content || ''));
     
     if (!isRelevant) {
       console.warn('Article blocked due to semantic mismatch. Redirecting to home to preserve SEO context.');

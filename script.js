@@ -856,14 +856,13 @@ document.addEventListener('DOMContentLoaded', () => {
     newsGrid.innerHTML = '';
     const articles = getArticles();
 
-    const coreTopics = ['prestashop', 'seo', 'sxo', 'ecommerce', 'e-commerce', 'security', 'cybersecurity', 'ai', 'artificial intelligence', 'agentic', 'webmcp', 'llm', 'google', 'lighthouse', 'core web vitals', 'ranking', 'search engine', 'automation'];
+    const coreTopicsPattern = /\b(prestashop|seo|sxo|ecommerce|e-commerce|security|cybersecurity|ai|artificial intelligence|agentic|webmcp|llms?|google|lighthouse|core web vitals|ranking|search engine|automation)\b/i;
 
     const filtered = articles.filter(art => {
       if (art.status === 'draft') return false;
       
       // Semantic filter: Only render articles matching core topics to preserve site SEO
-      const articleText = (art.title + ' ' + (art.content || '')).toLowerCase();
-      const isRelevant = coreTopics.some(topic => articleText.includes(topic));
+      const isRelevant = coreTopicsPattern.test(art.title + ' ' + (art.content || ''));
       if (!isRelevant) return false;
 
       if (filterCategory === 'all') return true;
