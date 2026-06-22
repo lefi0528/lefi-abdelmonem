@@ -129,14 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (bodyEl) {
       bodyEl.innerHTML = '';
 
-      // Render hero image if the article has one
-      if (art.image) {
-        const imgWrapper = document.createElement('div');
-        imgWrapper.style.cssText = 'width: calc(100% + 96px); margin: -50px -48px 32px -48px; overflow: hidden; border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0; max-height: 360px;';
-        imgWrapper.innerHTML = `<img src="${art.image}" alt="${art.title}" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy">`;
-        bodyEl.appendChild(imgWrapper);
-      }
-      
+
       let mainContent = art.content;
       let remarkText = "";
       
