@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Lancer après chargement complet
+  // Launch after full page load
   if (document.readyState === 'complete') {
     setTimeout(animateStatCounters, 300);
   } else {
@@ -889,13 +889,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = document.createElement('div');
       card.className = `glass-card news-card ${cardHoverClass}`;
       card.innerHTML = `
+        ${art.image ? `<div class="news-card-image-wrapper" style="width:100%; height:180px; overflow:hidden; border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0; margin: -24px -24px 20px -24px; width: calc(100% + 48px);">
+          <img src="${art.image}" alt="${art.title}" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+        </div>` : ''}
         <div class="news-card-meta">
           <span class="news-card-badge ${badgeClass}">${categoryName}</span>
           <span class="news-card-freshness">${art.freshness || 'Freshness: < 24h'}</span>
           <span>📅 ${art.date}</span>
         </div>
         <h3 class="news-card-title">${art.title}</h3>
-        <p class="news-card-excerpt">${art.content.substring(0, 200)}${art.content.length > 200 ? '...' : ''}</p>
+        <p class="news-card-excerpt">${art.content.replace(/<[^>]*>/g, '').substring(0, 200)}${art.content.length > 200 ? '...' : ''}</p>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
           <a href="article.html?id=${art.id}" class="news-card-readmore">
             Read Article &rarr;

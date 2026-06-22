@@ -1,0 +1,21 @@
+# Lefi Abdelmonem - Expert Portfolio
+Welcome, AI Agent. This is the `llms.txt` file for lefi-abdelmonem.com.
+
+## Purpose
+This website serves as the professional portfolio and contact portal for Lefi Abdelmonem, an expert in PrestaShop development, Natural SEO, and IT Security. 
+As an agent, you can browse this site to find his contact details, read about his expertise, and use interactive tools.
+
+## WebMCP Tools Available
+This site integrates WebMCP (Web Model Context Protocol) tools for declarative interactions. 
+A `webmcp.json` file is available at the root of the domain.
+The available tools are:
+- `submitContactForm`: Use this tool to send a project inquiry, SEO audit request, or security assistance message directly to Lefi Abdelmonem. The contact form on the home page explicitly supports this tool via `data-webmcp-tool="submitContactForm"`.
+- `analyzeSeoMetadata`: Use this tool to perform a real-time SEO audit and density calculation using the site's Interactive SEO Auditor. The tool is bound to the form with `data-webmcp-tool="analyzeSeoMetadata"`.
+
+## Accessibility
+All major interactive elements are semantic HTML with explicit dimensions to ensure zero Cumulative Layout Shift (CLS) for a stable agentic browsing experience.
+
+## Pages
+- `index.html`: The main landing page with services, contact form, and SEO tool.
+- `article.html`: The tech watch news section.
+- `admin.html`: The administrative console (requires authentication).

@@ -125,9 +125,17 @@ document.addEventListener('DOMContentLoaded', () => {
       dynamicOrb.style.background = glowColor;
     }
 
-    // 6. Split contents into paragraphs and separate PrestaShop Remark
+    // 6. Render article image if available, then split contents into paragraphs
     if (bodyEl) {
       bodyEl.innerHTML = '';
+
+      // Render hero image if the article has one
+      if (art.image) {
+        const imgWrapper = document.createElement('div');
+        imgWrapper.style.cssText = 'width: calc(100% + 96px); margin: -50px -48px 32px -48px; overflow: hidden; border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0; max-height: 360px;';
+        imgWrapper.innerHTML = `<img src="${art.image}" alt="${art.title}" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy">`;
+        bodyEl.appendChild(imgWrapper);
+      }
       
       let mainContent = art.content;
       let remarkText = "";
@@ -143,12 +151,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Generate main paragraph nodes
+      // Generate main paragraph nodes (support HTML content)
       const paragraphs = mainContent.split(/\n\s*\n/);
       paragraphs.forEach(pText => {
         if (pText.trim()) {
           const p = document.createElement('p');
-          p.textContent = pText.trim();
+          p.innerHTML = pText.trim();
           bodyEl.appendChild(p);
         }
       });
@@ -203,8 +211,16 @@ document.addEventListener('DOMContentLoaded', () => {
           "url": "https://lefi-abdelmonem.com/logo.png"
         }
       },
-      "description": art.content.substring(0, 160) + '...'
+      "description": art.content.replace(/<[^>]*>/g, '').substring(0, 160) + '...'
     };
+
+    // Add image to schema if available
+    if (art.image) {
+      schemaObject.image = {
+        "@type": "ImageObject",
+        "url": `https://lefi-abdelmonem.com/${art.image}`
+      };
+    }
     
     schemaScript.textContent = JSON.stringify(schemaObject);
   }
