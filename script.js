@@ -1029,6 +1029,7 @@ document.addEventListener('DOMContentLoaded', () => {
           };
         } catch (err) {
           return { success: false, error: err.message };
+        }
       }
     }
   };
