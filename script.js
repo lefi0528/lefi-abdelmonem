@@ -856,8 +856,16 @@ document.addEventListener('DOMContentLoaded', () => {
     newsGrid.innerHTML = '';
     const articles = getArticles();
 
+    const coreTopics = ['prestashop', 'seo', 'sxo', 'ecommerce', 'e-commerce', 'security', 'cybersecurity', 'ai', 'artificial intelligence', 'agentic', 'webmcp', 'llm', 'google', 'lighthouse', 'core web vitals', 'ranking', 'search engine', 'automation'];
+
     const filtered = articles.filter(art => {
       if (art.status === 'draft') return false;
+      
+      // Semantic filter: Only render articles matching core topics to preserve site SEO
+      const articleText = (art.title + ' ' + (art.content || '')).toLowerCase();
+      const isRelevant = coreTopics.some(topic => articleText.includes(topic));
+      if (!isRelevant) return false;
+
       if (filterCategory === 'all') return true;
       return art.category === filterCategory;
     });

@@ -75,6 +75,17 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    // 3.5 Semantic filter: Redirect if article is off-topic to protect site SEO
+    const coreTopics = ['prestashop', 'seo', 'sxo', 'ecommerce', 'e-commerce', 'security', 'cybersecurity', 'ai', 'artificial intelligence', 'agentic', 'webmcp', 'llm', 'google', 'lighthouse', 'core web vitals', 'ranking', 'search engine', 'automation'];
+    const articleText = (art.title + ' ' + art.content).toLowerCase();
+    const isRelevant = coreTopics.some(topic => articleText.includes(topic));
+    
+    if (!isRelevant) {
+      console.warn('Article blocked due to semantic mismatch. Redirecting to home to preserve SEO context.');
+      redirectToHome();
+      return;
+    }
+
     // 4. Update dynamic meta title and browser page title for premium SEO
     document.title = `${art.title} | Lefi Abdelmonem Tech News`;
     
