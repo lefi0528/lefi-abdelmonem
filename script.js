@@ -523,8 +523,8 @@ document.addEventListener('DOMContentLoaded', () => {
           // Fallback simulation if model isn't active but user clicked to see what it does
           // We can simulate an outstanding local AI optimization based on the keyword to show off Lefi's coding capabilities!
           setTimeout(() => {
-            const simulatedTitle = `Expert ${keywordVal.charAt(0).toUpperCase() + keywordVal.slice(1)} & Optimisation Vitesse E-commerce | Lefi`;
-            const simulatedDesc = `Consultant certifié FranceNum spécialisé en ${keywordVal.toLowerCase()} et audits de sécurité informatique. Augmentez la performance et le trafic de votre boutique en ligne.`;
+            const simulatedTitle = `Expert ${keywordVal.charAt(0).toUpperCase() + keywordVal.slice(1)} & E-commerce Speed Optimization | Lefi`;
+            const simulatedDesc = `Certified FranceNum consultant specializing in ${keywordVal.toLowerCase()} and IT security audits. Boost your online store performance and traffic.`;
             
             titleInput.value = simulatedTitle;
             descInput.value = simulatedDesc;
@@ -533,9 +533,9 @@ document.addEventListener('DOMContentLoaded', () => {
             aiModalFeedback.style.color = 'var(--accent-sec)';
             aiModalFeedback.style.border = '1px solid rgba(0, 255, 133, 0.2)';
             aiModalFeedback.style.background = 'rgba(0, 255, 133, 0.01)';
-            aiModalFeedback.innerHTML = `🤖 <strong>[Mode Simulation IA Local]</strong> Pour faire fonctionner la véritable IA locale sans coût serveur, activez Gemini Nano dans votre Chrome !<br>
-            • Titre optimisé : <em>"${simulatedTitle}"</em><br>
-            • Description optimisée : <em>"${simulatedDesc}"</em>`;
+            aiModalFeedback.innerHTML = `🤖 <strong>[Local AI Simulation Mode]</strong> To enable real zero-server-cost local AI, activate Gemini Nano in your Chrome browser!<br>
+            • Optimized Title: <em>"${simulatedTitle}"</em><br>
+            • Optimized Description: <em>"${simulatedDesc}"</em>`;
           }, 1200);
         }
       } finally {
