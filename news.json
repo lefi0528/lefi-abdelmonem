@@ -1,5 +1,16 @@
 [
   {
+    "id": "art-1782179915464-ai",
+    "category": "ai",
+    "title": "The running list: major tech layoffs in 2026 where employers cited AI",
+    "date": "6/23/2026",
+    "freshness": "Freshness: < 24h",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
     "id": "art-1782095493639-ai",
     "category": "ai",
     "title": "When the Trump administration cracks down on Anthropic, who benefits?",
@@ -151,17 +162,6 @@
     "content": "PrestaShop 9.0 is redefining modern e-commerce by introducing full native GraphQL API support and decoupled headless store configurations. Modern digital merchants are leveraging fast static frontends built on modern architectures combined with PrestaShop's robust backend engine.<br><br><strong>Expert Perspective:</strong> Headless commerce is no longer optional for high-traffic sites. Migrating to 9.0's architecture will drastically improve your INP scores and mobile conversion rates.",
     "sourceUrl": "https://smashingmagazine.com/2026/05/desktop-wallpaper-calendars-june-2026/",
     "sourceName": "Articles on Smashing Magazine — For Web Designers And Developers",
-    "status": "draft"
-  },
-  {
-    "id": "art-1780224880426-seo",
-    "category": "seo",
-    "title": "White-Collar Will Be Fully Automated In 18 Months – So What Makes You Differe...",
-    "date": "5/31/2026",
-    "freshness": "Freshness: < 24h",
-    "content": "The latest Google Search core algorithm updates of 2026 have pushed traditional keyword stuffing completely out of search relevancy. Contextual semantic matching, schema structural metadata (JSON-LD), and pristine Interaction to Next Paint (INP) performance scores are now the ultimate ranking signals.<br><br><strong>Expert Perspective:</strong> As a certified digital partner, I highly recommend regularly optimizing your structured semantic tags with advanced tools like FexaAI to ensure maximum search visibility.",
-    "sourceUrl": "https://www.searchenginejournal.com/white-collar-will-be-fully-automated-in-18-months-so-what-makes-you-different/575072/",
-    "sourceName": "Search Engine Journal",
     "status": "draft"
   }
 ]
