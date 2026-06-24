@@ -1,13 +1,74 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Locale-safe date parser: handles ISO "YYYY-MM-DD", US "M/D/YYYY", and EU "DD/MM/YYYY"
+  function parseArticleDate(dateStr) {
+    if (!dateStr) return null;
+
+    // 1. ISO format "YYYY-MM-DD" or full ISO string
+    if (/^\d{4}-\d{2}-\d{2}/.test(dateStr)) {
+      const d = new Date(dateStr);
+      if (!isNaN(d.getTime())) return d;
+    }
+
+    // 2. Slash-separated: determine if US (M/D/YYYY) or EU (DD/MM/YYYY)
+    const slashParts = dateStr.split('/');
+    if (slashParts.length === 3) {
+      const a = parseInt(slashParts[0], 10);
+      const b = parseInt(slashParts[1], 10);
+      const year = parseInt(slashParts[2], 10);
+      if (year > 2000) {
+        if (a > 12) return new Date(year, b - 1, a);
+        if (b > 12) return new Date(year, a - 1, b);
+        return new Date(year, a - 1, b);
+      }
+    }
+
+    // 3. Fallback
+    const fallback = new Date(dateStr);
+    if (!isNaN(fallback.getTime()) && fallback.getFullYear() > 2000) return fallback;
+    return null;
+  }
+
+  // Compute freshness dynamically from article date
+  function computeFreshness(dateStr) {
+    const dateObj = parseArticleDate(dateStr);
+    if (!dateObj) return 'No date';
+
+    const now = new Date();
+    const diffMs = now - dateObj;
+    const diffHours = diffMs / (1000 * 60 * 60);
+    const diffDays = diffMs / (1000 * 60 * 60 * 24);
+
+    if (diffHours < 0) return 'Upcoming';
+    if (diffHours < 2) return 'Freshness: < 2h';
+    if (diffHours < 6) return 'Freshness: < 6h';
+    if (diffHours < 12) return 'Freshness: < 12h';
+    if (diffHours < 24) return 'Freshness: < 24h';
+    if (diffDays < 3) return 'Freshness: < 3 days';
+    if (diffDays < 7) return 'Freshness: < 7 days';
+    if (diffDays < 14) return 'Freshness: < 2 weeks';
+    if (diffDays < 30) return 'Freshness: < 1 month';
+    if (diffDays < 90) return 'Freshness: < 3 months';
+    return 'Archived';
+  }
+
+  function getFreshnessClass(dateStr) {
+    const dateObj = parseArticleDate(dateStr);
+    if (!dateObj) return 'freshness-stale';
+
+    const diffHours = (new Date() - dateObj) / (1000 * 60 * 60);
+    if (diffHours < 24) return 'freshness-hot';
+    if (diffHours < 72) return 'freshness-warm';
+    if (diffHours < 168) return 'freshness-cool';
+    return 'freshness-stale';
+  }
   // Default fallback articles if database is completely empty
   const defaultArticles = [
     {
       "id": "art-1",
       "category": "ai",
       "title": "WebMCP & Autonomous Agents: Google I/O 2026 Revolutionizes Web Automation",
-      "date": "31/05/2026",
-      "freshness": "Freshness: < 24h",
+      "date": "2026-05-31",
       "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
       "status": "published"
     },
@@ -15,8 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "id": "art-2",
       "category": "prestashop",
       "title": "PrestaShop 9.0 Architecture: Leading the Headless E-commerce Wave in 2026",
-      "date": "31/05/2026",
-      "freshness": "Freshness: < 24h",
+      "date": "2026-05-31",
       "content": "PrestaShop 9.0 is redefining modern e-commerce by introducing full native GraphQL API support and decoupled headless store configurations. Modern digital merchants are leveraging fast static frontends built on modern architectures combined with PrestaShop's robust backend engine. This decoupled approach completely bypasses heavy server overhead, unlocking sub-second page load times.\n\nPrestaShop Remark: Plan your migration to PrestaShop 9.0 to unlock sub-second headless load speeds and robust GraphQL APIs.",
       "status": "published"
     },
@@ -24,8 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "id": "art-3",
       "category": "seo",
       "title": "Google Search 2026: Semantic Context and Core Web Vitals Domination",
-      "date": "31/05/2026",
-      "freshness": "Freshness: < 24h",
+      "date": "2026-05-31",
       "content": "The latest Google Search core algorithm updates of 2026 have pushed traditional keyword stuffing completely out of search relevancy. Contextual semantic matching, schema structural metadata (JSON-LD), and pristine Interaction to Next Paint (INP) performance scores are now the ultimate ranking signals.\n\nPrestaShop Remark: Embed JSON-LD schema tags on product pages and integrate with semantic platforms like FexaAI to secure your rankings.",
       "status": "published"
     }
@@ -120,7 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
       badgeEl.textContent = categoryName;
     }
     if (freshnessEl) {
-      freshnessEl.textContent = art.freshness || "Freshness: < 24h";
+      freshnessEl.textContent = computeFreshness(art.date);
+      freshnessEl.className = `news-card-freshness ${getFreshnessClass(art.date)}`;
     }
     if (dateEl) {
       dateEl.textContent = art.date;

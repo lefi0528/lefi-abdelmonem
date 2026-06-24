@@ -772,33 +772,115 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ===================================================
      8b. DYNAMIC AUTOMATED NEWS FEED & SECURE BACKOFFICE
      =================================================== */
+  // Locale-safe date parser: handles ISO "YYYY-MM-DD", US "M/D/YYYY", and EU "DD/MM/YYYY"
+  function parseArticleDate(dateStr) {
+    if (!dateStr) return null;
+
+    // 1. ISO format "YYYY-MM-DD" or full ISO string
+    if (/^\d{4}-\d{2}-\d{2}/.test(dateStr)) {
+      const d = new Date(dateStr);
+      if (!isNaN(d.getTime())) return d;
+    }
+
+    // 2. Slash-separated: determine if US (M/D/YYYY) or EU (DD/MM/YYYY)
+    const slashParts = dateStr.split('/');
+    if (slashParts.length === 3) {
+      const a = parseInt(slashParts[0], 10);
+      const b = parseInt(slashParts[1], 10);
+      const year = parseInt(slashParts[2], 10);
+      if (year > 2000) {
+        // If first number > 12, it must be DD/MM/YYYY (EU)
+        if (a > 12) {
+          return new Date(year, b - 1, a);
+        }
+        // If second number > 12, it must be M/D/YYYY (US)
+        if (b > 12) {
+          return new Date(year, a - 1, b);
+        }
+        // Both <= 12: assume US format (M/D/YYYY) since news.json uses en-US
+        return new Date(year, a - 1, b);
+      }
+    }
+
+    // 3. Fallback: let the browser try
+    const fallback = new Date(dateStr);
+    if (!isNaN(fallback.getTime()) && fallback.getFullYear() > 2000) return fallback;
+
+    return null;
+  }
+
+  // Compute freshness dynamically from article date
+  function computeFreshness(dateStr) {
+    const dateObj = parseArticleDate(dateStr);
+    if (!dateObj) return 'No date';
+
+    const now = new Date();
+    const diffMs = now - dateObj;
+    const diffHours = diffMs / (1000 * 60 * 60);
+    const diffDays = diffMs / (1000 * 60 * 60 * 24);
+
+    if (diffHours < 0) return 'Upcoming';
+    if (diffHours < 2) return 'Freshness: < 2h';
+    if (diffHours < 6) return 'Freshness: < 6h';
+    if (diffHours < 12) return 'Freshness: < 12h';
+    if (diffHours < 24) return 'Freshness: < 24h';
+    if (diffDays < 3) return 'Freshness: < 3 days';
+    if (diffDays < 7) return 'Freshness: < 7 days';
+    if (diffDays < 14) return 'Freshness: < 2 weeks';
+    if (diffDays < 30) return 'Freshness: < 1 month';
+    if (diffDays < 90) return 'Freshness: < 3 months';
+    return 'Archived';
+  }
+
+  // CSS class for freshness badge color
+  function getFreshnessClass(dateStr) {
+    const dateObj = parseArticleDate(dateStr);
+    if (!dateObj) return 'freshness-stale';
+
+    const diffHours = (new Date() - dateObj) / (1000 * 60 * 60);
+    if (diffHours < 24) return 'freshness-hot';
+    if (diffHours < 72) return 'freshness-warm';
+    if (diffHours < 168) return 'freshness-cool';
+    return 'freshness-stale';
+  }
+
   // Initial demo news in English (highly structured e-commerce tech articles)
   const defaultArticles = [
     {
       id: "art-1",
       category: "ai",
       title: "WebMCP & Autonomous Agents: Google I/O 2026 Revolutionizes Web Automation",
-      date: new Date().toLocaleDateString('en-US'),
-      freshness: "Freshness: < 24h",
+      date: new Date().toISOString().split('T')[0],
       content: "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution. Websites optimized for the WebMCP standard are currently experiencing massive jumps in autonomous user conversions as AI crawlers begin handling checkouts, contact forms, and audits programmatically."
     },
     {
       id: "art-2",
       category: "prestashop",
       title: "PrestaShop 9.0 Architecture: Leading the Headless E-commerce Wave in 2026",
-      date: new Date().toLocaleDateString('en-US'),
-      freshness: "Freshness: < 24h",
+      date: new Date().toISOString().split('T')[0],
       content: "PrestaShop 9.0 is redefining modern e-commerce by introducing full native GraphQL API support and decoupled headless store configurations. Modern digital merchants are leveraging fast static frontends built on modern architectures combined with PrestaShop's robust backend engine. This decoupled approach completely bypasses heavy server overhead, unlocking sub-second page load times, perfect 100/100 mobile Lighthouse performance scores, and enhanced protection against database threat vectors."
     },
     {
       id: "art-3",
       category: "seo",
       title: "Google Search 2026: Semantic Context and Core Web Vitals Domination",
-      date: new Date().toLocaleDateString('en-US'),
-      freshness: "Freshness: < 24h",
+      date: new Date().toISOString().split('T')[0],
       content: "The latest Google Search core algorithm updates of 2026 have pushed traditional keyword stuffing completely out of search relevancy. Contextual semantic matching, schema structural metadata (JSON-LD), and pristine Interaction to Next Paint (INP) performance scores are now the ultimate ranking signals. To rank high in AI Overviews, experts highly recommend leveraging advanced AI-driven semantic suites like FexaAI to automatically compile perfectly optimized metadata and structured category taxonomy."
     }
   ];
+
+  // One-time migration: strip stale static freshness fields from cached articles
+  if (!localStorage.getItem('lefi_news_v2')) {
+    const cached = localStorage.getItem('lefi_news_articles');
+    if (cached) {
+      try {
+        const arts = JSON.parse(cached);
+        arts.forEach(a => delete a.freshness);
+        localStorage.setItem('lefi_news_articles', JSON.stringify(arts));
+      } catch(e) {}
+    }
+    localStorage.setItem('lefi_news_v2', '1');
+  }
 
   // Get articles from localStorage or set defaults
   function getArticles() {
@@ -901,8 +983,8 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>` : ''}
         <div class="news-card-meta">
           <span class="news-card-badge ${badgeClass}">${categoryName}</span>
-          <span class="news-card-freshness">${art.freshness || 'Freshness: < 24h'}</span>
-          <span>📅 ${art.date}</span>
+          <span class="news-card-freshness ${getFreshnessClass(art.date)}">${computeFreshness(art.date)}</span>
+          <span>📅 ${(() => { const d = parseArticleDate(art.date); return d ? d.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' }) : art.date; })()}</span>
         </div>
         <h3 class="news-card-title">${art.title}</h3>
         <p class="news-card-excerpt">${art.content.replace(/<[^>]*>/g, '').substring(0, 200)}${art.content.length > 200 ? '...' : ''}</p>
