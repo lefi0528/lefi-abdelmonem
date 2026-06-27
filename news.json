@@ -1,5 +1,15 @@
 [
   {
+    "id": "art-1782525443389-ai",
+    "category": "ai",
+    "title": "Trump Admin releases Anthropic  Mythos to be used by more than 100 US compani...",
+    "date": "2026-06-27",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
     "id": "art-1782439392404-ai",
     "category": "ai",
     "title": "Anthropic Thinks Its Own Success Is Key to Making AI Safe",
@@ -145,17 +155,6 @@
     "category": "ai",
     "title": "Meta Employees Absolutely Hate Mark Zuckerberg’s Plan for a Companywide AI Ha...",
     "date": "6/13/2026",
-    "freshness": "Freshness: < 24h",
-    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
-    "sourceUrl": "",
-    "sourceName": "",
-    "status": "draft"
-  },
-  {
-    "id": "art-1781230302716-ai",
-    "category": "ai",
-    "title": "Theker just raised $85M to build the factory robot that doesn’t specialize in...",
-    "date": "6/12/2026",
     "freshness": "Freshness: < 24h",
     "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
     "sourceUrl": "",
