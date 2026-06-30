@@ -1,5 +1,17 @@
 [
   {
+    "id": "art-1782851627000-ai",
+    "category": "ai",
+    "title": "Claude Sonnet 5 Launched: Anthropic's Most Agentic AI Model Yet — 1M Context, Aggressive Pricing",
+    "date": "6/30/2026",
+    "freshness": "Freshness: < 2h",
+    "content": "<strong>Breaking — June 30, 2026.</strong> Anthropic has officially unveiled <strong>Claude Sonnet 5</strong>, the latest evolution of its Sonnet-class model family, positioned as the most agentic AI model the company has ever released. This launch marks a pivotal moment in the generative AI race.<br><br><strong>🧠 Key Capabilities</strong><br>Sonnet 5 excels in <strong>complex agentic workflows</strong>: sophisticated code generation, multi-file debugging, browser and terminal tool use, and autonomous task planning. Anthropic claims it delivers near-Opus-level intelligence while maintaining the speed and cost profile that defines the Sonnet family.<br><br><strong>📊 Technical Specifications</strong><br>• <strong>Context Window: 1 million tokens</strong> — 8× larger than GPT-4o's 128K tokens<br>• <strong>Introductory Pricing:</strong> $2 per million input tokens, $10 per million output tokens (valid through August 31, 2026)<br>• <strong>Standard Pricing:</strong> $3 / $15 per million tokens after the introductory period<br>• <strong>Availability:</strong> Anthropic API, Amazon Bedrock, Google Cloud, Microsoft Foundry, and claude.ai (web, iOS, Android)<br><br><strong>⚔️ Head-to-Head: Claude Sonnet 5 vs GPT-4o</strong><br>Against OpenAI's GPT-4o, Sonnet 5 stands out with its massive context window (1M vs 128K tokens) and lower input pricing ($2 vs $2.50 per million). Output costs are identical at $10 per million tokens. The contextual advantage is decisive for processing large codebases, lengthy technical documentation, and extended agentic workflows.<br><br><strong>🔄 The 2026 Claude Landscape</strong><br>This release fits into an accelerated cadence at Anthropic: Claude Opus 4.8 (May 28, 2026) remains the general-purpose flagship, while Claude Fable 5 (June 9, 2026) represents the cutting-edge Mythos-class frontier model. Claude Sonnet 4 was retired on June 15, 2026, now replaced by this next generation.<br><br><strong>🚀 Developer Impact</strong><br>The ecosystem is shifting toward <strong>agentic coding</strong>, where tools like Claude Code and Cowork orchestrate long-running tasks via the Model Context Protocol (MCP). Developers can now focus on architecture and strategy while AI handles detailed implementation — from debugging entire repositories to autonomously managing multi-step software development lifecycles.<br><br>PrestaShop Remark: Integrate Claude Sonnet 5 via the Anthropic API to automate product description generation, SEO optimization of product pages, and PrestaShop code maintenance — the 1M token context window allows analyzing an entire module or theme in a single request.",
+    "sourceUrl": "https://www.anthropic.com/",
+    "sourceName": "Anthropic — Official",
+    "image": "claude-sonnet-5-anthropic-lancement/cover.png",
+    "status": "published"
+  },
+  {
     "id": "art-1782784960787-ai",
     "category": "ai",
     "title": "Meta Contractors Posed as Teens to Prompt Rival Chatbots About Suicide, Sex, ...",
@@ -12,7 +24,7 @@
   {
     "id": "art-1782698906806-ai",
     "category": "ai",
-    "title": "Ford rehires ‘gray beard’ engineers after AI falls short",
+    "title": "Ford rehires ÔÇÿgray beardÔÇÖ engineers after AI falls short",
     "date": "2026-06-29",
     "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
     "sourceUrl": "",
@@ -22,7 +34,7 @@
   {
     "id": "art-1782612474337-ai",
     "category": "ai",
-    "title": "SoftBank’s CEO isn’t the only one with questions about Elon Musk’s orbital da...",
+    "title": "SoftBankÔÇÖs CEO isnÔÇÖt the only one with questions about Elon MuskÔÇÖs orbital da...",
     "date": "2026-06-28",
     "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
     "sourceUrl": "",
@@ -80,6 +92,17 @@
     "sourceUrl": "",
     "sourceName": "",
     "status": "draft"
+  },
+  {
+    "id": "art-1782137400000-seo",
+    "category": "seo",
+    "title": "Google Lighthouse Introduces Experimental 'Agentic Navigation Score' — Is Your Site Ready for AI Agents?",
+    "date": "6/22/2026",
+    "freshness": "Freshness: < 2h",
+    "content": "Google has quietly rolled out a groundbreaking experimental category inside Lighthouse: the <strong>Agentic Navigation Score</strong>. Already visible in PageSpeed Insights for sites running Chrome 150+, this new metric evaluates how well a website is structured for autonomous AI agent interaction — not just human visitors.<br><br>Unlike traditional 0–100 performance scores, the Agentic Navigation Score uses a binary checklist format (e.g., 3/3), measuring three critical signals:<br><br><strong>1. WebMCP Integration</strong> — Does the site expose tools to AI agents via the Web Model Context Protocol? This includes both imperative JavaScript registration (<code>navigator.modelContext.registerTool()</code>) and declarative HTML form annotations with <code>toolname</code> and <code>tooldescription</code> attributes.<br><br><strong>2. Agent-Oriented Accessibility</strong> — Goes beyond traditional ARIA compliance. Lighthouse now checks whether the accessibility tree provides machine-readable programmatic names, valid roles, and clear parent-child relationships that allow AI agents to navigate DOM elements autonomously.<br><br><strong>3. Stability & Discoverability</strong> — CLS (Cumulative Layout Shift) is re-evaluated specifically for agent context: layout shifts during interaction can cause agents to click wrong targets. Additionally, Lighthouse checks for the presence of a <code>llms.txt</code> file for agent discoverability — despite Google Search confirming it doesn't use llms.txt for ranking, it remains critical for agentic browsing contexts.<br><br>This signals a major paradigm shift: <strong>AEO (Agent-Engine Optimization)</strong> is becoming parallel to SEO. Sites that implement WebMCP standards and optimize for both human and machine navigation will gain first-mover advantage as AI agent traffic — already trackable via GA4's 'AI Assistant' channel — continues to surge.<br><br><strong>Expert Perspective:</strong> As an early implementer of the WebMCP standard, I can confirm that achieving a perfect agentic score requires rethinking your entire frontend architecture. Forms must be annotated for agent discovery, search must be exposed as callable tools, and layout stability must be bulletproof. This is no longer optional for forward-thinking e-commerce sites.<br><br>📖 <strong>Full technical deep-dive and implementation guide:</strong> <a href='https://www.genisoft.fr/tuto/lighthouse-score-navigation-agentique/' target='_blank' rel='noopener'>Read the complete tutorial on Genisoft</a>",
+    "sourceUrl": "https://www.genisoft.fr/tuto/lighthouse-score-navigation-agentique/",
+    "sourceName": "Genisoft — Tutoriels WEB",
+    "status": "published"
   },
   {
     "id": "art-1782095493639-ai",
@@ -156,6 +179,61 @@
     "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
     "sourceUrl": "",
     "sourceName": "",
+    "status": "draft"
+  },
+  {
+    "id": "art-1781490627242-ai",
+    "category": "ai",
+    "title": "As AI companies race to go public, who else is along for the ride?",
+    "date": "6/15/2026",
+    "freshness": "Freshness: < 24h",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
+    "id": "art-1781403307620-ai",
+    "category": "ai",
+    "title": "Meta reportedly moves to unwind $2B Manus deal after Beijing’s demand",
+    "date": "6/14/2026",
+    "freshness": "Freshness: < 24h",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
+    "id": "art-1781316266238-ai",
+    "category": "ai",
+    "title": "Meta Employees Absolutely Hate Mark Zuckerberg’s Plan for a Companywide AI Ha...",
+    "date": "6/13/2026",
+    "freshness": "Freshness: < 24h",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
+    "id": "art-1781230302716-ai",
+    "category": "ai",
+    "title": "Theker just raised $85M to build the factory robot that doesn’t specialize in...",
+    "date": "6/12/2026",
+    "freshness": "Freshness: < 24h",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
+    "id": "art-1780224873890-ai",
+    "category": "ai",
+    "title": "Wi-Fi Router vs. Mesh System: Which Is Best for You?",
+    "date": "5/31/2026",
+    "freshness": "Freshness: < 24h",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.<br><br><strong>Expert Perspective:</strong> This shift is critical. Developers must now optimize not just for human users, but for AI agents traversing their DOM.",
+    "sourceUrl": "https://www.wired.com/story/mesh-system-vs-wi-fi-router/",
+    "sourceName": "WIRED",
     "status": "draft"
   }
 ]
