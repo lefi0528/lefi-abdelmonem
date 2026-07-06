@@ -1,5 +1,15 @@
 [
   {
+    "id": "art-1783302887612-seo",
+    "category": "seo",
+    "title": "Safari’s New MCP Server Enables AI Debugging For SEO And CWV via @sejournal, ...",
+    "date": "2026-07-06",
+    "content": "The latest Google Search core algorithm updates of 2026 have pushed traditional keyword stuffing completely out of search relevancy. Contextual semantic matching, schema structural metadata (JSON-LD), and pristine Interaction to Next Paint (INP) performance scores are now the ultimate ranking signals.\n\nPrestaShop Remark: Embed JSON-LD schema tags on product pages and integrate with semantic platforms like FexaAI to secure your rankings.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
     "id": "art-1783216061691-ai",
     "category": "ai",
     "title": "New Google commercial imagines a Declaration of Independence written with hel...",
@@ -142,16 +152,5 @@
     "sourceUrl": "",
     "sourceName": "",
     "status": "draft"
-  },
-  {
-    "id": "art-1782137400000-seo",
-    "category": "seo",
-    "title": "Google Lighthouse Introduces Experimental 'Agentic Navigation Score' — Is Your Site Ready for AI Agents?",
-    "date": "6/22/2026",
-    "freshness": "Freshness: < 2h",
-    "content": "Google has quietly rolled out a groundbreaking experimental category inside Lighthouse: the <strong>Agentic Navigation Score</strong>. Already visible in PageSpeed Insights for sites running Chrome 150+, this new metric evaluates how well a website is structured for autonomous AI agent interaction — not just human visitors.<br><br>Unlike traditional 0–100 performance scores, the Agentic Navigation Score uses a binary checklist format (e.g., 3/3), measuring three critical signals:<br><br><strong>1. WebMCP Integration</strong> — Does the site expose tools to AI agents via the Web Model Context Protocol? This includes both imperative JavaScript registration (<code>navigator.modelContext.registerTool()</code>) and declarative HTML form annotations with <code>toolname</code> and <code>tooldescription</code> attributes.<br><br><strong>2. Agent-Oriented Accessibility</strong> — Goes beyond traditional ARIA compliance. Lighthouse now checks whether the accessibility tree provides machine-readable programmatic names, valid roles, and clear parent-child relationships that allow AI agents to navigate DOM elements autonomously.<br><br><strong>3. Stability & Discoverability</strong> — CLS (Cumulative Layout Shift) is re-evaluated specifically for agent context: layout shifts during interaction can cause agents to click wrong targets. Additionally, Lighthouse checks for the presence of a <code>llms.txt</code> file for agent discoverability — despite Google Search confirming it doesn't use llms.txt for ranking, it remains critical for agentic browsing contexts.<br><br>This signals a major paradigm shift: <strong>AEO (Agent-Engine Optimization)</strong> is becoming parallel to SEO. Sites that implement WebMCP standards and optimize for both human and machine navigation will gain first-mover advantage as AI agent traffic — already trackable via GA4's 'AI Assistant' channel — continues to surge.<br><br><strong>Expert Perspective:</strong> As an early implementer of the WebMCP standard, I can confirm that achieving a perfect agentic score requires rethinking your entire frontend architecture. Forms must be annotated for agent discovery, search must be exposed as callable tools, and layout stability must be bulletproof. This is no longer optional for forward-thinking e-commerce sites.<br><br>📖 <strong>Full technical deep-dive and implementation guide:</strong> <a href='https://www.genisoft.fr/tuto/lighthouse-score-navigation-agentique/' target='_blank' rel='noopener'>Read the complete tutorial on Genisoft</a>",
-    "sourceUrl": "https://www.genisoft.fr/tuto/lighthouse-score-navigation-agentique/",
-    "sourceName": "Genisoft — Tutoriels WEB",
-    "status": "published"
   }
 ]
