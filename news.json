@@ -1,5 +1,15 @@
 [
   {
+    "id": "art-1783991657195-ai",
+    "category": "ai",
+    "title": "Uber’s product chief on hotels, robotaxis, and why the company doesn’t want t...",
+    "date": "2026-07-14",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
     "id": "art-1783905893021-ai",
     "category": "ai",
     "title": "Uber’s Autonomous Vehicle Strategy: Slow Their Adoption",
@@ -140,15 +150,5 @@
     "sourceName": "Anthropic — Official",
     "image": "claude-sonnet-5-anthropic-lancement/cover.png",
     "status": "published"
-  },
-  {
-    "id": "art-1782784960787-ai",
-    "category": "ai",
-    "title": "Meta Contractors Posed as Teens to Prompt Rival Chatbots About Suicide, Sex, ...",
-    "date": "2026-06-30",
-    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
-    "sourceUrl": "",
-    "sourceName": "",
-    "status": "draft"
   }
 ]
