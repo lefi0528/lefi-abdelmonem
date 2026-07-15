@@ -1,5 +1,15 @@
 [
   {
+    "id": "art-1784077847306-seo",
+    "category": "seo",
+    "title": "Google’s Mueller On First Link Priority & Link Obfuscation via @sejournal, @M...",
+    "date": "2026-07-15",
+    "content": "The latest Google Search core algorithm updates of 2026 have pushed traditional keyword stuffing completely out of search relevancy. Contextual semantic matching, schema structural metadata (JSON-LD), and pristine Interaction to Next Paint (INP) performance scores are now the ultimate ranking signals.\n\nPrestaShop Remark: Embed JSON-LD schema tags on product pages and integrate with semantic platforms like FexaAI to secure your rankings.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
     "id": "art-1783991657195-ai",
     "category": "ai",
     "title": "Uber’s product chief on hotels, robotaxis, and why the company doesn’t want t...",
@@ -138,17 +148,5 @@
     "sourceUrl": "",
     "sourceName": "",
     "status": "draft"
-  },
-  {
-    "id": "art-1782851627000-ai",
-    "category": "ai",
-    "title": "Claude Sonnet 5 Launched: Anthropic's Most Agentic AI Model Yet — 1M Context, Aggressive Pricing",
-    "date": "6/30/2026",
-    "freshness": "Freshness: < 2h",
-    "content": "<strong>Breaking — June 30, 2026.</strong> Anthropic has officially unveiled <strong>Claude Sonnet 5</strong>, the latest evolution of its Sonnet-class model family, positioned as the most agentic AI model the company has ever released. This launch marks a pivotal moment in the generative AI race.<br><br><strong>🧠 Key Capabilities</strong><br>Sonnet 5 excels in <strong>complex agentic workflows</strong>: sophisticated code generation, multi-file debugging, browser and terminal tool use, and autonomous task planning. Anthropic claims it delivers near-Opus-level intelligence while maintaining the speed and cost profile that defines the Sonnet family.<br><br><strong>📊 Technical Specifications</strong><br>• <strong>Context Window: 1 million tokens</strong> — 8× larger than GPT-4o's 128K tokens<br>• <strong>Introductory Pricing:</strong> $2 per million input tokens, $10 per million output tokens (valid through August 31, 2026)<br>• <strong>Standard Pricing:</strong> $3 / $15 per million tokens after the introductory period<br>• <strong>Availability:</strong> Anthropic API, Amazon Bedrock, Google Cloud, Microsoft Foundry, and claude.ai (web, iOS, Android)<br><br><strong>⚔️ Head-to-Head: Claude Sonnet 5 vs GPT-4o</strong><br>Against OpenAI's GPT-4o, Sonnet 5 stands out with its massive context window (1M vs 128K tokens) and lower input pricing ($2 vs $2.50 per million). Output costs are identical at $10 per million tokens. The contextual advantage is decisive for processing large codebases, lengthy technical documentation, and extended agentic workflows.<br><br><strong>🔄 The 2026 Claude Landscape</strong><br>This release fits into an accelerated cadence at Anthropic: Claude Opus 4.8 (May 28, 2026) remains the general-purpose flagship, while Claude Fable 5 (June 9, 2026) represents the cutting-edge Mythos-class frontier model. Claude Sonnet 4 was retired on June 15, 2026, now replaced by this next generation.<br><br><strong>🚀 Developer Impact</strong><br>The ecosystem is shifting toward <strong>agentic coding</strong>, where tools like Claude Code and Cowork orchestrate long-running tasks via the Model Context Protocol (MCP). Developers can now focus on architecture and strategy while AI handles detailed implementation — from debugging entire repositories to autonomously managing multi-step software development lifecycles.<br><br>PrestaShop Remark: Integrate Claude Sonnet 5 via the Anthropic API to automate product description generation, SEO optimization of product pages, and PrestaShop code maintenance — the 1M token context window allows analyzing an entire module or theme in a single request.",
-    "sourceUrl": "https://www.anthropic.com/",
-    "sourceName": "Anthropic — Official",
-    "image": "claude-sonnet-5-anthropic-lancement/cover.png",
-    "status": "published"
   }
 ]
