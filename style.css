@@ -2053,13 +2053,36 @@ textarea.form-control {
 }
 
 .news-card-freshness {
-  background: rgba(0, 255, 133, 0.08);
-  border: 1px solid rgba(0, 255, 133, 0.2);
-  color: var(--accent-sec);
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 0.7rem;
   font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+/* Freshness color variants - dynamically applied based on article age */
+.news-card-freshness.freshness-hot {
+  background: rgba(0, 255, 133, 0.08);
+  border: 1px solid rgba(0, 255, 133, 0.2);
+  color: var(--accent-sec);
+}
+
+.news-card-freshness.freshness-warm {
+  background: rgba(255, 165, 0, 0.08);
+  border: 1px solid rgba(255, 165, 0, 0.2);
+  color: #FFA500;
+}
+
+.news-card-freshness.freshness-cool {
+  background: rgba(255, 215, 0, 0.06);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  color: #FFD700;
+}
+
+.news-card-freshness.freshness-stale {
+  background: rgba(150, 150, 150, 0.06);
+  border: 1px solid rgba(150, 150, 150, 0.15);
+  color: #999;
 }
 
 .news-card-title {
