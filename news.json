@@ -1,5 +1,15 @@
 [
   {
+    "id": "art-1786149732282-ai",
+    "category": "ai",
+    "title": "OpenAI says it slowed Astra model development over security concerns",
+    "date": "2026-08-08",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
     "id": "art-1786067924754-ai",
     "category": "ai",
     "title": "One of China’s Most Powerful AI Models Has Also Escaped Containment",
@@ -134,16 +144,6 @@
     "category": "ai",
     "title": "I tried out OpenAI’s new AI keypad — which will be fun for some coders and sl...",
     "date": "2026-07-25",
-    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
-    "sourceUrl": "",
-    "sourceName": "",
-    "status": "draft"
-  },
-  {
-    "id": "art-1784856205580-ai",
-    "category": "ai",
-    "title": "How AI guardrails are impeding the work of offensive cybersecurity researchers",
-    "date": "2026-07-24",
     "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
     "sourceUrl": "",
     "sourceName": "",
