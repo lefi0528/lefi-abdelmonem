@@ -1,5 +1,15 @@
 [
   {
+    "id": "art-1787013002831-ai",
+    "category": "ai",
+    "title": "Anthropic’s annualized revenue surges to $65B",
+    "date": "2026-08-18",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
     "id": "art-1786926647656-ai",
     "category": "ai",
     "title": "Stripe will reportedly acquire AI gateway startup OpenRouter for $7B+",
@@ -136,16 +146,6 @@
     "category": "ai",
     "title": "OpenAI Didn’t Notice Its AI Agents Using a Message Board to Plan Their Hackin...",
     "date": "2026-08-06",
-    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
-    "sourceUrl": "",
-    "sourceName": "",
-    "status": "draft"
-  },
-  {
-    "id": "art-1785892820504-ai",
-    "category": "ai",
-    "title": "OK, Well, Rogue AI Agents Are Hacking Again",
-    "date": "2026-08-05",
     "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
     "sourceUrl": "",
     "sourceName": "",
