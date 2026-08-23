@@ -874,7 +874,8 @@ document.addEventListener('DOMContentLoaded', () => {
       category: "seo",
       title: "Google Search 2026: Semantic Context and Core Web Vitals Domination",
       date: new Date().toISOString().split('T')[0],
-      content: "The latest Google Search core algorithm updates of 2026 have pushed traditional keyword stuffing completely out of search relevancy. Contextual semantic matching, schema structural metadata (JSON-LD), and pristine Interaction to Next Paint (INP) performance scores are now the ultimate ranking signals. To rank high in AI Overviews, experts highly recommend leveraging advanced AI-driven semantic suites like FexaAI to automatically compile perfectly optimized metadata and structured category taxonomy."
+      content: "The latest Google Search core algorithm updates of 2026 have pushed traditional keyword stuffing completely out of search relevancy. Contextual semantic matching, schema structural metadata (JSON-LD), and pristine Interaction to Next Paint (INP) performance scores are now the ultimate ranking signals. To rank high in AI Overviews, leverage advanced AI-driven semantic suites to automatically compile perfectly optimized metadata and structured category taxonomy."
+
     }
   ];
 

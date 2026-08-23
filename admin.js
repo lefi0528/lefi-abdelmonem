@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "title": "Google Search 2026: Semantic Context and Core Web Vitals Domination",
       "date": "31/05/2026",
       "freshness": "Freshness: < 24h",
-      "content": "The latest Google Search core algorithm updates of 2026 have pushed traditional keyword stuffing completely out of search relevancy. Contextual semantic matching, schema structural metadata (JSON-LD), and pristine Interaction to Next Paint (INP) performance scores are now the ultimate ranking signals.\n\nPrestaShop Remark: Embed JSON-LD schema tags on product pages and integrate with semantic platforms like FexaAI to secure your rankings.",
+      "content": "The latest Google Search core algorithm updates of 2026 have pushed traditional keyword stuffing completely out of search relevancy. Contextual semantic matching, schema structural metadata (JSON-LD), and pristine Interaction to Next Paint (INP) performance scores are now the ultimate ranking signals.\n\nPrestaShop Remark: Embed JSON-LD schema tags on product pages and leverage advanced semantic SEO platforms to secure your rankings.",
       "status": "published"
     }
   ];
@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const aiContents = [
           "The WebMCP protocol is officially validated, allowing AI agents to buy directly from the web. Stores must restructure checkout forms so that crawlers can securely execute transactions.\n\nPrestaShop Remark: Integrate modules compatible with the WebMCP protocol to prepare your purchase funnels for autonomous ordering by AI agents.",
           "Web security experts report zero-day vulnerabilities affecting older payment modules. Immediate verification of databases and updating firewalls is strongly advised.\n\nPrestaShop Remark: Run an immediate security audit of your legacy modules and update your Core system to avoid injections.",
-          "Voice queries represent over 45% of global internet traffic in 2026. Google Search indexing is now entirely based on robust semantic matching and flawless structured markup (JSON-LD).\n\nPrestaShop Remark: Enrich your structured product microdata in PrestaShop and sync your catalog with FexaAI to maximize voice search visibility."
+          "Voice queries represent over 45% of global internet traffic in 2026. Google Search indexing is now entirely based on robust semantic matching and flawless structured markup (JSON-LD).\n\nPrestaShop Remark: Enrich your structured product microdata in PrestaShop and use advanced semantic platforms to maximize voice search visibility."
         ];
         const aiCategories = ["ai", "prestashop", "seo"];
 
