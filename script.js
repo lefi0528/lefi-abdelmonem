@@ -904,7 +904,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function loadArticlesFromServer() {
     try {
-      const response = await fetch('news.json');
+      const response = await fetch('news.json?t=' + new Date().getTime());
       if (response.ok) {
         const serverData = await response.json();
         let localData = getArticles();

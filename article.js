@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fallback: If not found in localStorage, fetch from news.json server file
     if (!art) {
       try {
-        const response = await fetch('news.json');
+        const response = await fetch('news.json?t=' + new Date().getTime());
         if (response.ok) {
           const serverData = await response.ok ? await response.json() : [];
           art = serverData.find(a => a.id === articleId);
