@@ -1,5 +1,16 @@
 [
   {
+    "id": "art-1788384201564-ai",
+    "category": "ai",
+    "title": "Google Gemini 3.8 Flash : Architecture, Raisonnement Dynamique & Révolution Agentique",
+    "date": "2026-09-02",
+    "content": "Le déploiement officiel de Gemini 3.8 Flash par Google DeepMind redéfinit les frontières de l'intelligence artificielle appliquée à l'ingénierie logicielle, au web agentique et au commerce électronique. Alors que la génération 3.7 avait inauguré le concept de raisonnement hybride, Gemini 3.8 pousse le paradigme à son paroxysme en introduisant une allocation dynamique et continue du temps de calcul (Adaptive Test-Time Compute) couplée à une compression sans précédent du cache d'attention.\n\nPrestaShop Remark: Pour rendre votre boutique PrestaShop immédiatement exploitable par Gemini 3.8 Flash et les agents d'achat autonomes, intégrez le standard WebMCP et un balisage Schema.org sans faille.",
+    "sourceUrl": "https://deepmind.google/technologies/gemini/",
+    "sourceName": "Lefi Abdelmonem (Analyse IA)",
+    "status": "published",
+    "slug": "gemini-3-8-flash-architecture"
+  },
+  {
     "id": "art-1788290600000-ai",
     "category": "ai",
     "title": "Claude Fable 5.1: Why Anthropic Just Killed the Concept of \"Prompting\"",

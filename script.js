@@ -986,6 +986,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const idToSlug = {
+        'art-1788384201564-ai': 'gemini-3-8-flash-architecture',
         'art-1786596000000-ai': 'gemini-3-7-flash-hybrid-reasoning-ai',
         'art-1787380000000-seo': 'google-spam-update-august-2026-ecommerce-gsc-bug',
         'art-1788290600000-ai': 'claude-fable-5-1-anthropic-cache-revolution',
