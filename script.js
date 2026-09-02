@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
      =================================================== */
   const burgerMenu = document.getElementById('burgerMenu');
   const navMenu = document.getElementById('navMenu');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.nav-link, .nav-cta-btn, .nav-lang-btn');
   const mainHeader = document.getElementById('mainHeader');
 
   // Toggle mobile menu

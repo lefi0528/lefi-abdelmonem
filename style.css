@@ -347,16 +347,17 @@ section {
   width: 100%;
   height: 80px;
   z-index: 100;
-  background: rgba(6, 9, 19, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(6, 9, 19, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
   transition: var(--transition-smooth);
 }
 
 .main-header.scrolled {
   height: 70px;
-  background: rgba(6, 9, 19, 0.9);
+  background: rgba(6, 9, 19, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
@@ -364,7 +365,7 @@ section {
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  max-width: 1200px;
+  max-width: 1340px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -376,6 +377,9 @@ section {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  margin-right: 20px;
 }
 
 .logo-accent {
@@ -388,15 +392,16 @@ section {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 32px;
+  gap: 20px;
 }
 
 .nav-link {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
   font-weight: 500;
   position: relative;
   padding: 6px 0;
+  white-space: nowrap;
 }
 
 .nav-link::after {
@@ -418,8 +423,77 @@ section {
   width: 100%;
 }
 
+/* Dedicated Header CTA Button */
+.nav-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: linear-gradient(135deg, var(--accent-dev), #8000FF);
+  color: #FFFFFF !important;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-family: var(--font-title);
+  font-size: 0.88rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(173, 0, 255, 0.35);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  margin-left: 6px;
+}
+
+.nav-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(173, 0, 255, 0.55);
+  background: linear-gradient(135deg, #B51BFF, #8A0FFF);
+  color: #FFFFFF !important;
+}
+
+/* Fallback for article subpages */
 .nav-btn {
-  margin-left: 16px;
+  margin-left: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-btn.btn-primary {
+  padding: 8px 18px !important;
+  font-size: 0.88rem !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+}
+
+/* Dedicated Header Language Switch Pill */
+.nav-lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  background: rgba(0, 240, 255, 0.06);
+  color: var(--accent-seo) !important;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-lang-btn:hover {
+  background: rgba(0, 240, 255, 0.18);
+  border-color: var(--accent-seo);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+  transform: translateY(-1px);
 }
 
 /* Burger menu for Mobile */
@@ -1818,7 +1892,23 @@ textarea.form-control {
 /* -------------------------------------------
    Responsive Layout Media Queries
    ------------------------------------------- */
-@media (max-width: 992px) {
+/* Laptops & Compact Desktops (1081px to 1260px) */
+@media (min-width: 1081px) and (max-width: 1260px) {
+  .nav-menu {
+    gap: 12px;
+  }
+  .nav-link {
+    font-size: 0.82rem;
+  }
+  .nav-cta-btn {
+    padding: 7px 14px;
+    font-size: 0.82rem;
+    margin-left: 4px;
+  }
+}
+
+/* Tablets & Mobile Navigation Breakpoint (<= 1080px) */
+@media (max-width: 1080px) {
   .nav-menu {
     position: fixed;
     top: 80px;
@@ -1827,13 +1917,15 @@ textarea.form-control {
     height: calc(100vh - 80px);
     background: var(--bg-primary);
     flex-direction: column;
-    padding: 48px 24px;
-    gap: 32px;
+    padding: 36px 24px;
+    gap: 22px;
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
     transition: var(--transition-smooth);
     border-top: 1px solid var(--border-color);
+    overflow-y: auto;
+    align-items: center;
   }
 
   .nav-menu.active {
@@ -1854,6 +1946,19 @@ textarea.form-control {
   }
   .burger-menu.active .burger-bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-cta-btn {
+    width: 100%;
+    max-width: 240px;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    margin-left: 0;
+  }
+
+  .nav-lang-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 
   .about-grid,
