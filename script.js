@@ -985,6 +985,18 @@ document.addEventListener('DOMContentLoaded', () => {
         cardHoverClass = "card-prestashop";
       }
 
+      const idToSlug = {
+        'art-1786596000000-ai': 'gemini-3-7-flash-hybrid-reasoning-ai',
+        'art-1787380000000-seo': 'google-spam-update-august-2026-ecommerce-gsc-bug',
+        'art-1788290600000-ai': 'claude-fable-5-1-anthropic-cache-revolution',
+        'art-1787810400000-ai': 'ox-alpha-who-owns-mystery-ai-zhipu',
+        'art-1786590000000-ai': 'claude-sonnet-5-anthropic-lancement',
+        'art-1': 'optimisation-wordpress-aeo-agents-ia-autonomes',
+        'art-2': 'prestashop-webassembly-seo',
+        'art-3': 'sxo-the-future-of-seo'
+      };
+      const articleUrl = idToSlug[art.id] ? `${idToSlug[art.id]}/` : `article.html?id=${art.id}`;
+
       const card = document.createElement('div');
       card.className = `glass-card news-card ${cardHoverClass}`;
       card.innerHTML = `
@@ -994,13 +1006,13 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="news-card-meta">
           <span class="news-card-badge ${badgeClass}">${categoryName}</span>
           <span class="news-card-freshness ${getFreshnessClass(art.date)}">${computeFreshness(art.date)}</span>
-          <span>📅 ${(() => { const d = parseArticleDate(art.date); return d ? d.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: 'numeric' }) : art.date; })()}</span>
+          <span>📅 ${(() => { const d = parseArticleDate(art.date); return d ? d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'numeric', year: 'numeric' }) : art.date; })()}</span>
         </div>
         <h3 class="news-card-title">${art.title}</h3>
         <p class="news-card-excerpt">${art.content.replace(/<[^>]*>/g, '').substring(0, 200)}${art.content.length > 200 ? '...' : ''}</p>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
-          <a href="article.html?id=${art.id}" class="news-card-readmore">
-            Read Article &rarr;
+          <a href="${articleUrl}" class="news-card-readmore">
+            Lire l'article &rarr;
           </a>
         </div>
       `;

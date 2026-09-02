@@ -15,7 +15,38 @@ The available tools are:
 ## Accessibility
 All major interactive elements are semantic HTML with explicit dimensions to ensure zero Cumulative Layout Shift (CLS) for a stable agentic browsing experience.
 
-## Pages
-- `index.html`: The main landing page with services, contact form, and SEO tool.
-- `article.html`: The tech watch news section.
+## Pages & Endpoints
+- `index.html`: The main landing page in French (PrestaShop development, SEO/SXO, Web Security, Maintenance plans, and interactive SEO tool).
+- `en/index.html`: The international English version of the portfolio.
+- `portfolio/`: Client realizations, case studies, Core Web Vitals speed optimizations, and security interventions.
+- `prestashop-webassembly-seo/`: Technical analysis of WebAssembly (WASM) indexing and performance for PrestaShop.
+- `gemini-3-7-flash-hybrid-reasoning-ai/`: Architecture breakdown of Gemini 3.7 Flash and hybrid reasoning.
+- `google-spam-update-august-2026-ecommerce-gsc-bug/`: Deep dive into Google Spam Update and GSC telemetry bug.
+- `claude-fable-5-1-anthropic-cache-revolution/`: Economic and agentic implications of Claude Fable 5.1.
+- `ox-alpha-who-owns-mystery-ai-zhipu/`: Investigation on Ox Alpha mystery AI model.
+- `seo-en-2026-comment-lia-revolutionne-prestashop/`: How generative AI and AI Overviews transform PrestaShop SEO.
+- `sxo-the-future-of-seo/`: Search Experience Optimization (SXO) and conversion mechanics.
+- `eco-seo-empreinte-carbone-serveur-algorithme-google/`: Eco-SEO, green hosting, and carbon footprint ranking factors.
+- `seo-zero-clic-strategie-autorite-ia/`: Zero-click search strategies and generative engine citation.
+- `securite-wordpress-cryptographie-post-quantique-nist/`: Post-quantum cryptography standards and CMS security.
+- `passeport-numerique-produit-seo-prestashop/`: Digital Product Passport (DPP) compliance and SEO advantages.
+- `zero-party-data-prestashop/`: Zero-Party Data collection and conversion optimization.
+- `ia-locale-wordpress-prestashop-inference-serveur/`: On-premise AI inference for e-commerce platforms.
+- `seo-predictif-prestashop-anthropic-claude-6/`: Predictive SEO and demand forecasting for online stores.
+- `optimisation-wordpress-aeo-agents-ia-autonomes/`: Agent Engine Optimization (AEO) and WebMCP for autonomous buyers.
+- `wordpress-securite-ia-bots-polymorphes-immunite-numerique/`: Mitigating polymorphic AI scrapers and botnets.
+- `maintenance-ia-cms-auto-reparateur-seo/`: Self-healing e-commerce architectures and proactive maintenance.
+- `seo-webxr-prestashop-indexation-spatiale/`: Spatial computing, WebXR, and 3D product indexing.
+- `claude-sonnet-5-anthropic-lancement/`: Claude Sonnet 5 capabilities in agentic development.
+- `google-gemini-3-release/`: Gemini 3 multimodal capabilities for visual commerce.
+- `google-nano-banana-pro-ai/`: On-device AI retail applications.
+- `knowledge-graph-enhanced-llms/`: Knowledge Graphs and LLMs for semantic catalog reasoning.
+- `contrastive-learning-ai/`: Contrastive learning for semantic e-commerce site search.
+- `medusajs-self-hosted/`: MedusaJS headless architecture and self-hosting strategies.
+- `medusa-js-self-hosted/`: Deployment guide for scalable MedusaJS instances.
+- `wordpress-multilingue-natif/`: International SEO, hreflang tags, and lightweight multilingual CMS setup.
+- `maintenance-wordpress-ia/`: AI-assisted visual regression testing and CMS maintenance.
+- `seo-identite-wordpress-protection-ia/`: Brand identity protection and anti-scraping countermeasures.
+- `seo-wordpress-indexation-multi-modale-ia/`: Voice, image, and video search optimization.
+- `article.html`: Dynamic client-side reader fallback.
 - `admin.html`: The administrative console (requires authentication).

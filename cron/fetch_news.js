@@ -181,6 +181,12 @@ async function run() {
                 const rawDesc = item.summary || item.contentSnippet || item.content || item.description || '';
                 const cleanDesc = rawDesc.replace(/<[^>]*>/g, '').substring(0, 400).trim();
                 const cleanTitle = (item.title || '').replace(/<[^>]*>/g, '').trim();
+
+                // Anti-spam and quality filter to protect site SEO
+                const spamFilter = /\b(promo codes?|coupon|discount|15% off|\$15 off|deal|sale|solar eclipse)\b/i;
+                if (spamFilter.test(cleanTitle) || spamFilter.test(cleanDesc)) {
+                  return;
+                }
                 
                 allFreshItems.push({
                   category: category,
