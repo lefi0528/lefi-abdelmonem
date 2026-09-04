@@ -1152,18 +1152,20 @@
             Un flux d'actualités de pointe mis à jour toutes les 24 heures par notre agent IA autonome.
           </p>
         </div>
-      </div>
-
-      <!-- Filters -->
-      <div class="news-filters" style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px;">
-        <button class="news-filter-btn active" data-category="all">Tous</button>
-        <button class="news-filter-btn" data-category="ai">🤖 Artificial Intelligence</button>
-        <button class="news-filter-btn" data-category="prestashop">🛒 PrestaShop</button>
-        <button class="news-filter-btn" data-category="seo">📈 SEO & Marketing</button>
-      </div>
-
-      <!-- News Cards Grid (Static semantic fallback for instant crawler indexing, hydrated by script.js) -->
-            <div class="news-grid" id="newsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+       <!-- News Cards Grid (Static semantic fallback for instant crawler indexing, hydrated by script.js) -->
+      <div class="news-grid" id="newsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+        <article class="glass-card news-card" data-category="prestashop" style="display: flex; flex-direction: column; height: 100%;">
+          <div class="news-card-meta">
+            <span class="news-card-badge badge-prestashop">PrestaShop</span>
+            <span class="news-card-freshness freshness-hot">Nouveau : &lt; 2h</span>
+            <span class="news-card-date">04/09/2026</span>
+          </div>
+          <h3 class="news-card-title">Google Think sous la Loupe : Pourquoi le « Simple Bon SEO » ne Suffira Pas pour Votre PrestaShop</h3>
+          <p class="news-card-excerpt">Analyse critique de la publication Think with Google de septembre 2026 : pourquoi le Shopping Graph, les flux enrichis et l'E-E-A-T priment désormais sur le SEO traditionnel.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px;">
+            <a href="prestashop-google-ai-search-brand-authority/" class="news-card-readmore">Lire l'article &rarr;</a>
+          </div>
+        </article>
         <article class="glass-card news-card" data-category="ai" style="display: flex; flex-direction: column; height: 100%;">
           <div class="news-card-meta">
             <span class="news-card-badge badge-ai">IA &amp; Automatisation</span>
@@ -1175,6 +1177,7 @@
           <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px;">
             <a href="gemini-3-8-flash-architecture/" class="news-card-readmore">Lire l'article &rarr;</a>
           </div>
+        </article>
         <article class="glass-card news-card" data-category="ai" style="display: flex; flex-direction: column; height: 100%;">
           <div class="news-card-meta">
             <span class="news-card-badge badge-ai">IA &amp; Automatisation</span>
