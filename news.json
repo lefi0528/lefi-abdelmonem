@@ -1,5 +1,16 @@
 [
   {
+    "id": "art-1788538000000-prestashop",
+    "category": "prestashop",
+    "title": "Google Think sous la Loupe : Pourquoi le « Simple Bon SEO » ne Suffira Pas pour Votre PrestaShop",
+    "date": "2026-09-04",
+    "content": "Analyse critique et sans concession de la publication officielle de Think with Google (septembre 2026) par Brendon Kraham (VP Search & Commerce). Pourquoi le simple bon SEO traditionnel ne suffira pas à sauver votre visibilité e-commerce face au Mode IA et aux AI Overviews.\n\nPrestaShop Remark: Enrichissez immédiatement vos flux Google Merchant Center (product_highlight, lifestyle_image_link, hasMerchantReturnPolicy) et vos schémas JSON-LD pour exister dans le Google Shopping Graph.",
+    "sourceUrl": "https://business.google.com/fr/think/search-and-video/ai-search-era-brand-authority-strategy/",
+    "sourceName": "Lefi Abdelmonem (Analyse Critique Google Think)",
+    "status": "published",
+    "slug": "prestashop-google-ai-search-brand-authority"
+  },
+  {
     "id": "art-1788486113021-ai",
     "category": "ai",
     "title": "Crusoe reportedly raises $3B at a  $30B valuation",
@@ -82,16 +93,6 @@
     "status": "draft"
   },
   {
-    "id": "art-1787704365153-ai",
-    "category": "ai",
-    "title": "OpenAI loses a top data center exec, as stream of high-profile departures con...",
-    "date": "2026-08-26",
-    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
-    "sourceUrl": "",
-    "sourceName": "",
-    "status": "draft"
-  },
-  {
     "id": "art-1787810400000-ai",
     "category": "ai",
     "title": "Who Owns Ox Alpha? Inside the Hunt for the Mystery AI That Broke the Internet",
@@ -101,6 +102,16 @@
     "sourceName": "OSINT Investigation — Lefi Abdelmonem",
     "status": "published",
     "image": "ox_alpha_cover.jpg"
+  },
+  {
+    "id": "art-1787704365153-ai",
+    "category": "ai",
+    "title": "OpenAI loses a top data center exec, as stream of high-profile departures con...",
+    "date": "2026-08-26",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
   },
   {
     "id": "art-1787445174921-ai",
@@ -148,6 +159,98 @@
     "category": "ai",
     "title": "Stripe didn’t really buy OpenRouter because of the ‘singularity’",
     "date": "2026-08-20",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
+    "id": "art-1787099436162-ai",
+    "category": "ai",
+    "title": "Cursor capitalizes on GitHub frustration, launches rival hosting platform",
+    "date": "2026-08-19",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
+    "id": "art-1787013002831-ai",
+    "category": "ai",
+    "title": "Anthropic’s annualized revenue surges to $65B",
+    "date": "2026-08-18",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
+    "id": "art-1786926647656-ai",
+    "category": "ai",
+    "title": "Stripe will reportedly acquire AI gateway startup OpenRouter for $7B+",
+    "date": "2026-08-17",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
+    "id": "art-1786840326178-ai",
+    "category": "ai",
+    "title": "Woman claims her stepfather used Grok to transform childhood photo into expli...",
+    "date": "2026-08-16",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
+    "id": "art-1786753892904-seo",
+    "category": "seo",
+    "title": "Google Brings Gemini 3.7 Flash To AI Mode In Search via @sejournal, @MattGSou...",
+    "date": "2026-08-15",
+    "content": "The latest Google Search core algorithm updates of 2026 have pushed traditional keyword stuffing completely out of search relevancy. Contextual semantic matching, schema structural metadata (JSON-LD), and pristine Interaction to Next Paint (INP) performance scores are now the ultimate ranking signals.\n\nPrestaShop Remark: Embed JSON-LD schema tags on product pages and leverage advanced semantic SEO platforms to secure your rankings.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
+    "id": "art-1786668875703-ai",
+    "category": "ai",
+    "title": "The Safety Reckoning Inside OpenAI",
+    "date": "2026-08-14",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
+    "id": "art-1786596000000-ai",
+    "category": "ai",
+    "title": "Gemini 3.7 Flash Architecture: How Hybrid Reasoning & Test-Time Compute Redefine AI Engineering",
+    "date": "2026-08-13",
+    "content": "Google DeepMind's announcement of Gemini 3.7 Flash marks a definitive breakthrough in the evolution of compact, high-efficiency foundation models. While early Flash iterations optimized primarily for raw tokens-per-second throughput under fixed compute constraints, Gemini 3.7 Flash introduces native Hybrid Reasoning—unifying instant forward-pass generation with dynamically scalable Test-Time Compute.\n\nThis architectural leap solves the historic trade-off in production AI: developers no longer need to choose between sub-second latency and deep, multi-step logical deduction. The model dynamically balances inference compute based on problem entropy and reasoning depth.\n\n<h2>1. Mathematical Foundations: Test-Time Compute Scaling & PRM</h2>\n\nAt the core of Gemini 3.7 Flash is the mathematical formalization of test-time scaling laws. Rather than confining model capacity strictly to parameter count ($N$) and pre-training FLOPs ($C_{train}$), Gemini 3.7 Flash scales test-time inference compute ($C_{test}$) dynamically:\n\n$$\\text{Reasoning Depth} \\propto \\log(C_{test}) \\cdot \\mathcal{H}(\\text{Task Complexity})$$\n\n<ul>\n  <li><strong>Process-Supervised Reward Models (PRM):</strong> Unlike traditional Outcome Reward Models (ORM) that only evaluate final token outputs, PRMs score every intermediate reasoning step. Mathematical errors in logic chains or syntax generation are detected and pruned before compounding into hallucinations.</li>\n  <li><strong>Reinforcement Learning with Verifiable Rewards (RLVR):</strong> On deterministic domains—such as code compilation, formal math proofs, and JSON schema conformity—the model is trained against objective ground-truth verifiers, driving AST syntax error rates to near-zero.</li>\n  <li><strong>Dynamic Thinking Budget:</strong> Developers can explicitly modulate the thinking token budget (from 0 tokens for instant responses up to dedicated reasoning budgets for multi-file architectural refactoring).</li>\n</ul>\n\n<h2>2. Hardware & Architecture: Sparse MoE & Speculative Decoding</h2>\n\nTo maintain Flash-tier latency and economic viability in high-throughput enterprise pipelines, Gemini 3.7 Flash implements several deep architectural optimizations:\n\n<ul>\n  <li><strong>Fine-Grained Sparse Mixture-of-Experts (MoE):</strong> Features specialized sub-networks routed via an auxiliary load-balanced router loss. Active parameters per token remain extremely compact while total parameter capacity rivals flagship frontier models.</li>\n  <li><strong>Speculative Multi-Token Prediction:</strong> Generates and validates multiple token candidates simultaneously per forward pass, multiplying effective throughput on TPU v5e accelerators.</li>\n  <li><strong>GQA & Long-Context KV Compression:</strong> Native 1M+ token context window powered by Grouped-Query Attention (GQA) and optimized KV cache eviction strategies, eliminating the common \"lost-in-the-middle\" attention decay across massive codebases.</li>\n</ul>\n\n<h2>3. Architectural Comparison: Direct Generation vs. Gemini 3.7 Flash</h2>\n\n<table>\n  <thead>\n    <tr>\n      <th>Engineering Metric</th>\n      <th>Direct Single-Pass Models</th>\n      <th>Gemini 3.7 Flash (Hybrid Engine)</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><strong>Inference Paradigm</strong></td>\n      <td>Fixed forward pass (O(1) compute)</td>\n      <td><strong>Dynamic Test-Time Compute Allocation</strong></td>\n    </tr>\n    <tr>\n      <td><strong>Reasoning Error Pruning</strong></td>\n      <td>Post-generation or unmonitored</td>\n      <td><strong>Step-level PRM & RLVR verification</strong></td>\n    </tr>\n    <tr>\n      <td><strong>Tool Calling Reliability</strong></td>\n      <td>Vulnerable to schema drift under long chains</td>\n      <td><strong>Deterministic multi-hop agentic execution</strong></td>\n    </tr>\n    <tr>\n      <td><strong>Latency Profile</strong></td>\n      <td>Fixed low-latency / Shallow logic</td>\n      <td><strong>Sub-500ms default, deep thinking on-demand</strong></td>\n    </tr>\n  </tbody>\n</table>\n\n<h2>4. Agentic Workflows & WebMCP Integration</h2>\n\nIn practical software engineering and e-commerce ecosystems, Gemini 3.7 Flash excels in agentic loops. Its deterministic function calling adheres rigorously to standard protocols like MCP and WebMCP (Web Model Context Protocol), making it the ideal brain for autonomous checkout agents, automated SEO auditors, and CI/CD diagnostic bots.\n\nPrestaShop Remark: Leverage Gemini 3.7 Flash's hybrid thinking budget via WebMCP or API hooks to perform deterministic product schema validation, real-time inventory reconciliation, and zero-hallucination multilingual catalog generation.",
+    "sourceUrl": "https://deepmind.google/technologies/gemini/",
+    "sourceName": "Google DeepMind Research",
+    "status": "published",
+    "image": "lefi_profile.jpg"
+  },
+  {
+    "id": "art-1786590000000-ai",
+    "category": "ai",
+    "title": "Anthropic Claude Opus 4.8 & WebMCP: How Autonomous AI Agents Are Rewriting E-Commerce Rules",
+    "date": "2026-08-13",
+    "content": "When Anthropic rolled out Claude Opus 4.8 alongside the broader Claude 5 model architecture earlier this year, the tech community expected incremental gains in code generation and reasoning. What caught e-commerce executives by surprise, however, was how rapidly these models—when paired with Google's open WebMCP (Web Model Context Protocol)—transformed autonomous AI agents into high-converting transactional buyers.\n\nWe are no longer discussing AI search bots that index pages for citations. In mid-2026, AI agents act as personal purchasing concierges, inspecting DOM elements in real time, filling out multi-step product customizers, verifying inventory stock via client-side JavaScript tools, and executing checkout flows directly inside the browser.\n\n<h2>The Paradigm Shift: From Passive Crawling to Autonomous Transactions</h2>\n\nFor over two decades, web development has focused almost exclusively on human visual optics: high-resolution banners, micro-interactions, and persuasive CTA placements. But with Claude Opus 4.8 leveraging dynamic subagent delegation, the primary customer visiting your online store might soon be an autonomous AI agent buying on behalf of a human user.\n\nIf your storefront relies on obfuscated DOM nodes, unindexed dynamic JavaScript renders, or missing semantic labels, autonomous agents simply skip your site in favor of structured competitors. WebMCP bridges this gap by exposing explicit tool declarations directly to agentic crawlers.\n\n<h2>Comparing E-Commerce Paradigms: Traditional vs. Agentic (2026)</h2>\n\nTo understand why traditional storefronts are losing market share to agentic-optimized stores, consider the operational differences below:\n\n<table>\n  <thead>\n    <tr>\n      <th>Feature / Metric</th>\n      <th>Legacy E-Commerce Storefront</th>\n      <th>WebMCP Agentic-Ready Storefront</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><strong>Target Audience</strong></td>\n      <td>Human shoppers clicking visual elements</td>\n      <td>Autonomous AI agents (Claude Opus 4.8 / Claude 5) & Humans</td>\n    </tr>\n    <tr>\n      <td><strong>Data Extraction</strong></td>\n      <td>Scraping raw HTML & guesswork regex</td>\n      <td>Deterministic WebMCP tool calls & JSON-LD schemas</td>\n    </tr>\n    <tr>\n      <td><strong>Checkout Friction</strong></td>\n      <td>Multi-page form filling & captcha hurdles</td>\n      <td>Programmatic tool execution in &lt; 800ms</td>\n    </tr>\n    <tr>\n      <td><strong>Conversion Lift (2026)</strong></td>\n      <td>Baseline conversion (~2.1%)</td>\n      <td><strong>+42% surge</strong> in autonomous agent purchases</td>\n    </tr>\n  </tbody>\n</table>\n\n<h2>Key Optimization Pillars for PrestaShop Storefronts</h2>\n\nTo ensure your PrestaShop or custom e-commerce store is fully discoverable and executable by agentic workflows, focus on these three engineering priorities:\n\n<ul>\n  <li><strong>Clean JSON-LD Schema Graphs:</strong> Ensure product variants, price currency, and live stock statuses are exposed in validated schema metadata without relying on async client-side overrides.</li>\n  <li><strong>Deterministic ARIA & DOM Selection:</strong> Use explicit <code>data-mcp-tool</code> attributes on cart buttons, quantity adjusters, and shipping selectors.</li>\n  <li><strong>Native WebMCP Endpoint Exposure:</strong> Serve a valid <code>webmcp.json</code> manifest defining your store's client-side actions and form endpoints.</li>\n</ul>\n\n<h2>Strategic Roadmap for Digital Merchants</h2>\n\nAs we navigate the second half of 2026, the distinction between \"SEO\" and \"AEO\" (Agent Engine Optimization) has vanished. Merchants who adapt early to Anthropic's Claude Opus 4.8 capabilities and WebMCP standards are securing a massive first-mover advantage in automated retail.\n\nPrestaShop Remark: Integrate WebMCP-compatible action hooks and clean JSON-LD schemas in your PrestaShop theme to allow autonomous AI agents like Claude Opus 4.8 to discover products and execute checkouts programmatically.",
+    "sourceUrl": "https://claude.ai",
+    "sourceName": "Anthropic AI Insights",
+    "status": "published",
+    "image": "news_claude_webmcp_2026.jpg"
+  },
+  {
+    "id": "art-1786496037540-ai",
+    "category": "ai",
+    "title": "Accel closes oversubscribed $550M India fund within weeks, 19 months after it...",
+    "date": "2026-08-12",
     "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
     "sourceUrl": "",
     "sourceName": "",

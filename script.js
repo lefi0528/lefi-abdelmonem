@@ -986,6 +986,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const idToSlug = {
+        'art-1788538000000-prestashop': 'prestashop-google-ai-search-brand-authority',
         'art-1788384201564-ai': 'gemini-3-8-flash-architecture',
         'art-1786596000000-ai': 'gemini-3-7-flash-hybrid-reasoning-ai',
         'art-1787380000000-seo': 'google-spam-update-august-2026-ecommerce-gsc-bug',

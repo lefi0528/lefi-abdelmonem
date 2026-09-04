@@ -19,6 +19,7 @@ All major interactive elements are semantic HTML with explicit dimensions to ens
 - `index.html`: The main landing page in French (PrestaShop development, SEO/SXO, Web Security, Maintenance plans, and interactive SEO tool).
 - `en/index.html`: The international English version of the portfolio.
 - `portfolio/`: Client realizations, case studies, Core Web Vitals speed optimizations, and security interventions.
+- `prestashop-google-ai-search-brand-authority/`: Critical analysis of Google Think AI search strategy and PrestaShop optimizations.
 - `prestashop-webassembly-seo/`: Technical analysis of WebAssembly (WASM) indexing and performance for PrestaShop.
 - `gemini-3-7-flash-hybrid-reasoning-ai/`: Architecture breakdown of Gemini 3.7 Flash and hybrid reasoning.
 - `google-spam-update-august-2026-ecommerce-gsc-bug/`: Deep dive into Google Spam Update and GSC telemetry bug.
