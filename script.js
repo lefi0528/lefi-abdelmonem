@@ -904,7 +904,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function loadArticlesFromServer() {
     try {
-      const response = await fetch('news.json?t=' + new Date().getTime());
+      const isEn = window.location.pathname.includes('/en/') || window.location.pathname.endsWith('/en') || document.documentElement.lang === 'en';
+      const fetchUrl = (isEn ? '../' : '') + 'news.json?t=' + new Date().getTime();
+      const response = await fetch(fetchUrl);
       if (response.ok) {
         const serverData = await response.json();
         let localData = getArticles();
@@ -997,24 +999,29 @@ document.addEventListener('DOMContentLoaded', () => {
         'art-2': 'prestashop-webassembly-seo',
         'art-3': 'sxo-the-future-of-seo'
       };
-      const articleUrl = idToSlug[art.id] ? `${idToSlug[art.id]}/` : `article.html?id=${art.id}`;
+      const isEn = window.location.pathname.includes('/en/') || window.location.pathname.endsWith('/en') || document.documentElement.lang === 'en';
+      const rootPrefix = isEn ? '../' : '';
+      const rawUrl = idToSlug[art.id] ? `${idToSlug[art.id]}/` : `article.html?id=${art.id}`;
+      const articleUrl = rootPrefix + rawUrl;
+      const imageSrc = art.image ? (art.image.startsWith('http') || art.image.startsWith('/') ? art.image : rootPrefix + art.image) : '';
+      const readMoreText = isEn ? 'Read Article &rarr;' : "Lire l'article &rarr;";
 
       const card = document.createElement('div');
       card.className = `glass-card news-card ${cardHoverClass}`;
       card.innerHTML = `
         ${art.image ? `<div class="news-card-image-wrapper" style="width:100%; height:180px; overflow:hidden; border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0; margin: -24px -24px 20px -24px; width: calc(100% + 48px);">
-          <img src="${art.image}" alt="${art.title}" style="width:100%; height:100%; object-fit:cover;" loading="lazy">
+          <img src="${imageSrc}" alt="${art.title}" style="width:100%; height:100%; object-fit:cover;" loading="lazy" onerror="this.parentElement.style.display='none'">
         </div>` : ''}
         <div class="news-card-meta">
           <span class="news-card-badge ${badgeClass}">${categoryName}</span>
           <span class="news-card-freshness ${getFreshnessClass(art.date)}">${computeFreshness(art.date)}</span>
-          <span>📅 ${(() => { const d = parseArticleDate(art.date); return d ? d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'numeric', year: 'numeric' }) : art.date; })()}</span>
+          <span>📅 ${(() => { const d = parseArticleDate(art.date); return d ? d.toLocaleDateString(isEn ? 'en-US' : 'fr-FR', { day: 'numeric', month: 'numeric', year: 'numeric' }) : art.date; })()}</span>
         </div>
         <h3 class="news-card-title">${art.title}</h3>
         <p class="news-card-excerpt">${art.content.replace(/<[^>]*>/g, '').substring(0, 200)}${art.content.length > 200 ? '...' : ''}</p>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
           <a href="${articleUrl}" class="news-card-readmore">
-            Lire l'article &rarr;
+            ${readMoreText}
           </a>
         </div>
       `;
