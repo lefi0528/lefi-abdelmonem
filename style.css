@@ -322,7 +322,8 @@ section {
   margin-bottom: 8px;
 }
 
-.verified-fiverr-tag {
+.verified-fiverr-tag,
+.verified-client-tag {
   display: inline-flex;
   align-items: center;
   gap: 6px;
