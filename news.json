@@ -1,5 +1,15 @@
 [
   {
+    "id": "art-1789351217670-seo",
+    "category": "seo",
+    "title": "Matt Mullenweg Apparently Back In Charge At Automattic via @sejournal, @marti...",
+    "date": "2026-09-14",
+    "content": "The latest Google Search core algorithm updates of 2026 have pushed traditional keyword stuffing completely out of search relevancy. Contextual semantic matching, schema structural metadata (JSON-LD), and pristine Interaction to Next Paint (INP) performance scores are now the ultimate ranking signals.\n\nPrestaShop Remark: Embed JSON-LD schema tags on product pages and leverage advanced semantic SEO platforms to secure your rankings.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
     "id": "art-1789263745136-ai",
     "category": "ai",
     "title": "OpenAI’s Sam Altman says it would be ‘ill-advised’ to go public in 2026",
@@ -142,15 +152,5 @@
     "sourceName": "Lefi Abdelmonem (Analysis)",
     "status": "published",
     "image": "claude_fable_5_1_header.jpg"
-  },
-  {
-    "id": "art-1788229132834-ai",
-    "category": "ai",
-    "title": "Apple shares ‘shocking evidence’ against former employee accused of stealing ...",
-    "date": "2026-09-01",
-    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
-    "sourceUrl": "",
-    "sourceName": "",
-    "status": "draft"
   }
 ]
