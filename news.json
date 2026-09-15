@@ -1,5 +1,15 @@
 [
   {
+    "id": "art-1789438094219-ai",
+    "category": "ai",
+    "title": "Jensen Huang took a call from Trump, and showed off something else, too",
+    "date": "2026-09-15",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
     "id": "art-1789351217670-seo",
     "category": "seo",
     "title": "Matt Mullenweg Apparently Back In Charge At Automattic via @sejournal, @marti...",
@@ -141,16 +151,5 @@
     "sourceName": "Lefi Abdelmonem (Analyse IA)",
     "status": "published",
     "slug": "gemini-3-8-flash-architecture"
-  },
-  {
-    "id": "art-1788290600000-ai",
-    "category": "ai",
-    "title": "Claude Fable 5.1: Why Anthropic Just Killed the Concept of \"Prompting\"",
-    "date": "2026-09-01",
-    "content": "The tech press is buzzing today over the release of <strong>Claude Fable 5.1</strong>, Anthropic's new \"Mythos-class\" model. But by focusing on surface-level benchmarks, the industry is missing the real revolution: the collapse of \"Cache Read\" costs ($0.25/M).\n\n<h2>1. The Real Revolution is Economic: The \"Cache Read\" Heist</h2>\nBy slashing this cost by 75%, Anthropic makes the creation of persistent autonomous agents financially viable. Having an AI re-read a 100,000-line context at each step of an iterative loop no longer costs a fortune. You don't \"prompt\" Fable 5.1 anymore; you hand it a backlog and read its PR report on Monday.\n\n<h2>2. Fable vs Mythos: Civilian vs Classified AI</h2>\nThe split of the model into two entities (the general public Fable and the unfiltered Mythos for cleared researchers) marks a philosophical turning point. It is the dawn of a two-tier AI system.\n\n<h2>Conclusion</h2>\nThe next question is no longer \"which AI writes the best code\", but \"which AI can live in my codebase for a week without blowing the budget\". On this battlefield, Anthropic has just taken a staggering lead.",
-    "sourceUrl": "https://anthropic.com",
-    "sourceName": "Lefi Abdelmonem (Analysis)",
-    "status": "published",
-    "image": "claude_fable_5_1_header.jpg"
   }
 ]
