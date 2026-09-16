@@ -1,5 +1,15 @@
 [
   {
+    "id": "art-1789523998290-ai",
+    "category": "ai",
+    "title": "We don’t need AI regulation — leave safety to us, Nvidia’s Jensen Huang says",
+    "date": "2026-09-16",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
     "id": "art-1789438094219-ai",
     "category": "ai",
     "title": "Jensen Huang took a call from Trump, and showed off something else, too",
@@ -140,16 +150,5 @@
     "sourceUrl": "",
     "sourceName": "",
     "status": "draft"
-  },
-  {
-    "id": "art-1788384201564-ai",
-    "category": "ai",
-    "title": "Google Gemini 3.8 Flash : Architecture, Raisonnement Dynamique & Révolution Agentique",
-    "date": "2026-09-02",
-    "content": "Le déploiement officiel de Gemini 3.8 Flash par Google DeepMind redéfinit les frontières de l'intelligence artificielle appliquée à l'ingénierie logicielle, au web agentique et au commerce électronique. Alors que la génération 3.7 avait inauguré le concept de raisonnement hybride, Gemini 3.8 pousse le paradigme à son paroxysme en introduisant une allocation dynamique et continue du temps de calcul (Adaptive Test-Time Compute) couplée à une compression sans précédent du cache d'attention.\n\nPrestaShop Remark: Pour rendre votre boutique PrestaShop immédiatement exploitable par Gemini 3.8 Flash et les agents d'achat autonomes, intégrez le standard WebMCP et un balisage Schema.org sans faille.",
-    "sourceUrl": "https://deepmind.google/technologies/gemini/",
-    "sourceName": "Lefi Abdelmonem (Analyse IA)",
-    "status": "published",
-    "slug": "gemini-3-8-flash-architecture"
   }
 ]
