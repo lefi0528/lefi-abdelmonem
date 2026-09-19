@@ -1,5 +1,15 @@
 [
   {
+    "id": "art-1789782975772-ai",
+    "category": "ai",
+    "title": "India forces caller-ID apps to feed spam reports to telcos",
+    "date": "2026-09-19",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
     "id": "art-1789696265893-ai",
     "category": "ai",
     "title": "Crusoe raises $3.9B to build massive data centers and small modular ‘AI facto...",
@@ -138,17 +148,5 @@
     "sourceUrl": "",
     "sourceName": "",
     "status": "draft"
-  },
-  {
-    "id": "art-1788538000000-prestashop",
-    "category": "prestashop",
-    "title": "Google Think sous la Loupe : Pourquoi le « Simple Bon SEO » ne Suffira Pas pour Votre PrestaShop",
-    "date": "2026-09-04",
-    "content": "Analyse critique et sans concession de la publication officielle de Think with Google (septembre 2026) par Brendon Kraham (VP Search & Commerce). Pourquoi le simple bon SEO traditionnel ne suffira pas à sauver votre visibilité e-commerce face au Mode IA et aux AI Overviews.\n\nPrestaShop Remark: Enrichissez immédiatement vos flux Google Merchant Center (product_highlight, lifestyle_image_link, hasMerchantReturnPolicy) et vos schémas JSON-LD pour exister dans le Google Shopping Graph.",
-    "sourceUrl": "https://business.google.com/fr/think/search-and-video/ai-search-era-brand-authority-strategy/",
-    "sourceName": "Lefi Abdelmonem (Analyse Critique Google Think)",
-    "status": "published",
-    "slug": "prestashop-google-ai-search-brand-authority",
-    "image": "prestashop_google_ai_search_cover.jpg"
   }
 ]
