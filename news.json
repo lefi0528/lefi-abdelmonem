@@ -1,5 +1,15 @@
 [
   {
+    "id": "art-1790214817414-ai",
+    "category": "ai",
+    "title": "Everything new coming to Meta’s AI agent Muse",
+    "date": "2026-09-24",
+    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
+    "sourceUrl": "",
+    "sourceName": "",
+    "status": "draft"
+  },
+  {
     "id": "art-1790129141852-ai",
     "category": "ai",
     "title": "TechCrunch Founder Summit’s agenda revealed: Unlock fundraising, hiring, and ...",
@@ -135,16 +145,6 @@
     "title": "Google Rolls Out Redesigned Search Results Across The EEA via @sejournal, @Ma...",
     "date": "2026-09-09",
     "content": "The latest Google Search core algorithm updates of 2026 have pushed traditional keyword stuffing completely out of search relevancy. Contextual semantic matching, schema structural metadata (JSON-LD), and pristine Interaction to Next Paint (INP) performance scores are now the ultimate ranking signals.\n\nPrestaShop Remark: Embed JSON-LD schema tags on product pages and leverage advanced semantic SEO platforms to secure your rankings.",
-    "sourceUrl": "",
-    "sourceName": "",
-    "status": "draft"
-  },
-  {
-    "id": "art-1788831798651-ai",
-    "category": "ai",
-    "title": "Le Creuset x Star Trek Collection: Prices, availability, release date",
-    "date": "2026-09-08",
-    "content": "At the recent Google I/O 2026 event, the introduction of the WebMCP (Web Model Context Protocol) standard has enabled autonomous AI agents to interact directly with web applications. Webpages can now expose client-side JavaScript tools and forms to browser-based AI models, creating a seamless bridge between static web content and active agentic execution.\n\nPrestaShop Remark: Leverage WebMCP-ready modules to prepare your cart actions for automated AI crawler buyers.",
     "sourceUrl": "",
     "sourceName": "",
     "status": "draft"
