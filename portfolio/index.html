@@ -280,33 +280,33 @@
           
           <!-- Étude de cas 1 -->
           <div class="case-detail-card" style="border-left: 4px solid var(--accent-seo);">
-            <h3 style="color: var(--accent-seo);">🚀 Optimisation Core Web Vitals & Temps de Chargement sur PrestaShop 8</h3>
+            <h3 style="color: var(--accent-seo);">🚀 Optimisation de la Vitesse & Performance sur PrestaShop 8</h3>
             <div class="case-meta-list">
               <div><strong>Plateforme :</strong> PrestaShop 8.1</div>
               <div><strong>Secteur :</strong> Mode & Accessoires (France)</div>
-              <div><strong>Périmètre :</strong> Audit de vitesse, refonte templates & cache</div>
+              <div><strong>Périmètre :</strong> Audit de performance, refonte templates & cache</div>
               <div><strong>Rôle :</strong> Consultant SEO technique & développeur</div>
             </div>
             
             <div class="case-subheading"><span>🔍</span> Problème Initial & Diagnostic</div>
-            <p>Temps de chargement mobile excessif constaté (> 4,5 s), Largest Contentful Paint (LCP) dégradé et signaux Core Web Vitals au rouge dans Google Search Console. L'audit a révélé un blocage au rendu lié à 6 scripts tiers synchrones dans l'en-tête, 14 requêtes SQL redondantes dans la boucle catalogue et l'absence de compression WebP native pour les images produits.</p>
+            <p>Temps de chargement mobile excessif constaté (> 4,5 s mesuré en test de laboratoire), Largest Contentful Paint (LCP) dégradé et signaux Core Web Vitals en alerte dans Google Search Console pénalisant l'expérience utilisateur. L'audit a révélé un blocage au rendu lié à la présence de scripts tiers synchrones dans l'en-tête, des requêtes SQL superflues dans la boucle catalogue et l'absence de compression WebP native pour les images produits.</p>
             
             <div class="case-subheading"><span>⚙️</span> Actions Réalisées</div>
             <p>Intervention directe dans le thème enfant et la configuration serveur :</p>
             <ul>
-              <li>Déférencement et chargement asynchrone / différé des scripts JS tiers.</li>
+              <li>Chargement différé (defer) et exécution asynchrone (async) des scripts JavaScript tiers non critiques.</li>
               <li>Mise en place d'un pipeline de conversion d'images en WebP natif avec balises &lt;picture&gt;.</li>
-              <li>Optimisation du cache opcode PHP et purge des requêtes SQL superflues dans les contrôleurs de listes de produits.</li>
+              <li>Optimisation du cache opcode PHP et purge des requêtes SQL redondantes dans les contrôleurs de listes de produits.</li>
               <li>Réduction du Cumulative Layout Shift (CLS) par assignation systématique des attributs width et height sur les médias.</li>
             </ul>
 
             <div class="case-result-box" style="margin-top: 16px;">
-              <div class="case-block-label"><span>📈</span> Résultats Mesurés</div>
-              <p><strong>Score Lighthouse Lab mobile :</strong> passage de 42 à 94/100. <strong>LCP mesuré en laboratoire :</strong> 1,1 s. Seuil "Bon" validé sur l'ensemble des indicateurs de test.</p>
+              <div class="case-block-label"><span>📈</span> Résultats de Test en Laboratoire</div>
+              <p><strong>Test de laboratoire (profil mobile standardisé) :</strong> progression du score synthétique de 42 à 94/100 lors des audits de contrôle Lighthouse. Réduction notable du temps de rendu visuel de la page produit.</p>
             </div>
             
             <div class="case-limits-box" style="margin-top: 12px;">
-              <p><strong>Limites d'interprétation :</strong> Les scores synthétiques Lighthouse reflètent un environnement de test standardisé (profil réseau 4G émulé). Les métriques de terrain réelles (CrUX) dépendent de la connectivité et des terminaux effectifs des utilisateurs.</p>
+              <p><strong>Distinction méthodologique essentielle :</strong> Ce score reflète un environnement de laboratoire émulé (profil réseau 4G standardisé). Il ne préjuge pas de la validation des signaux Core Web Vitals réels de terrain (données CrUX / Search Console sur 28 jours), qui dépendent de la connectivité et des terminaux effectifs des visiteurs.</p>
             </div>
           </div>
 
@@ -321,23 +321,23 @@
             </div>
             
             <div class="case-subheading"><span>🔍</span> Problème Initial & Diagnostic</div>
-            <p>Désindexation progressive de plusieurs milliers de fiches produits suite à une refonte d'arborescence mal configurée : multiplication de boucles de redirection 301, conflits de balises canoniques et prolifération d'URLs dupliquées générées par le module de navigation à facettes.</p>
+            <p>Désindexation importante de fiches produits suite à une refonte d'arborescence : multiplication de chaînes de redirections 301, conflits de balises canoniques et prolifération d'URLs dupliquées générées par le module de navigation à facettes.</p>
             
             <div class="case-subheading"><span>⚙️</span> Actions Réalisées</div>
             <ul>
-              <li>Restructuration intégrale de la table de routage d'URLs et résolution des chaînes de redirection 301 dans le .htaccess et le Dispatcher.</li>
-              <li>Neutralisation des facettes sans valeur SEO via l'application de balises noindex ciblées et la directive Disallow appropriée dans robots.txt.</li>
+              <li>Restructuration intégrale de la table de routage d'URLs et résolution des boucles de redirection 301.</li>
+              <li>Gestion différenciée des facettes : application de balises noindex sur les combinaisons explorables sans pertinence SEO pour les désindexer proprement, et règles d'exclusion ciblées dans robots.txt sur les filtres complexes pour préserver le budget de crawl.</li>
               <li>Harmonisation des balises canoniques pointant systématiquement vers l'URL maîtresse de chaque produit.</li>
-              <li>Génération et soumission d'un sitemap XML segmenté par catégorie pour fluidifier le passage des robots.</li>
+              <li>Génération et soumission d'un sitemap XML segmenté par catégorie pour faciliter la découverte des URLs prioritaires par Googlebot.</li>
             </ul>
 
             <div class="case-result-box" style="margin-top: 16px;">
               <div class="case-block-label"><span>📈</span> Résultats Mesurés</div>
-              <p>Résorption de 100% des erreurs d'exploration critiques signalées dans Google Search Console. Rétablissement progressif d'une fréquence de crawl normale par Googlebot sous 3 semaines.</p>
+              <p>Résorption progressive des erreurs d'exploration majeures signalées dans Google Search Console et reprise du passage régulier de Googlebot sur les catégories et fiches produits prioritaires.</p>
             </div>
             
             <div class="case-limits-box" style="margin-top: 12px;">
-              <p><strong>Limites d'interprétation :</strong> Le rythme de réindexation et la reprise du trafic dépendent du calendrier de passage de Googlebot et de la saisonnalité de la demande sur les gammes de mobilier concernées.</p>
+              <p><strong>Limites d'interprétation :</strong> Le rythme de réindexation et la reprise du trafic dépendent du calendrier de passage de Googlebot et de la saisonnalité de la demande sur les gammes de mobilier concernées. La soumission d'un sitemap facilite la découverte mais ne constitue pas une garantie d'indexation automatique.</p>
             </div>
           </div>
 
@@ -352,23 +352,23 @@
             </div>
             
             <div class="case-subheading"><span>🔍</span> Problème Initial & Diagnostic</div>
-            <p>Boutique compromise un dimanche soir via l'injection de scripts malveillants ciblant les passerelles de paiement. Suspension immédiate du compte d'hébergement pour risque de sécurité et avertissement d'accès sur les navigateurs web.</p>
+            <p>Boutique compromise un dimanche soir via l'injection de scripts malveillants ciblant les passerelles de commande et paiement. Suspension immédiate du compte d'hébergement pour risque de sécurité et avertissement d'accès sur les navigateurs web.</p>
             
             <div class="case-subheading"><span>⚙️</span> Actions Réalisées</div>
             <ul>
-              <li>Localisation de la porte dérobée exploitée dans un module tiers non maintenu et isolation immédiate.</li>
-              <li>Scan et nettoyage complet des fichiers sources du CMS et des tables de la base de données infectées.</li>
-              <li>Régénération intégrale des clés secrètes (_COOKIE_KEY_) et des mots de passe d'administration et de base de données.</li>
+              <li>Identification et neutralisation des vecteurs malveillants injectés dans les extensions tierces.</li>
+              <li>Scan et nettoyage approfondi des fichiers sources du CMS et des tables de la base de données infectées.</li>
+              <li>Régénération intégrale des clés secrètes (_COOKIE_KEY_) et des identifiants d'administration et de base de données.</li>
               <li>Mise en place de règles de filtrage applicatif (WAF) au niveau du serveur pour bloquer les tentatives de traversal et d'injection SQL.</li>
             </ul>
 
             <div class="case-result-box" style="margin-top: 16px;">
               <div class="case-block-label"><span>📈</span> Résultats Mesurés</div>
-              <p>Boutique décontaminée et remise en production en moins de 2 heures. Suspension hébergeur levée et intégrité de la base de données préservée sans fuite constatée.</p>
+              <p>Boutique décontaminée et remise en production en environ deux heures (délai d'interruption total rapporté par le marchand). Suspension hébergeur levée avec succès.</p>
             </div>
             
             <div class="case-limits-box" style="margin-top: 12px;">
-              <p><strong>Limites d'interprétation :</strong> La décontamination d'urgence élimine la menace active. La sécurité à long terme requiert le suivi rigoureux des correctifs de sécurité de PrestaShop et de l'ensemble des modules tiers.</p>
+              <p><strong>Limites d'interprétation :</strong> La décontamination d'urgence élimine la menace active et rétablit l'exploitation. La sécurité à long terme requiert le suivi rigoureux des correctifs de sécurité de PrestaShop et de l'ensemble des modules tiers.</p>
             </div>
           </div>
 
@@ -377,14 +377,14 @@
             Mes prestations font l'objet d'évaluations publiques et vérifiables sur les plateformes professionnelles reconnues :
           </p>
           <ul>
+            <li><strong>Malt :</strong> Profil certifié <a href="https://www.malt.fr/profile/abdelmonemlefi" target="_blank" rel="noopener" style="color: #ff5a45; font-weight: 600;">abdelmonemlefi</a> avec retours d'expérience clients authentifiés (notamment Noël Dumortier et Ferdinand Aroulnadane).</li>
             <li><strong>Fiverr :</strong> Prestataire Top Rated sous le profil <a href="https://www.fiverr.com/genisoft0528" target="_blank" rel="noopener" style="color: #1dbf73; font-weight: 600;">genisoft0528</a> avec avis clients vérifiés et commandes clôturées.</li>
             <li><strong>France Num :</strong> Référencé dans l'annuaire gouvernemental en tant qu'<a href="https://www.francenum.gouv.fr/activateurs/genisoft" target="_blank" rel="noopener" style="color: var(--accent-seo); font-weight: 600;">Activateur France Num (GENISOFT)</a>.</li>
             <li><strong>Codeur.com :</strong> Profil vérifié <a href="https://www.codeur.com/-genisoft-web" target="_blank" rel="noopener" style="color: #00a8ff; font-weight: 600;">genisoft-web</a>.</li>
-            <li><strong>Malt :</strong> Profil certifié <a href="https://www.malt.fr/profile/abdelmonemlefi" target="_blank" rel="noopener" style="color: #ff5a45; font-weight: 600;">abdelmonemlefi</a> avec retours d'expérience clients authentifiés (notamment Noël Dumortier et Ferdinand Aroulnadane).</li>
           </ul>
 
           <div class="article-remark-block">
-            <strong>💡 Engagement de transparence :</strong> Les chiffres et résultats présentés sont issus de données de mesure réelles (Google Search Console, Google Lighthouse, logs serveur). Aucune garantie arbitraire de positionnement n'est promise : la visibilité SEO est le fruit d'un assainissement technique rigoureux et continu.
+            <strong>💡 Engagement méthodologique :</strong> Les interventions présentées s'appuient sur des données d'observation techniques (tests de laboratoire, rapports d'exploration Search Console, logs serveur). Conformément aux recommandations de Google Search Essentials, aucune garantie arbitraire de positionnement ou de trafic n'est formulée : le référencement naturel pérenne repose sur la rigueur d'assainissement du code et la conformité continue aux critères d'indexation.
           </div>
         
         </div>

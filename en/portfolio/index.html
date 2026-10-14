@@ -289,24 +289,24 @@
             </div>
             
             <div class="case-subheading"><span>🔍</span> Initial Problem &amp; Diagnostic</div>
-            <p>Excessive mobile load times detected (&gt; 4.5s), severely degraded Largest Contentful Paint (LCP), and failing Core Web Vitals status in Google Search Console. The audit revealed render-blocking overhead caused by 6 synchronous third-party scripts in the header, 14 redundant SQL queries in the catalog loop, and the absence of modern native WebP compression for product imagery.</p>
+            <p>Excessive mobile load times detected (&gt; 4.5s), degraded Largest Contentful Paint (LCP) in synthetic testing, and page experience warnings in Google Search Console. The audit revealed render-blocking third-party scripts, unoptimized database queries in product listing loops, and missing modern format compression (WebP).</p>
             
             <div class="case-subheading"><span>⚙️</span> Actions Implemented</div>
             <p>Direct intervention within the child theme and server environment:</p>
             <ul>
-              <li>Deferred and asynchronous loading of non-critical third-party JavaScript libraries.</li>
-              <li>Engineered a native WebP image conversion pipeline utilizing responsive &lt;picture&gt; elements.</li>
-              <li>Tuned PHP opcode caching and eradicated redundant database queries in product listing controllers.</li>
-              <li>Eliminated Cumulative Layout Shift (CLS) by systematically applying explicit width and height attributes across all media assets.</li>
+              <li>Deferred and asynchronous loading (defer/async) of non-critical third-party scripts.</li>
+              <li>Conversion and compression of product visuals to WebP format with responsive &lt;picture&gt; elements.</li>
+              <li>Cache configuration and suppression of unoptimized database queries in product templates.</li>
+              <li>Elimination of Cumulative Layout Shift (CLS) by systematically setting width and height dimensions on all images and media assets.</li>
             </ul>
 
             <div class="case-result-box" style="margin-top: 16px;">
               <div class="case-block-label"><span>📈</span> Measured Results</div>
-              <p><strong>Mobile Lab Lighthouse score:</strong> improved from 42 to 94/100. <strong>Measured Lab LCP:</strong> reduced to 1.1s. Successfully achieved "Good" threshold across all Core Web Vitals synthetic benchmarks.</p>
+              <p><strong>Mobile synthetic Lighthouse lab score:</strong> improved from 42 to 94/100 under standardized mobile test conditions. Significant reduction in synthetic LCP and stabilization of visual shifts (CLS).</p>
             </div>
             
             <div class="case-limits-box" style="margin-top: 12px;">
-              <p><strong>Interpretation Limits:</strong> Synthetic Lighthouse lab scores reflect a standardized testing profile (emulated fast 4G network). Actual Field metrics (Chrome UX Report / CrUX) depend on real-world visitor connectivity and client hardware capabilities.</p>
+              <p><strong>Interpretation Limits:</strong> The Lighthouse mobile score is a synthetic lab measurement under simulated 4G throttling. It does not replace Real User Monitoring (CrUX / Core Web Vitals) across diverse visitor devices and network connections.</p>
             </div>
           </div>
 
@@ -321,23 +321,23 @@
             </div>
             
             <div class="case-subheading"><span>🔍</span> Initial Problem &amp; Diagnostic</div>
-            <p>Substantial de-indexing of several thousand product sheets following a misconfigured catalog restructuring: infinite 301 redirection loops, conflicting canonical tags, and widespread URL duplication produced by layered navigation facets.</p>
+            <p>Substantial crawl anomalies and de-indexing risks following a catalog restructuring: circular 301 redirection chains, conflicting canonical tags, and crawling budget dispersion caused by faceted navigation filters.</p>
             
             <div class="case-subheading"><span>⚙️</span> Actions Implemented</div>
             <ul>
-              <li>Comprehensive rewrite of the URL routing table, eliminating circular 301 redirect loops in .htaccess and the Dispatcher controller.</li>
-              <li>Neutralized low-value facet combinations by injecting targeted noindex directives and appropriate Disallow rules in robots.txt.</li>
-              <li>Standardized canonical tags to consistently reference the primary master product URL.</li>
-              <li>Generated and deployed a paginated XML sitemap segmented by product families to streamline Googlebot crawl efficiency.</li>
+              <li>Comprehensive audit and remediation of 301 redirection rules at the web server level.</li>
+              <li>Systematic implementation of noindex meta tags on crawlable low-value filter pages, and robots.txt Disallow directives reserved for infinite parameter combinations (ensuring crawlers do not block noindex detection).</li>
+              <li>Alignment of canonical tags pointing consistently to master category and product URLs.</li>
+              <li>Generation of a clean, structured XML sitemap submitted to Google Search Console.</li>
             </ul>
 
             <div class="case-result-box" style="margin-top: 16px;">
               <div class="case-block-label"><span>📈</span> Measured Results</div>
-              <p>Eliminated 100% of critical crawl errors reported in Google Search Console. Steady recovery of normal Googlebot crawl frequency accomplished within 3 weeks.</p>
+              <p><strong>Google Search Console health:</strong> elimination of priority crawl errors reported in Google Search Console, normalization of server response codes, and restored crawler indexing efficiency.</p>
             </div>
             
             <div class="case-limits-box" style="margin-top: 12px;">
-              <p><strong>Interpretation Limits:</strong> Organic re-indexing timelines and traffic recovery depend on Googlebot crawl schedules and seasonal market demand across the specific furniture lines.</p>
+              <p><strong>Interpretation Limits:</strong> Crawl frequency and indexation updates depend on Googlebot crawling cycles and market seasonality across specific product lines.</p>
             </div>
           </div>
 
@@ -352,23 +352,23 @@
             </div>
             
             <div class="case-subheading"><span>🔍</span> Initial Problem &amp; Diagnostic</div>
-            <p>Store compromised on a Sunday evening via malicious script injection targeting payment gateway modules. Immediate emergency hosting suspension enacted and security warnings displayed across web browsers.</p>
+            <p>Emergency store compromise on a weekend via an exploited security vulnerability in a third-party module. Automated hosting suspension and browser warning banners.</p>
             
             <div class="case-subheading"><span>⚙️</span> Actions Implemented</div>
             <ul>
-              <li>Isolated the exploited backdoor located within an unmaintained legacy third-party module.</li>
-              <li>Executed comprehensive forensic scanning and cleansing of core CMS files and infected database tables.</li>
-              <li>Regenerated all encryption keys (_COOKIE_KEY_) alongside administrative and database access credentials.</li>
-              <li>Configured application-level Web Application Firewall (WAF) filtering to defend against path traversal and SQL injection vectors.</li>
+              <li>Identification and isolation of the vulnerable third-party module entry point.</li>
+              <li>Thorough scan and forensic disinfection of server files and database tables.</li>
+              <li>Regeneration of CMS authentication keys (_COOKIE_KEY_), administrative passwords, and database credentials.</li>
+              <li>Deployment of WAF rules and .htaccess access restrictions to protect critical admin and API endpoints.</li>
             </ul>
 
             <div class="case-result-box" style="margin-top: 16px;">
               <div class="case-block-label"><span>📈</span> Measured Results</div>
-              <p>Store fully sanitized and restored to production in under 2 hours. Hosting suspension lifted, and database customer integrity maintained with zero confirmed data leaks.</p>
+              <p><strong>Production restore &amp; containment:</strong> store sanitized, secured, and restored to production in under 2 hours (documented client review). Hosting block lifted, access secured, and transaction pipeline reinstated.</p>
             </div>
             
             <div class="case-limits-box" style="margin-top: 12px;">
-              <p><strong>Interpretation Limits:</strong> Emergency intervention removes the immediate active threat. Sustained security necessitates continuous application of PrestaShop core updates and third-party module patches.</p>
+              <p><strong>Interpretation Limits:</strong> Incident remediation removes the active breach; ongoing platform integrity requires continuous security patch management for PrestaShop core and modules.</p>
             </div>
           </div>
 
@@ -384,7 +384,7 @@
           </ul>
 
           <div class="article-remark-block">
-            <strong>💡 Transparency Commitment:</strong> All figures and outcomes presented reflect actual diagnostic data (Google Search Console, Google Lighthouse, server logs). No arbitrary ranking guarantees are made: sustainable organic search visibility is achieved through rigorous, ongoing technical remediation.
+            <strong>💡 Transparency Commitment:</strong> All published metrics correspond to verified diagnostic tools (Google Search Console, synthetic Lighthouse tests, server logs) or explicit client feedback. No artificial guarantees: sustainable organic visibility is achieved through continuous technical diligence and verified implementations.
           </div>
         
         </div>

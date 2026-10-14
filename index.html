@@ -558,7 +558,7 @@
   <!-- SEO Case Studies Section -->
   <section class="cases-section" id="cases" style="padding: 60px 0;">
     <div class="container">
-      <div class="section-label">Preuves & Réalisations</div>
+      <div class="section-label">Études de Cas</div>
       <h2 class="section-title">Études de Cas SEO & Interventions Techniques</h2>
       <p style="color: var(--text-secondary); max-width: 680px; margin-bottom: 24px;">
         Chaque projet fait l'objet d'un diagnostic rigoureux, d'une intervention ciblée dans le code et d'une mesure des résultats sans extrapolation.
@@ -569,27 +569,27 @@
         <div class="glass-card case-card">
           <div class="case-header">
             <span class="case-badge badge-seo">SEO Technique & Vitesse</span>
-            <h3 class="case-title">Optimisation Core Web Vitals sur PrestaShop 8</h3>
+            <h3 class="case-title">Optimisation de la Vitesse & Performance sur PrestaShop 8</h3>
             <div class="case-meta-tag">
               <span><strong>Plateforme :</strong> PrestaShop 8.1</span>
               <span><strong>Secteur :</strong> Mode & Accessoires (France)</span>
-              <span><strong>Périmètre :</strong> Audit technique, optimisation des templates & mise en cache</span>
+              <span><strong>Périmètre :</strong> Audit de performance, optimisation des templates & mise en cache</span>
             </div>
           </div>
           <div class="case-block">
             <div class="case-block-label"><span>🔍</span> Problème Initial & Diagnostic</div>
-            <p>Temps de chargement mobile excessif (> 4,5 s), Largest Contentful Paint (LCP) dégradé et signaux Core Web Vitals au rouge dans Google Search Console, limitant l'indexation mobile-first.</p>
+            <p>Temps de chargement mobile excessif (> 4,5 s mesuré en test de laboratoire), Largest Contentful Paint (LCP) dégradé et signaux Core Web Vitals en alerte dans Google Search Console pénalisant l'expérience utilisateur.</p>
           </div>
           <div class="case-block">
             <div class="case-block-label"><span>⚙️</span> Rôle Personnel & Actions</div>
-            <p>Intervention directe dans le thème enfant : report du chargement des scripts JS tiers, refonte du pipeline d'images en WebP natif, optimisation du cache opcode et suppression de 14 requêtes SQL redondantes dans le catalogue.</p>
+            <p>Intervention directe dans le thème enfant : chargement différé et asynchrone des scripts JS tiers non critiques, refonte du pipeline d'images en WebP natif, optimisation du cache opcode et purge des requêtes SQL superflues dans les contrôleurs de listes de produits.</p>
           </div>
           <div class="case-result-box">
-            <div class="case-block-label"><span>📈</span> Résultats Mesurés</div>
-            <p><strong>Score Lighthouse Lab mobile :</strong> passage de 42 à 94/100. <strong>LCP mesuré :</strong> 1,1 s en laboratoire. Validation du seuil "Bon" sur les Core Web Vitals.</p>
+            <div class="case-block-label"><span>📈</span> Résultats de Test en Laboratoire</div>
+            <p><strong>Test de laboratoire (profil mobile standardisé) :</strong> progression du score synthétique de 42 à 94/100 lors des audits de contrôle Lighthouse. Réduction notable du temps de rendu visuel de la page produit.</p>
           </div>
           <div class="case-limits-box">
-            <p><strong>Limite d'interprétation :</strong> Les scores Lighthouse synthétiques reflètent un environnement de test standardisé. Les données de terrain réelles (CrUX) dépendent de la connexion et des terminaux des visiteurs.</p>
+            <p><strong>Distinction méthodologique essentielle :</strong> Ce score reflète un environnement de laboratoire émulé. Il ne préjuge pas de la validation des signaux Core Web Vitals réels de terrain (données CrUX / Search Console sur 28 jours), qui dépendent de la connectivité et des terminaux réels des visiteurs.</p>
           </div>
         </div>
 
@@ -606,18 +606,18 @@
           </div>
           <div class="case-block">
             <div class="case-block-label"><span>🔍</span> Problème Initial & Diagnostic</div>
-            <p>Désindexation massive de fiches produits suite à une migration de sous-catégories mal configurée : boucles de redirection 301, conflits canoniques et multiplication d'URLs dupliquées via les facettes.</p>
+            <p>Désindexation importante de fiches produits consécutive à une restructuration d'arborescence : chaînes de redirections 301, conflits de balises canoniques et prolifération d'URLs dupliquées via la navigation à facettes.</p>
           </div>
           <div class="case-block">
             <div class="case-block-label"><span>⚙️</span> Rôle Personnel & Actions</div>
-            <p>Correction complète du routeur d'URLs, purge des boucles 301 dans le .htaccess et le contrôleur Dispatcher, balisage noindex sur les filtres sans valeur SEO et soumission d'un sitemap XML segmenté par famille de produits.</p>
+            <p>Restructuration du plan de redirections pour supprimer les boucles 301, harmonisation des balises canoniques pointant vers l'URL maîtresse de chaque produit, et gestion différenciée des facettes : application de balises noindex sur les combinaisons explorables sans pertinence SEO, et règles d'exclusion ciblées dans robots.txt sur les filtres complexes pour préserver le budget de crawl. Déploiement d'un sitemap XML segmenté par famille de produits.</p>
           </div>
           <div class="case-result-box">
             <div class="case-block-label"><span>📈</span> Résultats Mesurés</div>
-            <p>Élimination de 100% des erreurs d'exploration critiques signalées dans GSC. Rétablissement progressif du crawl régulier par Googlebot sous 3 semaines.</p>
+            <p>Résorption progressive des erreurs d'exploration majeures signalées dans Google Search Console et reprise du passage régulier de Googlebot sur les pages prioritaires.</p>
           </div>
           <div class="case-limits-box">
-            <p><strong>Limite d'interprétation :</strong> Le rétablissement du trafic dépend du rythme de passage de Googlebot et de la demande saisonnière des consommateurs sur les gammes concernées.</p>
+            <p><strong>Limites d'interprétation :</strong> La vitesse d'exploration et la reprise du trafic dépendent du calendrier de passage de Googlebot et de la saisonnalité de la demande. La soumission d'un sitemap facilite la découverte mais ne constitue pas une garantie d'indexation automatique.</p>
           </div>
         </div>
 
@@ -629,23 +629,23 @@
             <div class="case-meta-tag">
               <span><strong>Plateforme :</strong> PrestaShop 1.7 / cPanel</span>
               <span><strong>Secteur :</strong> Distribution B2B (Belgique)</span>
-              <span><strong>Périmètre :</strong> Décontamination, colmatage de vulnérabilité & durcissement</span>
+              <span><strong>Périmètre :</strong> Décontamination d'urgence, colmatage de vulnérabilité & durcissement</span>
             </div>
           </div>
           <div class="case-block">
             <div class="case-block-label"><span>🔍</span> Problème Initial & Diagnostic</div>
-            <p>Boutique compromise un dimanche soir par injection de scripts malveillants dans les modules de paiement, blocage préventif immédiat par l'hébergeur et avertissement de sécurité sur Google Chrome.</p>
+            <p>Boutique compromise un dimanche soir par injection de scripts malveillants ciblant les composants de commande et paiement, suspension préventive immédiate par l'hébergeur pour risque de sécurité.</p>
           </div>
           <div class="case-block">
             <div class="case-block-label"><span>⚙️</span> Rôle Personnel & Actions</div>
-            <p>Identification de la porte dérobée dans un module tiers abandonné, nettoyage intégral des tables et fichiers infectés, régénération des clés de chiffrement et configuration d'un pare-feu applicatif (WAF).</p>
+            <p>Identification et neutralisation des scripts malveillants injectés, nettoyage approfondi des fichiers du CMS et des tables de la base de données, régénération complète des clés de chiffrement (_COOKIE_KEY_) et des accès d'administration et BDD, et configuration de règles de filtrage applicatif (WAF) au niveau serveur.</p>
           </div>
           <div class="case-result-box">
             <div class="case-block-label"><span>📈</span> Résultats Mesurés</div>
-            <p>Boutique réouverte et opérationnelle en moins de 2 heures. Levée de la suspension de l'hébergeur et intégrité de la base clients préservée sans fuite de données.</p>
+            <p>Boutique décontaminée et remise en production en environ deux heures (délai d'interruption rapporté par le marchand). Suspension d'hébergement levée avec succès.</p>
           </div>
           <div class="case-limits-box">
-            <p><strong>Limite d'interprétation :</strong> L'intervention d'urgence supprime la menace active. La sécurité à long terme exige le maintien régulier des correctifs du CMS et des modules.</p>
+            <p><strong>Limites d'interprétation :</strong> L'intervention d'urgence élimine la menace active et rétablit l'exploitation. La sécurité pérenne requiert l'application régulière des correctifs officiels du CMS et des modules tiers.</p>
           </div>
         </div>
       </div>
@@ -671,7 +671,7 @@
           <div class="service-icon-box">📊</div>
           <h3>SEO Technique E-Commerce <span class="arrow">→</span></h3>
           <p>
-            Audit structurel complet de votre boutique : résorption des blocages de crawl, harmonisation des balises canoniques, optimisation de la pagination et de la navigation à facettes, et mise en place de données structurées Schema.org pour le Google Shopping Graph.
+            Audit structurel complet de votre boutique : résorption des blocages de crawl, harmonisation des balises canoniques, optimisation de la pagination et de la navigation à facettes, et mise en place de données structurées Schema.org conformes aux recommandations Google pour les fiches produits.
           </p>
           <div class="card-visual-sim">
             <div class="seo-graph-sim">
@@ -693,7 +693,7 @@
           <div class="service-icon-box">🛒</div>
           <h3>Développement & Cœur PrestaShop <span class="arrow">→</span></h3>
           <p>
-            Spécialiste du cœur PrestaShop (versions 1.7 et 8+). Conception et débogage de modules sur-mesure, optimisation des requêtes SQL lourdes, personnalisation de thèmes enfants sans altérer les fichiers natifs et fluidification du tunnel de commande.
+            Spécialiste de l'architecture PrestaShop (versions 1.7 et 8+). Conception et débogage de modules sur-mesure, optimisation des requêtes de base de données, personnalisation de thèmes enfants sans altérer les fichiers natifs et fluidification du tunnel de commande.
           </p>
           <div class="card-visual-sim">
             <div class="dev-speed-sim">
@@ -722,7 +722,7 @@
           <div class="card-visual-sim">
             <div class="sec-scan-line"></div>
             <div class="sec-code-matrix">
-              SYS_SECURE: OK // WAF_ACTIVE // PARAMS_SANITIZED // HTTPS_STRICT
+              Protection Serveur &amp; Filtrage Applicatif
             </div>
           </div>
           <a href="#contact" class="service-footer-link">
@@ -741,7 +741,7 @@
           <div class="card-visual-sim">
             <div class="ai-flow-node-line"></div>
             <div class="sec-code-matrix" id="aiSimText">
-              [AI] Structured Data Ready... [WebMCP] Compliant!
+              Données Structurées Schema.org &amp; Protocoles Web
             </div>
           </div>
           <a href="#fexa" class="service-footer-link">
@@ -800,7 +800,7 @@
       </div>
 
       <div class="method-notice-card">
-        <strong>Engagement déontologique :</strong> Aucun consultant sérieux ne peut garantir une première position sur Google ni un délai arbitraire d'indexation. Mon engagement repose sur la rigueur de la méthode, l'élimination prouvée des erreurs techniques et le respect strict des directives officielles pour les webmasters.
+        <strong>Engagement déontologique :</strong> Conformément aux recommandations de Google Search Essentials, je ne formule aucune promesse arbitraire de première position ou de délai d'indexation. Mon engagement repose sur une méthode rigoureuse, la correction démontrable des blocages techniques dans le code et un suivi transparent des indicateurs.
       </div>
     </div>
   </section>
@@ -823,8 +823,8 @@
           </p>
           <ul class="fexa-features-list">
             <li><span class="fexa-check">✓</span> <span><strong>Génération et optimisation des métadonnées :</strong> Titres SEO et méta-descriptions respectant les contraintes de calibrage et évitant le contenu dupliqué sur les déclinaisons produits.</span></li>
-            <li><span class="fexa-check">✓</span> <span><strong>Enrichissement des données structurées :</strong> Génération de schémas JSON-LD Product & Breadcrumb conformes aux exigences du Google Shopping Graph.</span></li>
-            <li><span class="fexa-check">✓</span> <span><strong>Contrôle éditorial humain :</strong> Chaque proposition est vérifiable et modifiable avant application, garantissant l'absence d'hallucination ou de non-conformité.</span></li>
+            <li><span class="fexa-check">✓</span> <span><strong>Enrichissement des données structurées :</strong> Génération de schémas JSON-LD (Product, BreadcrumbList) conformes aux spécifications Schema.org et aux recommandations Google pour les fiches marchandes.</span></li>
+            <li><span class="fexa-check">✓</span> <span><strong>Contrôle éditorial humain :</strong> Chaque proposition peut être relue, corrigée et validée avant application. Ce contrôle permet de repérer et de corriger les erreurs éventuelles.</span></li>
           </ul>
           <div style="margin-top: 24px;">
             <a href="https://fexaai.com" target="_blank" rel="noopener" class="btn-primary" style="gap: 8px;">
@@ -905,10 +905,10 @@
   <!-- Interactive SEO Auditor (Lead Magnet) -->
   <section class="seo-tool-section" id="seo-tool">
     <div class="container">
-      <div class="section-label">Outil Gratuit</div>
-      <h2 class="section-title">Auditeur SEO & Simulateur de Snippet Google</h2>
+      <div class="section-label">Outil d'Aide à la Rédaction</div>
+      <h2 class="section-title">Simulateur de Snippet Google & Calibrage Métadonnées</h2>
       <p style="color: var(--text-secondary); max-width: 600px; margin-bottom: 40px;">
-        Visualisez précisément comment les robots d'indexation lisent vos métadonnées. Renseignez vos balises et rédigez un extrait de texte avec votre mot-clé cible pour calculer votre densité sémantique en temps réel.
+        Visualisez le calibrage indicatif de vos métadonnées de page. Renseignez vos balises et saisissez un extrait de texte pour mesurer la fréquence d'apparition de votre mot-clé cible sans sur-optimisation.
       </p>
 
       <div class="glass-card seo-tool-wrapper">
@@ -916,7 +916,7 @@
         <form id="seoForm" class="tool-controls" onsubmit="return false;" data-webmcp-tool="analyzeSeoMetadata">
           <div class="form-group">
             <label for="seoTitleInput">Titre de la Page (Balise Title)</label>
-            <input type="text" id="seoTitleInput" class="form-control" placeholder="Ex : Expert PrestaShop et Consultant SEO - Lefi Abdelmonem" value="Expert PrestaShop et Consultant SEO - Lefi Abdelmonem">
+            <input type="text" id="seoTitleInput" class="form-control" placeholder="Ex : Consultant SEO PrestaShop & Optimisation E-Commerce — Abdelmonem Lefi" value="Consultant SEO PrestaShop & Optimisation E-Commerce — Abdelmonem Lefi">
           </div>
           
           <div class="form-group">
@@ -926,7 +926,7 @@
 
           <div class="form-group">
             <label for="seoDescInput">Description (Balise Meta Description)</label>
-            <textarea id="seoDescInput" class="form-control" placeholder="Ex : Lefi Abdelmonem, expert PrestaShop, consultant SEO et cybersécurité e-commerce. Audit et développement sur-mesure.">Lefi Abdelmonem, expert PrestaShop, consultant SEO et cybersécurité e-commerce. Audit et développement sur-mesure.</textarea>
+            <textarea id="seoDescInput" class="form-control" placeholder="Ex : Consultant SEO spécialisé PrestaShop. Audit technique dans le code, amélioration de la vitesse mobile, résolution des blocages d'indexation et sécurisation.">Consultant SEO spécialisé PrestaShop. Audit technique dans le code, amélioration de la vitesse mobile, résolution des blocages d'indexation et sécurisation.</textarea>
           </div>
 
           <div class="form-group">
@@ -935,8 +935,8 @@
           </div>
 
           <div class="form-group">
-            <label for="seoContentInput">Extrait de Contenu (pour calculer la Densité)</label>
-            <textarea id="seoContentInput" class="form-control" placeholder="Collez ici un paragraphe de votre page web...">En tant qu'expert en développement PrestaShop et référencement naturel SEO, j'accompagne la croissance des entreprises. Je suis spécialisé dans la conception de modules sur-mesure et la sécurisation des bases de données pour garantir que votre boutique e-commerce soit rapide, sécurisée et parfaitement positionnée sur Google.</textarea>
+            <label for="seoContentInput">Extrait de Contenu (pour mesurer la fréquence du terme)</label>
+            <textarea id="seoContentInput" class="form-control" placeholder="Collez ici un paragraphe de votre page web...">En tant que consultant SEO spécialisé sur PrestaShop, j'interviens sur l'architecture technique des boutiques e-commerce. Mon travail porte sur l'optimisation des temps de chargement, la correction du maillage interne et la conformité aux critères de recherche Google.</textarea>
           </div>
 
           <div class="form-group" style="margin-top: 24px;">
@@ -951,7 +951,7 @@
         <div class="tool-preview-card">
           <div>
             <div class="serp-header">
-              <span>Aperçu du Snippet Google SERP</span>
+              <span>Aperçu Indicatif du Snippet Google</span>
               <div class="serp-device-switch">
                 <button class="device-btn active" id="btnDeviceDesktop" aria-label="Desktop view">Ordinateur</button>
                 <button class="device-btn" id="btnDeviceMobile" aria-label="Mobile view">Mobile</button>
@@ -964,9 +964,10 @@
                 <span class="serp-url-fav">🌐</span>
                 <span class="serp-url-text" id="serpUrlText">https://lefi-abdelmonem.com</span>
               </div>
-              <div class="serp-title-row" id="serpTitleText">Expert PrestaShop et SEO/GEO - Lefi Abdelmonem</div>
-              <div class="serp-description-row" id="serpDescText">Lefi Abdelmonem, expert PrestaShop, consultant SEO et cybersécurité e-commerce. Audit de performance et développements sur-mesure.</div>
+              <div class="serp-title-row" id="serpTitleText">Consultant SEO PrestaShop & Optimisation E-Commerce — Abdelmonem Lefi</div>
+              <div class="serp-description-row" id="serpDescText">Consultant SEO spécialisé PrestaShop. Audit technique dans le code, amélioration de la vitesse mobile, résolution des blocages d'indexation et sécurisation.</div>
             </div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 10px; line-height: 1.4;"><em>Aperçu indicatif : Google peut modifier ou reformuler le titre et l'extrait dans les résultats de recherche en fonction de la requête de l'internaute. Les longueurs indiquées sont des repères éditoriaux.</em></p>
           </div>
 
           <!-- Analysis Results indicators -->
@@ -978,8 +979,8 @@
                   <div class="indicator-bar" id="titleLengthBar"></div>
                 </div>
                 <div class="indicator-status">
-                  <span id="titleStatusLabel">Optimal</span>
-                  <strong>Max 60</strong>
+                  <span id="titleStatusLabel">Repère éditorial</span>
+                  <strong>Repère ~60 car.</strong>
                 </div>
               </div>
               <div class="indicator-box">
@@ -988,22 +989,24 @@
                   <div class="indicator-bar" id="descLengthBar"></div>
                 </div>
                 <div class="indicator-status">
-                  <span id="descStatusLabel">Optimal</span>
-                  <strong>Max 160</strong>
+                  <span id="descStatusLabel">Repère éditorial</span>
+                  <strong>Repère ~160 car.</strong>
                 </div>
               </div>
             </div>
 
             <div class="indicator-box density-results-box">
               <div class="density-text-feedback">
-                <h4 style="font-family: var(--font-title); font-size: 0.95rem; margin-bottom: 4px;">Densité du Mot-Clé Cible</h4>
-                <p id="densityFeedback" style="font-size: 0.8rem; color: var(--text-secondary);">La densité optimale recommandée se situe entre 1% et 2,5% pour éviter le bourrage de mots-clés.</p>
+                <h4 style="font-family: var(--font-title); font-size: 0.95rem; margin-bottom: 4px;">Fréquence du Mot-Clé Cible</h4>
+                <p id="densityFeedback" style="font-size: 0.8rem; color: var(--text-secondary);">Statistique descriptive fournie à titre indicatif. Google n'utilise pas de règle de densité fixe ou « optimale ».</p>
               </div>
               <div class="density-score-circle" id="densityCircle">0%</div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
   <!-- Timeline (Experience & Education) -->
   <section class="experience-section" id="experience">
@@ -1165,7 +1168,7 @@
         <div class="reviews-track">
           <!-- Slide 1 -->
           <div class="review-slide active" id="slide1">
-            <div class="verified-client-tag">⭐ Noël Dumortier • France</div>
+            <div class="verified-client-tag">⭐ Noël Dumortier • Recommandation sur Malt</div>
             <p class="review-text">
               Abdelmonem a entièrement refondu notre boutique en ligne, tant sur le plan du design que du SEO. Il a rendu le processus d'une simplicité remarquable. Tout a été mené avec un professionnalisme exemplaire, du devis à la livraison. Son expertise technique est tout simplement excellente. Nous retravaillerons avec lui très bientôt ! 👍
             </p>
@@ -1173,14 +1176,14 @@
               <div class="review-author-avatar">ND</div>
               <div class="review-author-info">
                 <h4>Noël Dumortier</h4>
-                <p>Directeur de Boutique E-commerce (France)</p>
+                <p><a href="https://www.malt.fr/profile/abdelmonemlefi" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">Avis certifié sur le profil Malt</a> (France)</p>
               </div>
             </div>
           </div>
 
           <!-- Slide 2 -->
           <div class="review-slide" id="slide2">
-            <div class="verified-client-tag">⭐ Ferdinand Aroulnadane • France</div>
+            <div class="verified-client-tag">⭐ Ferdinand Aroulnadane • Recommandation sur Malt</div>
             <p class="review-text">
               Abdelmonem est incroyable, d'une efficacité redoutable et d'une bienveillance rare. Je le recommande vivement sans la moindre hésitation ! 🔥
             </p>
@@ -1188,82 +1191,82 @@
               <div class="review-author-avatar">FA</div>
               <div class="review-author-info">
                 <h4>Ferdinand Aroulnadane</h4>
-                <p>Directeur Infrastructure d'Entreprise (France)</p>
+                <p><a href="https://www.malt.fr/profile/abdelmonemlefi" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">Avis certifié sur le profil Malt</a> (France)</p>
               </div>
             </div>
           </div>
 
           <!-- Slide 3 -->
           <div class="review-slide" id="slide3">
-            <div class="verified-client-tag">⭐ Client Vérifié • ⭐⭐⭐⭐⭐</div>
+            <div class="verified-client-tag">⭐ Commande Fiverr Vérifiée • ⭐⭐⭐⭐⭐</div>
             <p class="review-text">
               J'ai rarement rencontré un collaborateur avec une telle approche pratique et orientée résultat. Il va droit au but, identifie la racine du problème et maîtrise parfaitement son sujet. Il prend le temps de vérifier méticuleusement chaque résultat et maintient une communication irréprochable. L'un de mes meilleurs choix de prestataire !
             </p>
             <div class="review-author">
               <div class="review-author-avatar">UK</div>
               <div class="review-author-info">
-                <h4>Client Vérifié</h4>
-                <p>Gérant E-commerce (Royaume-Uni)</p>
+                <h4>Client Fiverr</h4>
+                <p><a href="https://www.fiverr.com/genisoft0528" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">Profil Fiverr genisoft0528</a> (Royaume-Uni)</p>
               </div>
             </div>
           </div>
 
           <!-- Slide 4 -->
           <div class="review-slide" id="slide4">
-            <div class="verified-client-tag">⭐ Client Vérifié • ⭐⭐⭐⭐⭐</div>
+            <div class="verified-client-tag">⭐ Commande Fiverr Vérifiée • ⭐⭐⭐⭐⭐</div>
             <p class="review-text">
               Notre serveur PrestaShop est tombé un dimanche soir tard. Genisoft était en ligne et s'est immédiatement mis au travail, identifiant un malware et un conflit d'hébergeur. Il est resté mobilisé jusqu'au lundi matin pour rétablir l'accès complet. 10/10, je referai appel à lui sans hésiter !
             </p>
             <div class="review-author">
               <div class="review-author-avatar">US</div>
               <div class="review-author-info">
-                <h4>Client Vérifié</h4>
-                <p>Responsable E-commerce (États-Unis)</p>
+                <h4>Client Fiverr</h4>
+                <p><a href="https://www.fiverr.com/genisoft0528" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">Profil Fiverr genisoft0528</a> (États-Unis)</p>
               </div>
             </div>
           </div>
 
           <!-- Slide 5 -->
           <div class="review-slide" id="slide5">
-            <div class="verified-client-tag">⭐ Client Vérifié • ⭐⭐⭐⭐⭐</div>
+            <div class="verified-client-tag">⭐ Commande Fiverr Vérifiée • ⭐⭐⭐⭐⭐</div>
             <p class="review-text">
               Notre hébergeur avait bloqué notre boutique en ligne suite à une infection malware. Genisoft a répondu en quelques minutes, a nettoyé le malware et colmaté la faille. Temps d'interruption total : à peine 2 heures. Très impressionné par sa réactivité !
             </p>
             <div class="review-author">
               <div class="review-author-avatar">CA</div>
               <div class="review-author-info">
-                <h4>Client Vérifié</h4>
-                <p>Commerçant Retail (Canada)</p>
+                <h4>Client Fiverr</h4>
+                <p><a href="https://www.fiverr.com/genisoft0528" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">Profil Fiverr genisoft0528</a> (Canada)</p>
               </div>
             </div>
           </div>
 
           <!-- Slide 6 -->
           <div class="review-slide" id="slide6">
-            <div class="verified-client-tag">⭐ Client Vérifié • ⭐⭐⭐⭐⭐</div>
+            <div class="verified-client-tag">⭐ Commande Fiverr Vérifiée • ⭐⭐⭐⭐⭐</div>
             <p class="review-text">
               Genisoft nous a aidés à indexer notre boutique sur Google (nous n'étions plus correctement indexés depuis des mois). Il a répondu à toutes mes questions, s'est montré très réactif et professionnel. Merci beaucoup !
             </p>
             <div class="review-author">
               <div class="review-author-avatar">FR</div>
               <div class="review-author-info">
-                <h4>Client Vérifié</h4>
-                <p>Entreprise Commerciale (France)</p>
+                <h4>Client Fiverr</h4>
+                <p><a href="https://www.fiverr.com/genisoft0528" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">Profil Fiverr genisoft0528</a> (France)</p>
               </div>
             </div>
           </div>
 
           <!-- Slide 7 -->
           <div class="review-slide" id="slide7">
-            <div class="verified-client-tag">⭐ Client Vérifié • ⭐⭐⭐⭐⭐</div>
+            <div class="verified-client-tag">⭐ Commande Fiverr Vérifiée • ⭐⭐⭐⭐⭐</div>
             <p class="review-text">
               Nous avions 5 sites piratés (dont 3 sous WordPress). Genisoft a pris le dossier en main immédiatement. Excellente communication et budget respecté malgré les imprévus techniques. Un partenaire sérieux et hautement recommandé.
             </p>
             <div class="review-author">
               <div class="review-author-avatar">BE</div>
               <div class="review-author-info">
-                <h4>Client Vérifié</h4>
-                <p>Agence Webmaster (Belgique)</p>
+                <h4>Client Fiverr</h4>
+                <p><a href="https://www.fiverr.com/genisoft0528" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: underline;">Profil Fiverr genisoft0528</a> (Belgique)</p>
               </div>
             </div>
           </div>
@@ -1293,9 +1296,9 @@
       <div class="news-header-wrapper">
         <div>
           <div class="section-label">Veille Technologique</div>
-          <h2 class="section-title">Actualités IA, PrestaShop & Référencement</h2>
+          <h2 class="section-title">Actualités & Analyses PrestaShop, SEO et E-Commerce</h2>
           <p class="section-subtitle-text" style="color: var(--text-secondary); margin-bottom: 24px; max-width: 600px;">
-            Un flux d'actualités de pointe mis à jour toutes les 24 heures par notre agent IA autonome.
+            Analyses techniques et retours d'expérience sur l'écosystème PrestaShop, les évolutions des algorithmes Google et les bonnes pratiques e-commerce.
           </p>
         </div>
        <!-- News Cards Grid (Static semantic fallback for instant crawler indexing, hydrated by script.js) -->
@@ -1306,7 +1309,6 @@
           </div>
           <div class="news-card-meta">
             <span class="news-card-badge badge-prestashop">PrestaShop</span>
-            <span class="news-card-freshness freshness-hot">Nouveau : &lt; 2h</span>
             <span class="news-card-date">04/09/2026</span>
           </div>
           <h3 class="news-card-title">Google Think sous la Loupe : Pourquoi le « Simple Bon SEO » ne Suffira Pas pour Votre PrestaShop</h3>
@@ -1315,46 +1317,9 @@
             <a href="prestashop-google-ai-search-brand-authority/" class="news-card-readmore">Lire l'article &rarr;</a>
           </div>
         </article>
-        <article class="glass-card news-card" data-category="ai" style="display: flex; flex-direction: column; height: 100%;">
-          <div class="news-card-meta">
-            <span class="news-card-badge badge-ai">IA &amp; Automatisation</span>
-            <span class="news-card-freshness freshness-hot">Dernière Génération : &lt; 1h</span>
-            <span class="news-card-date">02/09/2026</span>
-          </div>
-          <h3 class="news-card-title">Google Gemini 3.8 Flash : Architecture, Raisonnement Dynamique &amp; Révolution Agentique</h3>
-          <p class="news-card-excerpt">Analyse technique de Google Gemini 3.8 Flash par un expert IA : dynamic test-time compute, compression KV-cache, intégration WebMCP et opportunités e-commerce.</p>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px;">
-            <a href="gemini-3-8-flash-architecture/" class="news-card-readmore">Lire l'article &rarr;</a>
-          </div>
-        </article>
-        <article class="glass-card news-card" data-category="ai" style="display: flex; flex-direction: column; height: 100%;">
-          <div class="news-card-meta">
-            <span class="news-card-badge badge-ai">IA &amp; Automatisation</span>
-            <span class="news-card-freshness freshness-hot">Nouveau : &lt; 2h</span>
-            <span class="news-card-date">13/08/2026</span>
-          </div>
-          <h3 class="news-card-title">Gemini 3.7 Flash Architecture : Raisonnement Hybride &amp; Inférence E-Commerce</h3>
-          <p class="news-card-excerpt">Analyse technique approfondie de Gemini 3.7 Flash par Google DeepMind : test-time compute scaling, PRM/RLVR, Sparse MoE et exécution agentique pour boutiques e-commerce.</p>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px;">
-            <a href="gemini-3-7-flash-hybrid-reasoning-ai/" class="news-card-readmore">Lire l'article &rarr;</a>
-          </div>
-        </article>
-        <article class="glass-card news-card" data-category="ai" style="display: flex; flex-direction: column; height: 100%;">
-          <div class="news-card-meta">
-            <span class="news-card-badge badge-ai">IA &amp; Automatisation</span>
-            <span class="news-card-freshness freshness-hot">Nouveau : &lt; 24h</span>
-            <span class="news-card-date">01/09/2026</span>
-          </div>
-          <h3 class="news-card-title">Claude Fable 5.1 : Pourquoi Anthropic Révolutionne l'Économie des Agents IA</h3>
-          <p class="news-card-excerpt">Comment la réduction de 75% du coût de lecture du cache (Cache Read) rend viable le déploiement d'agents IA autonomes et persistants pour le e-commerce.</p>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px;">
-            <a href="claude-fable-5-1-anthropic-cache-revolution/" class="news-card-readmore">Lire l'article &rarr;</a>
-          </div>
-        </article>
         <article class="glass-card news-card" data-category="prestashop" style="display: flex; flex-direction: column; height: 100%;">
           <div class="news-card-meta">
             <span class="news-card-badge badge-prestashop">PrestaShop</span>
-            <span class="news-card-freshness freshness-optimal">Expertise Tech</span>
             <span class="news-card-date">23/07/2026</span>
           </div>
           <h3 class="news-card-title">PrestaShop WebAssembly (WASM) : Indexation Client-Side Ultra-Rapide &amp; SEO</h3>
@@ -1366,13 +1331,45 @@
         <article class="glass-card news-card" data-category="seo" style="display: flex; flex-direction: column; height: 100%;">
           <div class="news-card-meta">
             <span class="news-card-badge badge-seo">SEO &amp; SXO</span>
-            <span class="news-card-freshness freshness-optimal">Pilier Stratégique</span>
             <span class="news-card-date">23/07/2026</span>
           </div>
           <h3 class="news-card-title">SXO 2026 : Pourquoi l'Expérience Utilisateur est le Cœur du Référencement</h3>
           <p class="news-card-excerpt">Pourquoi le classement Google en 2026 exige zéro CLS, un ciblage des moteurs de réponse conversationnels et un tunnel d'achat sans friction.</p>
           <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px;">
             <a href="sxo-the-future-of-seo/" class="news-card-readmore">Lire l'article &rarr;</a>
+          </div>
+        </article>
+        <article class="glass-card news-card" data-category="seo" style="display: flex; flex-direction: column; height: 100%;">
+          <div class="news-card-meta">
+            <span class="news-card-badge badge-seo">Hébergement &amp; Green IT</span>
+            <span class="news-card-date">23/07/2026</span>
+          </div>
+          <h3 class="news-card-title">Éco-SEO &amp; Empreinte Carbone Serveur : L'Algorithme Google et l'Hébergement Vert</h3>
+          <p class="news-card-excerpt">Sobriété numérique, allègement du code et réduction des requêtes HTTP : comment l'écoconception web renforce directement la performance et l'indexation.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px;">
+            <a href="eco-seo-empreinte-carbone-serveur-algorithme-google/" class="news-card-readmore">Lire l'article &rarr;</a>
+          </div>
+        </article>
+        <article class="glass-card news-card" data-category="prestashop" style="display: flex; flex-direction: column; height: 100%;">
+          <div class="news-card-meta">
+            <span class="news-card-badge badge-prestashop">PrestaShop &amp; IA</span>
+            <span class="news-card-date">23/07/2026</span>
+          </div>
+          <h3 class="news-card-title">SEO en 2026 : Comment l'IA Révolutionne PrestaShop</h3>
+          <p class="news-card-excerpt">Génération assistée de balisage sémantique, enrichissement automatisé des descriptions et détection proactive des anomalies de navigation.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px;">
+            <a href="seo-en-2026-comment-lia-revolutionne-prestashop/" class="news-card-readmore">Lire l'article &rarr;</a>
+          </div>
+        </article>
+        <article class="glass-card news-card" data-category="prestashop" style="display: flex; flex-direction: column; height: 100%;">
+          <div class="news-card-meta">
+            <span class="news-card-badge badge-prestashop">Conformité &amp; Données</span>
+            <span class="news-card-date">23/07/2026</span>
+          </div>
+          <h3 class="news-card-title">Passeport Numérique Produit (DPP) &amp; SEO PrestaShop</h3>
+          <p class="news-card-excerpt">Anticiper les obligations européennes de traçabilité des produits en intégrant les attributs DPP dans vos schémas de données structurées.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px;">
+            <a href="passeport-numerique-produit-seo-prestashop/" class="news-card-readmore">Lire l'article &rarr;</a>
           </div>
         </article>
       </div>

@@ -290,77 +290,97 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Perform the SEO check Calculations
   function runSeoAudit() {
+    if (!titleInput || !urlInput || !descInput || !keywordInput || !contentInput) return;
+
     const titleVal = titleInput.value;
     const urlVal = urlInput.value;
     const descVal = descInput.value;
     const keywordVal = keywordInput.value;
     const contentVal = contentInput.value;
 
+    const isFr = document.documentElement.lang === 'fr';
+
     // 1. Update text displays in Google SERP mock
-    serpTitleText.innerHTML = highlightMatches(titleVal || "Please enter a title...", keywordVal);
-    serpUrlText.textContent = urlVal || "https://lefi-abdelmonem.com";
-    serpDescText.innerHTML = highlightMatches(descVal || "Please enter a description...", keywordVal);
+    if (serpTitleText) {
+      serpTitleText.innerHTML = highlightMatches(titleVal || (isFr ? "Veuillez saisir un titre..." : "Please enter a title..."), keywordVal);
+    }
+    if (serpUrlText) {
+      serpUrlText.textContent = urlVal || "https://lefi-abdelmonem.com";
+    }
+    if (serpDescText) {
+      serpDescText.innerHTML = highlightMatches(descVal || (isFr ? "Veuillez saisir une description..." : "Please enter a description..."), keywordVal);
+    }
 
     // 2. Character counts
     const titleLen = titleVal.length;
     const descLen = descVal.length;
 
-    titleCharCount.textContent = titleLen;
-    descCharCount.textContent = descLen;
+    if (titleCharCount) titleCharCount.textContent = titleLen;
+    if (descCharCount) descCharCount.textContent = descLen;
 
-    // 3. Title bar evaluation
-    const titlePercentage = Math.min((titleLen / 60) * 100, 100);
-    titleLengthBar.style.width = `${titlePercentage}%`;
+    // 3. Title bar evaluation (editorial guide ~60 chars)
+    if (titleLengthBar && titleStatusLabel) {
+      const titlePercentage = Math.min((titleLen / 60) * 100, 100);
+      titleLengthBar.style.width = `${titlePercentage}%`;
 
-    if (titleLen === 0) {
-      titleStatusLabel.textContent = "Empty";
-      titleStatusLabel.style.color = '#EF4444';
-      titleLengthBar.className = "indicator-bar warning";
-    } else if (titleLen < 40) {
-      titleStatusLabel.textContent = "Too Short";
-      titleStatusLabel.style.color = 'var(--accent-seo)';
-      titleLengthBar.className = "indicator-bar";
-    } else if (titleLen <= 60) {
-      titleStatusLabel.textContent = "Optimal";
-      titleStatusLabel.style.color = 'var(--accent-sec)';
-      titleLengthBar.className = "indicator-bar optimal";
-    } else {
-      titleStatusLabel.textContent = "Too Long (Truncated)";
-      titleStatusLabel.style.color = '#EF4444';
-      titleLengthBar.className = "indicator-bar warning";
-      // Truncate in mock
-      serpTitleText.innerHTML = highlightMatches(titleVal.substring(0, 57) + "...", keywordVal);
+      if (titleLen === 0) {
+        titleStatusLabel.textContent = isFr ? "Vide" : "Empty";
+        titleStatusLabel.style.color = '#EF4444';
+        titleLengthBar.className = "indicator-bar warning";
+      } else if (titleLen < 40) {
+        titleStatusLabel.textContent = isFr ? "Repère court (< 40 car.)" : "Short (< 40 chars)";
+        titleStatusLabel.style.color = 'var(--accent-seo)';
+        titleLengthBar.className = "indicator-bar";
+      } else if (titleLen <= 60) {
+        titleStatusLabel.textContent = isFr ? "Repère éditorial atteint (~60 car.)" : "Editorial guideline met (~60 chars)";
+        titleStatusLabel.style.color = 'var(--accent-sec)';
+        titleLengthBar.className = "indicator-bar optimal";
+      } else {
+        titleStatusLabel.textContent = isFr ? "Dépasse ~60 car. (risque de troncature)" : "Exceeds ~60 chars (truncation risk)";
+        titleStatusLabel.style.color = 'var(--accent-seo)';
+        titleLengthBar.className = "indicator-bar";
+        if (serpTitleText) {
+          serpTitleText.innerHTML = highlightMatches(titleVal.substring(0, 57) + "...", keywordVal);
+        }
+      }
     }
 
-    // 4. Description bar evaluation
-    const descPercentage = Math.min((descLen / 160) * 100, 100);
-    descLengthBar.style.width = `${descPercentage}%`;
+    // 4. Description bar evaluation (editorial guide ~160 chars)
+    if (descLengthBar && descStatusLabel) {
+      const descPercentage = Math.min((descLen / 160) * 100, 100);
+      descLengthBar.style.width = `${descPercentage}%`;
 
-    if (descLen === 0) {
-      descStatusLabel.textContent = "Empty";
-      descStatusLabel.style.color = '#EF4444';
-      descLengthBar.className = "indicator-bar warning";
-    } else if (descLen < 110) {
-      descStatusLabel.textContent = "Too Short";
-      descStatusLabel.style.color = 'var(--accent-seo)';
-      descLengthBar.className = "indicator-bar";
-    } else if (descLen <= 160) {
-      descStatusLabel.textContent = "Optimal";
-      descStatusLabel.style.color = 'var(--accent-sec)';
-      descLengthBar.className = "indicator-bar optimal";
-    } else {
-      descStatusLabel.textContent = "Too Long (Truncated)";
-      descStatusLabel.style.color = '#EF4444';
-      descLengthBar.className = "indicator-bar warning";
-      // Truncate in mock
-      serpDescText.innerHTML = highlightMatches(descVal.substring(0, 157) + "...", keywordVal);
+      if (descLen === 0) {
+        descStatusLabel.textContent = isFr ? "Vide" : "Empty";
+        descStatusLabel.style.color = '#EF4444';
+        descLengthBar.className = "indicator-bar warning";
+      } else if (descLen < 110) {
+        descStatusLabel.textContent = isFr ? "Repère court (< 110 car.)" : "Short (< 110 chars)";
+        descStatusLabel.style.color = 'var(--accent-seo)';
+        descLengthBar.className = "indicator-bar";
+      } else if (descLen <= 160) {
+        descStatusLabel.textContent = isFr ? "Repère éditorial atteint (~160 car.)" : "Editorial guideline met (~160 chars)";
+        descStatusLabel.style.color = 'var(--accent-sec)';
+        descLengthBar.className = "indicator-bar optimal";
+      } else {
+        descStatusLabel.textContent = isFr ? "Dépasse ~160 car. (risque de troncature)" : "Exceeds ~160 chars (truncation risk)";
+        descStatusLabel.style.color = 'var(--accent-seo)';
+        descLengthBar.className = "indicator-bar";
+        if (serpDescText) {
+          serpDescText.innerHTML = highlightMatches(descVal.substring(0, 157) + "...", keywordVal);
+        }
+      }
     }
 
-    // 5. Keyword Density calculation
+    // 5. Keyword Frequency (Descriptive Statistic)
+    if (!densityCircle || !densityFeedback) return;
+
     if (!keywordVal || keywordVal.trim() === "" || !contentVal || contentVal.trim() === "") {
       densityCircle.textContent = "0%";
       densityCircle.className = "density-score-circle";
-      densityFeedback.textContent = "Enter a keyword and write text to analyze key phrase density.";
+      densityFeedback.textContent = isFr 
+        ? "Saisissez un mot-clé et un extrait de texte pour calculer la fréquence descriptive du terme."
+        : "Enter a keyword and content excerpt to calculate descriptive term frequency.";
       densityFeedback.style.color = 'var(--text-secondary)';
       return;
     }
@@ -371,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (totalWords === 0) {
       densityCircle.textContent = "0%";
       densityCircle.className = "density-score-circle";
-      densityFeedback.textContent = "Enter some content in the content area.";
+      densityFeedback.textContent = isFr ? "Saisissez du contenu dans le champ texte." : "Please enter sample content in the field.";
       return;
     }
 
@@ -383,37 +403,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const density = ((kwCount / totalWords) * 100).toFixed(1);
     densityCircle.textContent = `${density}%`;
+    densityCircle.className = "density-score-circle";
+    densityCircle.style.borderColor = 'var(--accent-seo)';
+    densityCircle.style.color = 'var(--text-primary)';
 
-    // Density visual scoring
-    if (density === 0.0) {
-      densityCircle.className = "density-score-circle";
-      densityCircle.style.borderColor = 'var(--border-color)';
-      densityCircle.style.color = 'var(--text-primary)';
-      densityFeedback.textContent = `The keyword "${keywordVal}" was not found in your content paragraph.`;
+    if (kwCount === 0) {
+      densityFeedback.textContent = isFr 
+        ? `Le terme "${keywordVal}" n'apparaît pas dans l'extrait analysé (0 occurrence sur ${totalWords} mots).`
+        : `The term "${keywordVal}" does not appear in the analyzed excerpt (0 occurrences across ${totalWords} words).`;
       densityFeedback.style.color = 'var(--text-secondary)';
-    } else if (density < 1.0) {
-      densityCircle.className = "density-score-circle";
-      densityCircle.style.borderColor = 'var(--accent-seo)';
-      densityCircle.style.color = 'var(--accent-seo)';
-      densityFeedback.textContent = `Low density (${density}%). Try to include the keyword slightly more for higher relevance.`;
-      densityFeedback.style.color = 'var(--accent-seo)';
-    } else if (density <= 2.5) {
-      densityCircle.className = "density-score-circle optimal";
-      densityCircle.removeAttribute('style'); // Use css definitions
-      densityFeedback.textContent = `Excellent! Optimal density (${density}%). This matches organic search standards without stuffing.`;
-      densityFeedback.style.color = 'var(--accent-sec)';
     } else {
-      densityCircle.className = "density-score-circle";
-      densityCircle.style.borderColor = '#EF4444';
-      densityCircle.style.color = '#EF4444';
-      densityFeedback.textContent = `Warning: high density (${density}%). This may trigger Google's keyword stuffing spam filters!`;
-      densityFeedback.style.color = '#EF4444';
+      densityFeedback.textContent = isFr
+        ? `Fréquence observée : ${kwCount} occurrence${kwCount > 1 ? 's' : ''} sur ${totalWords} mots (${density}%). Statistique descriptive : les moteurs de recherche évaluent la pertinence sémantique globale sans seuil de densité universel.`
+        : `Observed frequency: ${kwCount} occurrence${kwCount > 1 ? 's' : ''} across ${totalWords} words (${density}%). Descriptive metric: search engines evaluate overall topical relevance without universal density thresholds.`;
+      densityFeedback.style.color = 'var(--text-secondary)';
     }
   }
 
-  // Bind live updates
+  // Bind live updates safely
   [titleInput, urlInput, descInput, keywordInput, contentInput].forEach(elem => {
-    elem.addEventListener('input', runSeoAudit);
+    if (elem) elem.addEventListener('input', runSeoAudit);
   });
 
   /* ===================================================
@@ -422,34 +431,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnAiOptimize = document.getElementById('btnAiOptimize');
   const aiModalFeedback = document.getElementById('aiModalFeedback');
 
-  if (btnAiOptimize) {
+  if (btnAiOptimize && aiModalFeedback) {
     btnAiOptimize.addEventListener('click', async () => {
+      const isFr = document.documentElement.lang === 'fr';
+
       // Clear previous feedback
       aiModalFeedback.style.display = 'none';
       aiModalFeedback.textContent = '';
       aiModalFeedback.className = '';
 
-      const titleVal = titleInput.value.trim();
-      const descVal = descInput.value.trim();
-      const keywordVal = keywordInput.value.trim();
+      const titleVal = titleInput ? titleInput.value.trim() : '';
+      const descVal = descInput ? descInput.value.trim() : '';
+      const keywordVal = keywordInput ? keywordInput.value.trim() : '';
 
       if (!keywordVal) {
         aiModalFeedback.style.display = 'block';
         aiModalFeedback.style.color = '#EF4444';
         aiModalFeedback.style.border = '1px solid rgba(239, 68, 68, 0.2)';
         aiModalFeedback.style.background = 'rgba(239, 68, 68, 0.02)';
-        aiModalFeedback.textContent = 'Please enter a target keyword first so that local AI has a focus topic.';
+        aiModalFeedback.textContent = isFr 
+          ? 'Veuillez saisir un mot-clé cible avant de solliciter l\'assistance locale.' 
+          : 'Please enter a target keyword first.';
         return;
       }
 
       btnAiOptimize.disabled = true;
       const originalBtnText = btnAiOptimize.innerHTML;
-      btnAiOptimize.innerHTML = '<span>⚡ Activating local browser Gemini Nano...</span>';
+      btnAiOptimize.innerHTML = isFr 
+        ? '<span>⚡ Détection du modèle local Gemini Nano...</span>' 
+        : '<span>⚡ Detecting local browser Gemini Nano...</span>';
       btnAiOptimize.style.opacity = '0.7';
 
       try {
         // 1. Check if window.ai and the Prompt API are available
-        const hasBuiltInAi = window.ai && window.ai.languageModel;
+        const hasBuiltInAi = typeof window !== 'undefined' && window.ai && window.ai.languageModel;
 
         if (!hasBuiltInAi) {
           throw new Error("NOT_SUPPORTED");
@@ -466,27 +481,28 @@ document.addEventListener('DOMContentLoaded', () => {
         aiModalFeedback.style.color = 'var(--accent-seo)';
         aiModalFeedback.style.border = '1px solid rgba(0, 240, 255, 0.2)';
         aiModalFeedback.style.background = 'rgba(0, 240, 255, 0.01)';
-        aiModalFeedback.textContent = 'Model loaded. Processing SEO optimizations locally...';
+        aiModalFeedback.textContent = isFr 
+          ? 'Modèle local actif. Génération de propositions éditoriales en local...' 
+          : 'Local model active. Processing suggestions locally...';
 
         const session = await window.ai.languageModel.create({
-          systemPrompt: "You are an expert e-commerce SEO optimizer. Optimize titles and meta descriptions for target keywords. Keep response structured as JSON format with keys 'title' and 'description'."
+          systemPrompt: "You are an e-commerce SEO assistant. Suggest concise, compliant titles (~60 chars) and meta descriptions (~160 chars) matching editorial guidelines. Respond ONLY with valid JSON containing keys 'title' and 'description'."
         });
 
-        const prompt = `Optimize the following metadata for the e-commerce keyword "${keywordVal}".
+        const prompt = `Suggest editorial improvements for the search term "${keywordVal}".
         Current Title: "${titleVal || "None"}"
         Current Meta Description: "${descVal || "None"}"
         
         Requirements:
-        1. Title must be under 60 characters and contain the keyword.
-        2. Meta description must be under 160 characters, highly converting, and contain the keyword.
-        3. Output MUST be ONLY a raw JSON string like: {"title": "optimized title", "description": "optimized description"}`;
+        1. Title: editorial guideline ~60 characters, containing the term.
+        2. Meta description: editorial guideline ~160 characters, informative, containing the term.
+        3. Output: strictly raw JSON like {"title": "suggested title", "description": "suggested description"}`;
 
         const aiResponseText = await session.prompt(prompt);
         session.destroy();
 
         // 4. Parse output
         let cleanJsonStr = aiResponseText.trim();
-        // Remove markdown wrappers if any
         if (cleanJsonStr.startsWith('```json')) {
           cleanJsonStr = cleanJsonStr.substring(7, cleanJsonStr.length - 3).trim();
         } else if (cleanJsonStr.startsWith('```')) {
@@ -496,57 +512,47 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = JSON.parse(cleanJsonStr);
 
         if (data.title && data.description) {
-          titleInput.value = data.title;
-          descInput.value = data.description;
+          if (titleInput) titleInput.value = data.title;
+          if (descInput) descInput.value = data.description;
           
-          // Trigger updates
           runSeoAudit();
 
           aiModalFeedback.style.color = 'var(--accent-sec)';
           aiModalFeedback.style.border = '1px solid rgba(0, 255, 133, 0.2)';
           aiModalFeedback.style.background = 'rgba(0, 255, 133, 0.01)';
-          aiModalFeedback.textContent = '🚀 SEO tags optimized successfully in local by your browser\'s built-in Gemini Nano model! (0 server cost, 0 latency)';
+          aiModalFeedback.textContent = isFr
+            ? 'Proposition éditoriale générée localement par votre navigateur via Gemini Nano (sans appel serveur tiers).'
+            : 'Editorial suggestion generated locally by your browser via Gemini Nano (no external server call).';
         } else {
           throw new Error("INVALID_JSON_STRUCTURE");
         }
 
       } catch (error) {
-        console.error(error);
+        console.info('On-device AI status:', error.message);
         aiModalFeedback.style.display = 'block';
         aiModalFeedback.style.color = 'var(--accent-ai)';
         aiModalFeedback.style.border = '1px solid rgba(255, 0, 122, 0.2)';
         aiModalFeedback.style.background = 'rgba(255, 0, 122, 0.01)';
 
-        if (error.message === "NOT_SUPPORTED" || error.message === "MODEL_NOT_AVAILABLE") {
-          aiModalFeedback.innerHTML = `⚠️ <strong>On-Device Chrome AI (Gemini Nano) not detected in your browser.</strong><br><br>
-          To experience zero-server-cost local AI, please do the following in Google Chrome 148+:<br>
-          1. Enable <strong>Prompt API</strong> in <code>chrome://flags/#optimization-guide-on-device-model</code>.<br>
-          2. Restart Chrome and wait for the Gemini model to download in <code>chrome://components</code> (Optimization Guide On Device Model).`;
+        if (isFr) {
+          aiModalFeedback.innerHTML = `⚠️ <strong>API d'IA locale (Gemini Nano / Prompt API) non disponible sur ce navigateur.</strong><br><br>
+          Cette option repose sur l'exécution locale de modèles IA intégrés directement dans le navigateur (expérimentation Google Chrome). Pour tester l'inférence locale :<br>
+          1. Utilisez une version récente de Google Chrome compatible.<br>
+          2. Activez l'option <em>Prompt API for Gemini Nano</em> dans <code>chrome://flags</code>.<br>
+          3. Vérifiez la disponibilité du composant dans <code>chrome://components</code>.`;
         } else {
-          // Fallback simulation if model isn't active but user clicked to see what it does
-          // We can simulate an outstanding local AI optimization based on the keyword to show off Lefi's coding capabilities!
-          setTimeout(() => {
-            const simulatedTitle = `Expert ${keywordVal.charAt(0).toUpperCase() + keywordVal.slice(1)} & E-commerce Speed Optimization | Lefi`;
-            const simulatedDesc = `Certified FranceNum consultant specializing in ${keywordVal.toLowerCase()} and IT security audits. Boost your online store performance and traffic.`;
-            
-            titleInput.value = simulatedTitle;
-            descInput.value = simulatedDesc;
-            runSeoAudit();
-
-            aiModalFeedback.style.color = 'var(--accent-sec)';
-            aiModalFeedback.style.border = '1px solid rgba(0, 255, 133, 0.2)';
-            aiModalFeedback.style.background = 'rgba(0, 255, 133, 0.01)';
-            aiModalFeedback.innerHTML = `🤖 <strong>[Local AI Simulation Mode]</strong> To enable real zero-server-cost local AI, activate Gemini Nano in your Chrome browser!<br>
-            • Optimized Title: <em>"${simulatedTitle}"</em><br>
-            • Optimized Description: <em>"${simulatedDesc}"</em>`;
-          }, 1200);
+          aiModalFeedback.innerHTML = `⚠️ <strong>On-Device Local AI (Gemini Nano / Prompt API) is not available in your browser.</strong><br><br>
+          This experimental feature requires Google Chrome's built-in browser AI API. To test local inference:<br>
+          1. Use a compatible release of Google Chrome.<br>
+          2. Enable the <em>Prompt API for Gemini Nano</em> flag in <code>chrome://flags</code>.<br>
+          3. Ensure the model component is downloaded in <code>chrome://components</code>.`;
         }
       } finally {
         setTimeout(() => {
           btnAiOptimize.disabled = false;
           btnAiOptimize.innerHTML = originalBtnText;
           btnAiOptimize.style.opacity = '1';
-        }, 1200);
+        }, 800);
       }
     });
   }
