@@ -195,7 +195,10 @@ document.addEventListener('DOMContentLoaded', () => {
     var plusTargets = [198, 427, 35];
 
     statEls.forEach(function(el) {
-      var target = parseInt(el.getAttribute('data-target'), 10);
+      var rawTarget = el.getAttribute('data-target');
+      if (!rawTarget) return;
+      var target = parseInt(rawTarget, 10);
+      if (isNaN(target)) return;
       var hasSuffix = plusTargets.indexOf(target) !== -1;
       var duration = 1600;
       var startTime = null;
@@ -689,9 +692,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!nameVal || !emailVal || !msgVal) return;
 
     // Visual button load
+    const isFr = document.documentElement.lang === 'fr';
     btnSubmit.disabled = true;
     const origText = btnSubmit.textContent;
-    btnSubmit.textContent = "Sending Message...";
+    btnSubmit.textContent = isFr ? "Envoi du message en cours..." : "Sending Message...";
     btnSubmit.style.opacity = '0.7';
 
     // Prepare Web3Forms payload
@@ -718,7 +722,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (response.status == 200) {
         // Success feedback
         formFeedback.className = "form-feedback-message success";
-        formFeedback.textContent = `Thank you, ${nameVal}! Your message has been sent successfully. I will get back to you shortly.`;
+        formFeedback.textContent = isFr 
+          ? `Merci ${nameVal} ! Votre message a bien été envoyé. Je vous répondrai dans les plus brefs délais.`
+          : `Thank you, ${nameVal}! Your message has been sent successfully. I will get back to you shortly.`;
         formFeedback.style.display = 'block';
         contactForm.reset();
       } else {
@@ -726,14 +732,18 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(response);
         formFeedback.className = "form-feedback-message error";
         formFeedback.style.display = 'block';
-        formFeedback.textContent = json.message || "Something went wrong. Please try again or email me directly.";
+        formFeedback.textContent = json.message || (isFr 
+          ? "Une erreur s'est produite. Veuillez réessayer ou m'écrire directement par email." 
+          : "Something went wrong. Please try again or email me directly.");
       }
     })
     .catch((error) => {
       console.log(error);
       formFeedback.className = "form-feedback-message error";
       formFeedback.style.display = 'block';
-      formFeedback.textContent = "Network error. Please try again or email me directly.";
+      formFeedback.textContent = isFr 
+        ? "Erreur réseau. Veuillez vérifier votre connexion ou me contacter directement par email." 
+        : "Network error. Please try again or email me directly.";
     })
     .finally(() => {
       btnSubmit.disabled = false;

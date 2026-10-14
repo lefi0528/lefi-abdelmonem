@@ -2663,4 +2663,250 @@ textarea.form-control {
   line-height: 1.6;
 }
 
+/* -------------------------------------------
+   SEO Case Studies, Method & Fexa AI Sections
+   ------------------------------------------- */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.case-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-top: 3px solid var(--accent-seo);
+}
+
+.case-card.case-sec {
+  border-top-color: var(--accent-sec);
+}
+
+.case-card.case-dev {
+  border-top-color: var(--accent-dev);
+}
+
+.case-header {
+  margin-bottom: 20px;
+}
+
+.case-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+  font-family: var(--font-title);
+}
+
+.case-badge.badge-seo {
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--accent-seo);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+}
+
+.case-badge.badge-dev {
+  background: rgba(173, 0, 255, 0.1);
+  color: var(--accent-dev);
+  border: 1px solid rgba(173, 0, 255, 0.25);
+}
+
+.case-badge.badge-sec {
+  background: rgba(0, 255, 133, 0.1);
+  color: var(--accent-sec);
+  border: 1px solid rgba(0, 255, 133, 0.25);
+}
+
+.case-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.case-meta-tag {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.case-meta-tag span strong {
+  color: var(--text-primary);
+}
+
+.case-block {
+  margin-bottom: 16px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.case-block-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.case-block p {
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.case-result-box {
+  background: rgba(0, 255, 133, 0.04);
+  border: 1px solid rgba(0, 255, 133, 0.2);
+  border-radius: var(--border-radius-sm);
+  padding: 14px 16px;
+  margin: 16px 0;
+}
+
+.case-result-box .case-block-label {
+  color: var(--accent-sec);
+}
+
+.case-limits-box {
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 3px solid var(--text-muted);
+  padding: 10px 14px;
+  margin-top: auto;
+  border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+}
+
+.case-limits-box p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Method Steps */
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.method-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.method-number {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-seo);
+  opacity: 0.8;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.method-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.method-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.method-deliverable {
+  margin-top: auto;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-dev);
+  background: rgba(173, 0, 255, 0.06);
+  border: 1px solid rgba(173, 0, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: var(--border-radius-sm);
+  width: fit-content;
+}
+
+.method-notice-card {
+  margin-top: 32px;
+  padding: 20px 24px;
+  border-left: 3px solid var(--accent-seo);
+  background: rgba(0, 240, 255, 0.03);
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.method-notice-card strong {
+  color: var(--text-primary);
+}
+
+/* Fexa AI Presentation Showcase */
+.fexa-showcase-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-top: 36px;
+}
+
+@media (max-width: 900px) {
+  .fexa-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fexa-main-card {
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  background: linear-gradient(135deg, rgba(12, 16, 31, 0.9) 0%, rgba(20, 26, 48, 0.6) 100%);
+  padding: 36px;
+}
+
+.fexa-secondary-card {
+  border: 1px solid var(--border-color);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fexa-features-list {
+  list-style: none;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fexa-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.fexa-features-list li span.fexa-check {
+  color: var(--accent-seo);
+  font-weight: bold;
+}
+
+
 

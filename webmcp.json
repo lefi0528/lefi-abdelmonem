@@ -1,12 +1,12 @@
 {
   "$schema": "https://webmcp.org/schemas/webmcp.json",
-  "name": "Lefi Abdelmonem - Expert Portfolio Tools",
-  "description": "Exposes e-commerce contact forms, pricing plan selections, and SEO audit tools to browser-based AI agents.",
+  "name": "Abdelmonem Lefi — E-Commerce SEO Consultant & PrestaShop Specialist",
+  "description": "Exposes e-commerce contact forms and SEO audit tools to browser-based AI agents.",
   "version": "1.0.0",
   "tools": [
     {
       "name": "submitContactForm",
-      "description": "Sends a secure project inquiry or maintenance hire request directly to Lefi Abdelmonem.",
+      "description": "Sends a secure project inquiry or audit request directly to Abdelmonem Lefi.",
       "parameters": {
         "type": "object",
         "properties": {
