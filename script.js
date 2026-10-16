@@ -616,67 +616,66 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnPrev = document.getElementById('btnPrevReview');
   const btnNext = document.getElementById('btnNextReview');
   
-  let currentSlide = 0;
-  let slideInterval = null;
+  if (slides && slides.length > 0 && btnPrev && btnNext) {
+    let currentSlide = 0;
+    let slideInterval = null;
 
-  function showSlide(index) {
-    // Wrap around boundaries
-    if (index >= slides.length) currentSlide = 0;
-    else if (index < 0) currentSlide = slides.length - 1;
-    else currentSlide = index;
+    function showSlide(index) {
+      if (index >= slides.length) currentSlide = 0;
+      else if (index < 0) currentSlide = slides.length - 1;
+      else currentSlide = index;
 
-    // Toggle active slide
-    slides.forEach((slide, i) => {
-      if (i === currentSlide) {
-        slide.classList.add('active');
-      } else {
-        slide.classList.remove('active');
-      }
-    });
+      slides.forEach((slide, i) => {
+        if (i === currentSlide) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
 
-    // Toggle active dot
-    dots.forEach((dot, i) => {
-      if (i === currentSlide) {
-        dot.classList.add('active');
-      } else {
-        dot.classList.remove('active');
-      }
-    });
-  }
+      dots.forEach((dot, i) => {
+        if (i === currentSlide) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
 
-  // Button navigations
-  btnPrev.addEventListener('click', () => {
-    showSlide(currentSlide - 1);
-    resetAutoPlay();
-  });
-
-  btnNext.addEventListener('click', () => {
-    showSlide(currentSlide + 1);
-    resetAutoPlay();
-  });
-
-  // Dot navigations
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const idx = parseInt(dot.getAttribute('data-index'));
-      showSlide(idx);
+    // Button navigations
+    btnPrev.addEventListener('click', () => {
+      showSlide(currentSlide - 1);
       resetAutoPlay();
     });
-  });
 
-  // Auto-play loop
-  function startAutoPlay() {
-    slideInterval = setInterval(() => {
+    btnNext.addEventListener('click', () => {
       showSlide(currentSlide + 1);
-    }, 7000);
-  }
+      resetAutoPlay();
+    });
 
-  function resetAutoPlay() {
-    clearInterval(slideInterval);
+    // Dot navigations
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const idx = parseInt(dot.getAttribute('data-index'), 10);
+        showSlide(idx);
+        resetAutoPlay();
+      });
+    });
+
+    // Auto-play loop
+    function startAutoPlay() {
+      slideInterval = setInterval(() => {
+        showSlide(currentSlide + 1);
+      }, 7000);
+    }
+
+    function resetAutoPlay() {
+      clearInterval(slideInterval);
+      startAutoPlay();
+    }
+
     startAutoPlay();
   }
-
-  startAutoPlay();
 
 
   /* ===================================================
