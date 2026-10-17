@@ -562,6 +562,20 @@ section {
   letter-spacing: 0.05em;
 }
 
+.hero-badge.hero-badge-fiverr {
+  background: rgba(29, 191, 115, 0.08);
+  border-color: rgba(29, 191, 115, 0.35);
+  color: #A7F3D0;
+}
+
+.hero-badge-star {
+  color: var(--accent-fiverr);
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
 .hero-title {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   line-height: 1.1;
@@ -573,6 +587,7 @@ section {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+  font-size: 0.75em;
 }
 
 .hero-description {
@@ -2778,6 +2793,48 @@ textarea.form-control {
 
 .case-result-box .case-block-label {
   color: var(--accent-sec);
+}
+
+/* Featured case study (full-width card with key metrics) */
+.case-card.case-featured {
+  grid-column: 1 / -1;
+}
+
+.case-meta-tag a {
+  color: var(--accent-seo);
+}
+
+.case-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 10px 0 12px;
+}
+
+.case-metric {
+  background: rgba(0, 240, 255, 0.04);
+  border: 1px solid rgba(0, 240, 255, 0.18);
+  border-radius: var(--border-radius-sm);
+  padding: 12px 14px;
+}
+
+.case-metric-value {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.case-metric-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.case-metrics-note {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
 .case-limits-box {
