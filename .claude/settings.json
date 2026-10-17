@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(node -e ' *)",
-      "Bash(node crop-semrush.js \"C:/Users/lefi0/AppData/Local/Temp/claude/c--Users-lefi0-OneDrive-Desktop-lefi-abdelmonem/209bcbf7-2b83-47b8-acbf-e0df67ada419/images/2.png\" \"C:/Users/lefi0/AppData/Local/Temp/seo-verif/scripts/site-review/semrush-crop.png\" \"C:/Users/lefi0/AppData/Local/Temp/seo-verif/scripts/site-review\")",
-      "Bash(xargs sed -i 's/style\\\\.css?v=4/style.css?v=5/')"
-    ]
-  }
-}
