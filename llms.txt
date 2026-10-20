@@ -23,3 +23,4 @@ All major interactive elements are semantic HTML with explicit dimensions to ens
 - `prestashop-google-ai-search-brand-authority/`: Critical analysis of Google Think AI search strategy and PrestaShop optimizations (French).
 - `google-spam-update-august-2026-ecommerce-gsc-bug/`: Deep dive into the August 2026 Google Spam Update and GSC telemetry bug (French).
 - `prestashop-webassembly-seo/`: Technical analysis of WebAssembly (WASM) indexing and performance for PrestaShop (French).
+- `google-ai-organized-serp-query-fan-out-ecommerce/`: Deep dive into Google's AI-organized search results, Gemini Query Fan-Out, and semantic engineering for e-commerce (French).
