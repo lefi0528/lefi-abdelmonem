@@ -24,3 +24,4 @@ All major interactive elements are semantic HTML with explicit dimensions to ens
 - `google-spam-update-august-2026-ecommerce-gsc-bug/`: Deep dive into the August 2026 Google Spam Update and GSC telemetry bug (French).
 - `prestashop-webassembly-seo/`: Technical analysis of WebAssembly (WASM) indexing and performance for PrestaShop (French).
 - `google-ai-organized-serp-query-fan-out-ecommerce/`: Deep dive into Google's AI-organized search results, Gemini Query Fan-Out, and semantic engineering for e-commerce (French).
+- `php2shell-critical-php-vulnerability-wordpress-prestashop/`: In-depth cybersecurity report and forensic breakdown of the global PHP2Shell (CVE-2026-109618 / CVE-2026-109619) 9.2 Critical RCE vulnerability affecting WordPress and PrestaShop (English).
