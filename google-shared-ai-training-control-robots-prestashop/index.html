@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Entraînement IA : le robots.txt de PrestaShop face au signal commun | Lefi Abdelmonem</title>
+  <meta name="description" content="Google prendra en charge en 2027 un jeton robots.txt commun contre l'entraînement IA. Ce que le générateur de PrestaShop en fait, et où placer la règle.">
+  <meta name="author" content="Lefi Abdelmonem">
+  <link rel="canonical" href="https://lefi-abdelmonem.com/google-shared-ai-training-control-robots-prestashop/">
+  <meta name="robots" content="index, follow">
+
+  <!-- OpenGraph Tags -->
+  <meta property="og:title" content="Entraînement IA : le robots.txt de PrestaShop face au signal commun | Lefi Abdelmonem">
+  <meta property="og:description" content="Google prendra en charge en 2027 un jeton robots.txt commun contre l'entraînement IA. Ce que le générateur de PrestaShop en fait, et où placer la règle.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lefi-abdelmonem.com/google-shared-ai-training-control-robots-prestashop/">
+  <meta property="og:site_name" content="Lefi Abdelmonem">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://lefi-abdelmonem.com/google-shared-ai-training-control-robots-prestashop/cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Entraînement IA : le robots.txt de PrestaShop face au signal commun">
+  <meta name="twitter:description" content="Le jeton __usage_ai-training expliqué pour une boutique PrestaShop : ce que le générateur de robots.txt efface, et où écrire la règle pour qu'elle tienne.">
+  <meta name="twitter:image" content="https://lefi-abdelmonem.com/google-shared-ai-training-control-robots-prestashop/cover.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../style.css?v=6">
+
+  <!-- WebMCP Agentic Web Standard -->
+  <link rel="webmcp" type="application/json" href="../webmcp.json">
+
+  <!-- JSON-LD Structured Data (TechArticle & Breadcrumbs) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://lefi-abdelmonem.com/google-shared-ai-training-control-robots-prestashop/#article",
+        "isPartOf": {
+          "@id": "https://lefi-abdelmonem.com/#website"
+        },
+        "headline": "Entraînement IA : le robots.txt de PrestaShop face au signal commun",
+        "description": "Google prendra en charge en 2027 un jeton robots.txt commun contre l'entraînement IA. Ce que le générateur de PrestaShop en fait, et où placer la règle.",
+        "url": "https://lefi-abdelmonem.com/google-shared-ai-training-control-robots-prestashop/",
+        "datePublished": "2026-10-31",
+        "dateModified": "2026-10-31",
+        "inLanguage": "fr",
+        "author": {
+          "@type": "Person",
+          "@id": "https://lefi-abdelmonem.com/#person",
+          "name": "Lefi Abdelmonem",
+          "url": "https://lefi-abdelmonem.com/"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Lefi Abdelmonem",
+          "url": "https://lefi-abdelmonem.com/"
+        },
+        "image": "https://lefi-abdelmonem.com/google-shared-ai-training-control-robots-prestashop/cover.jpg",
+        "mainEntityOfPage": "https://lefi-abdelmonem.com/google-shared-ai-training-control-robots-prestashop/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://lefi-abdelmonem.com/google-shared-ai-training-control-robots-prestashop/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://lefi-abdelmonem.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Actualités & Veille",
+            "item": "https://lefi-abdelmonem.com/#news"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Robots.txt, entraînement IA et PrestaShop"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .article-container {
+      flex-grow: 1;
+      width: 100%;
+      max-width: 880px;
+      margin: 120px auto 80px auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .article-view-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 52px 48px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+    .article-nav-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+    }
+    .article-badge-brand {
+      background: rgba(0, 240, 255, 0.12);
+      color: var(--accent-seo);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .article-title-main {
+      font-family: var(--font-title);
+      font-size: 2.35rem;
+      font-weight: 700;
+      line-height: 1.28;
+      color: var(--text-primary);
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+    .article-subtitle {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+    .article-content-body {
+      color: var(--text-secondary);
+      font-size: 1.08rem;
+      line-height: 1.85;
+      font-family: var(--font-body);
+    }
+    .article-content-body p { margin-bottom: 24px; }
+    .article-content-body h2 {
+      font-family: var(--font-title);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 44px 0 22px 0;
+      border-left: 4px solid var(--accent-seo);
+      padding-left: 16px;
+      line-height: 1.3;
+    }
+    .article-content-body h3 {
+      font-family: var(--font-title);
+      font-size: 1.28rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 30px 0 16px 0;
+    }
+    .article-content-body ul, .article-content-body ol {
+      margin: 20px 0 28px 24px;
+    }
+    .article-content-body li {
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    .article-content-body a {
+      color: var(--accent-seo);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .article-content-body code {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 0.92em;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 1px 6px;
+      border-radius: 5px;
+      overflow-wrap: anywhere;
+    }
+    .article-remark-block {
+      background: rgba(0, 240, 255, 0.05);
+      border-left: 3px solid var(--accent-seo);
+      padding: 22px 26px;
+      border-radius: 0 12px 12px 0;
+      margin: 36px 0;
+      color: var(--text-primary);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+    .article-callout-warning {
+      background: rgba(255, 170, 0, 0.08);
+      border-left: 3px solid #ffaa00;
+      padding: 20px 24px;
+      border-radius: 0 12px 12px 0;
+      margin: 32px 0;
+      color: #ffda79;
+      line-height: 1.7;
+    }
+    .article-table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 32px 0;
+    }
+    .article-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    .article-table th, .article-table td {
+      padding: 14px 16px;
+      border: 1px solid var(--border-color);
+      text-align: left;
+      vertical-align: top;
+    }
+    .article-table th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .article-table td {
+      color: var(--text-secondary);
+    }
+    .article-method-note {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+      margin-top: 40px;
+    }
+    .article-sources li {
+      font-size: 0.95rem;
+      overflow-wrap: anywhere;
+    }
+    .article-cta-box {
+      margin-top: 52px;
+      padding: 36px;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.12), rgba(173, 0, 255, 0.08));
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      text-align: center;
+    }
+    .article-cta-box h3 {
+      font-size: 1.45rem;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .article-cta-box p {
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .article-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      font-family: var(--font-title);
+      font-weight: 500;
+      margin-bottom: 32px;
+      transition: var(--transition-smooth);
+      width: fit-content;
+    }
+    .article-back-link:hover {
+      color: var(--text-primary);
+      transform: translateX(-4px);
+    }
+    @media (max-width: 768px) {
+      .article-container { margin-top: 100px; margin-bottom: 40px; }
+      .article-view-card { padding: 30px 20px; }
+      .article-title-main { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="article-page-wrapper">
+
+    <!-- Navbar (Static Header) -->
+    <header class="main-header" style="position: fixed; top: 0; width: 100%; z-index: 100;">
+      <div class="container header-container" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px;">
+        <a href="../" class="logo">
+          LEFI <span class="logo-accent">.ABDELMONEM</span>
+        </a>
+        <nav class="nav-menu" style="display: flex; gap: 20px; align-items: center;">
+          <a href="../#home" class="nav-link">Accueil</a>
+          <a href="../#services" class="nav-link">Expertises</a>
+          <a href="../#news" class="nav-link active">Actualités</a>
+          <a href="../#contact" class="nav-link nav-btn btn-primary" style="padding: 8px 20px; border-radius: 9999px;">Me Contacter</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Ambient Glowing Orb -->
+    <div class="ambient-glows">
+      <div class="glow-orb" style="width: 520px; height: 520px; top: 12%; left: 50%; transform: translateX(-50%); filter: blur(140px); opacity: 0.12; background: radial-gradient(circle, var(--accent-seo) 0%, rgba(173, 0, 255, 0) 70%);"></div>
+    </div>
+
+    <!-- Article Content Container -->
+    <main class="article-container">
+
+      <a href="../#news" class="article-back-link">
+        &larr; Retour à l'accueil / Actualités
+      </a>
+
+      <article class="article-view-card">
+
+        <header>
+          <div class="article-nav-header">
+            <span class="article-badge-brand">Robots.txt et IA</span>
+            <span>📅 31 Octobre 2026</span>
+            <span>⏱️ 7 min de lecture</span>
+            <span>✍️ Par Lefi Abdelmonem</span>
+          </div>
+
+          <h1 class="article-title-main">
+            Entraînement IA : le robots.txt de PrestaShop face au signal commun
+          </h1>
+
+          <div class="article-subtitle">
+            Un nouveau jeton robots.txt, <code>__usage_ai-training</code>, servira à dire « pas d'entraînement IA » à plusieurs fournisseurs à la fois. Sur PrestaShop, il ne survivra pas à une régénération du fichier si vous l'ajoutez à la main.
+          </div>
+
+          <figure style="margin: 32px 0 40px 0; text-align: center;">
+            <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 15px 45px rgba(0,0,0,0.6);">
+              <img src="cover.jpg" alt="Illustration : extrait d'un fichier robots.txt de boutique PrestaShop, avec un groupe __usage_ai-training placé en fin de fichier, séparé du groupe User-agent: *" width="1200" height="675" style="width: 100%; height: auto; display: block;">
+            </div>
+            <figcaption style="margin-top: 14px; font-size: 0.9rem; color: #94a3b8; font-style: italic; line-height: 1.5;">
+              Illustration : le jeton commun s'écrit dans un groupe séparé, en fin de fichier. Les réponses pour Googlebot n'en dépendent pas.
+            </figcaption>
+          </figure>
+        </header>
+
+        <div class="article-content-body">
+
+          <p>
+            Le 30 octobre 2026, Google a annoncé qu'il prendrait en charge un signal d'opposition à l'entraînement IA commun à plusieurs fournisseurs, placé dans robots.txt. Rien ne change aujourd'hui dans la recherche Google : l'enjeu, pour une boutique PrestaShop, est de décider de sa position et de savoir où l'écrire pour qu'elle tienne.
+          </p>
+
+          <h2>1. Ce qui a été annoncé</h2>
+
+          <p>
+            Dans un <a href="https://developers.google.com/search/blog/2026/10/ai-training-control">billet de Google Search Central</a> signé John Mueller, Google indique vouloir reconnaître un « jeton de politique » partagé dans robots.txt, issu des travaux du groupe AIPREF de l'IETF. La <a href="https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers">documentation des robots de Google</a>, mise à jour le même jour, précise la syntaxe : <code>user-agent: __usage_ai-training</code>. Le billet parle d'une prise en charge en 2027, la documentation de début 2027.
+          </p>
+
+          <p>Trois règles d'interprétation sont annoncées par Google :</p>
+
+          <ul>
+            <li>si votre robots.txt s'oppose à l'entraînement avec ce jeton <strong>et</strong> ne mentionne pas explicitement Google-Extended, Google prévoit de le lire comme un <code>Disallow</code> de Google-Extended ;</li>
+            <li>les contrôles propres à chaque entreprise, dont Google-Extended, continuent de fonctionner à côté du signal commun ;</li>
+            <li>les sites qui autorisent explicitement Google-Extended restent éligibles pour apparaître dans les réponses des applications Gemini et y recevoir des clics, via l'ancrage (grounding).</li>
+          </ul>
+
+          <p>
+            Rappel tiré de la même documentation : Google-Extended n'a aucun effet sur l'inclusion dans la recherche Google et n'est pas un signal de classement. Il porte sur l'entraînement des modèles Gemini et sur l'ancrage dans les applications Gemini et Vertex AI.
+          </p>
+
+          <p>
+            Le texte technique de référence est un <a href="https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal/">Internet-Draft individuel</a> publié le 30 octobre, que l'IETF n'a pas adopté à ce stade. Deux points y comptent pour un marchand. D'abord, un groupe <code>User-Agent: *</code> ne doit <strong>pas</strong> être lu comme visant le jeton (section 4.2) : vos règles actuelles n'expriment donc aucune préférence. Ensuite, le jeton n'est pas une directive d'exploration (section 4.4) : il exprime un choix d'usage, même si un fournisseur peut en tenir compte pour décider de ce qu'il récupère.
+          </p>
+
+          <h2>2. Ce que cela change pour une boutique PrestaShop</h2>
+
+          <p>
+            Le robots.txt d'une boutique PrestaShop est en général produit par le back-office, bouton « Générer le fichier robots.txt » dans <strong>Paramètres de la boutique &gt; Trafic et SEO</strong>. Nous avons lu la fonction qui l'écrit, <code>Tools::generateRobotsFile()</code> dans <a href="https://github.com/PrestaShop/PrestaShop/blob/9.2.0/classes/Tools.php"><code>classes/Tools.php</code></a>, dans quatre versions : 1.7.6.9, 1.7.7.8, 8.2.8 et 9.2.0. Le comportement est le même partout :
+          </p>
+
+          <div class="article-table-wrapper">
+            <table class="article-table">
+              <thead>
+                <tr>
+                  <th>Constat dans le code</th>
+                  <th>Conséquence pour le jeton IA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Le fichier est ouvert en mode <code>wb</code> : il est réécrit en entier</td>
+                  <td>Toute ligne ajoutée à la main (FTP, gestionnaire de fichiers de l'hébergeur) disparaît à la prochaine génération</td>
+                </tr>
+                <tr>
+                  <td>Un seul groupe est écrit : <code>User-agent: *</code></td>
+                  <td>Le fichier par défaut n'exprime aucune préférence d'entraînement</td>
+                </tr>
+                <tr>
+                  <td>Hook <code>actionAdminMetaBeforeWriteRobotsFile</code></td>
+                  <td>Il modifie les listes du groupe <code>*</code> : inadapté pour créer un groupe à part</td>
+                </tr>
+                <tr>
+                  <td>Hook <code>actionAdminMetaAfterWriteRobotsFile</code>, qui reçoit le fichier ouvert</td>
+                  <td>Un module peut y écrire un groupe <code>__usage_ai-training</code> en fin de fichier</td>
+                </tr>
+                <tr>
+                  <td>L'enregistrement d'une URL de boutique (<code>AdminShopUrlController</code>) régénère le fichier <strong>sans</strong> exécuter les hooks</td>
+                  <td>En multiboutique, modifier une URL de boutique efface aussi le groupe ajouté par un module</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="article-callout-warning">
+            ⚠️ <strong>Le point le plus facile à manquer :</strong> en multiboutique, une modification dans <strong>Paramètres avancés &gt; Multiboutique</strong>, sur l'URL d'une boutique, réécrit robots.txt sans passer par les modules.
+          </div>
+
+          <h2>3. Le test : quatre façons d'écrire la règle</h2>
+
+          <p>
+            Nous avons reconstitué le robots.txt que PrestaShop 9.2.0 génère pour une boutique fictive (racine du domaine, français et anglais, URL simplifiées), puis lu quatre variantes avec un petit analyseur écrit selon le RFC 9309 et la section 4.2 du brouillon IETF. Un second contrôle a été fait avec un analyseur déjà répandu, <code>urllib.robotparser</code> de Python.
+          </p>
+
+          <div class="article-table-wrapper">
+            <table class="article-table">
+              <thead>
+                <tr>
+                  <th>Variante</th>
+                  <th>Fiche produit <code>/fr/accueil/12-...html</code></th>
+                  <th>Panier <code>/fr/panier</code></th>
+                  <th>Exploration par Googlebot</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>A. Fichier PrestaShop tel quel</td>
+                  <td>aucune préférence</td>
+                  <td>aucune préférence</td>
+                  <td>inchangée</td>
+                </tr>
+                <tr>
+                  <td>B. A + groupe <code>__usage_ai-training</code> / <code>Disallow: /</code> en fin de fichier</td>
+                  <td>préférence contre</td>
+                  <td>préférence contre</td>
+                  <td>inchangée</td>
+                </tr>
+                <tr>
+                  <td>C. B + groupe <code>Google-Extended</code> / <code>Allow: /</code></td>
+                  <td>jeton commun : contre ; Google-Extended : pour</td>
+                  <td>idem</td>
+                  <td>inchangée</td>
+                </tr>
+                <tr>
+                  <td>D. Jeton glissé sous <code>User-agent: *</code></td>
+                  <td><strong>préférence pour</strong></td>
+                  <td>préférence contre</td>
+                  <td>inchangée</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>Ce que montre le test :</p>
+
+          <ul>
+            <li><strong>B</strong> est la forme correcte d'une opposition générale. Selon le billet de Google, elle vaudrait aussi refus de Google-Extended, puisque ce dernier n'est pas cité.</li>
+            <li><strong>C</strong> est la forme d'un choix nuancé : opposition par défaut, mais maintien de l'éligibilité aux réponses ancrées des applications Gemini, puisque, selon Google, le jeton commun ne vaut refus de Google-Extended que si ce dernier n'est pas cité.</li>
+            <li><strong>D</strong> est le piège propre à PrestaShop. Ajouter la ligne <code>User-agent: __usage_ai-training</code> juste sous <code>User-agent: *</code> rattache le jeton aux règles d'exploration de PrestaShop. Le panier, le compte et la recherche deviennent « contre », et tout le reste, fiches produits et images comprises, devient une préférence <strong>en faveur</strong> de l'entraînement. L'inverse de l'intention.</li>
+            <li>Dans les quatre cas, les réponses pour Googlebot sont identiques, avec les deux analyseurs. Le jeton ne change rien à l'exploration ni à l'indexation.</li>
+          </ul>
+
+          <div class="article-remark-block">
+            <strong>Lecture de consultant.</strong> Pour un catalogue, je ne vois pas de raison de se précipiter : Google ne prévoit de lire ce jeton qu'en 2027 et le brouillon IETF peut encore évoluer. En revanche, je conseille de trancher dès maintenant la question de Google-Extended, parce qu'elle a déjà un effet : un refus vous retire de l'ancrage des applications Gemini, un canal où des fiches produits peuvent être citées avec un lien. Pour une boutique qui vit de sa visibilité, la variante C me paraît la plus cohérente si vous voulez vous opposer à l'entraînement en général sans quitter Gemini. C'est un avis, pas une mesure : Google ne publie aucune donnée de trafic issue de cet ancrage. Sur le plan technique, ma règle est simple : sur PrestaShop, une préférence écrite à la main dans robots.txt est une préférence provisoire.
+          </div>
+
+          <h2>Que vérifier cette semaine</h2>
+
+          <ol>
+            <li>Ouvrez <code>https://votre-boutique/robots.txt</code> et cherchez <code>Google-Extended</code> et <code>__usage_ai-training</code>. Si l'en-tête « automatically generated by PrestaShop » est présent et qu'une de ces lignes a été ajoutée à la main, elle disparaîtra à la prochaine génération.</li>
+            <li>Dans <strong>Paramètres de la boutique &gt; Trafic et SEO</strong>, notez qui, dans l'équipe ou l'agence, clique sur « Générer le fichier robots.txt » et à quelle occasion (changement de langue, de thème, de module).</li>
+            <li>Si vous êtes en multiboutique, ajoutez à votre procédure un contrôle de robots.txt après toute modification d'URL dans <strong>Paramètres avancés &gt; Multiboutique</strong>.</li>
+            <li>Décidez de votre position sur Google-Extended (garder ou non l'ancrage dans Gemini) avant d'écrire quoi que ce soit pour le jeton commun.</li>
+            <li>Si vous voulez une règle durable, demandez à votre développeur un module branché sur <code>actionAdminMetaAfterWriteRobotsFile</code> qui écrit un groupe séparé en fin de fichier, jamais sous <code>User-agent: *</code>.</li>
+          </ol>
+
+          <h2>Limites</h2>
+
+          <ul>
+            <li>Le jeton <code>__usage_ai-training</code> n'est encore qu'un Internet-Draft individuel, sans statut à l'IETF ; sa syntaxe peut changer avant 2027.</li>
+            <li>Google décrit une intention de prise en charge, pas un comportement en production. Les autres fournisseurs d'IA « peuvent » faire de même, selon le billet : aucun n'est engagé par ce texte.</li>
+            <li>Une préférence n'est pas un blocage technique : elle repose sur le respect du signal par chaque fournisseur.</li>
+            <li>Notre test porte sur un fichier reconstitué d'après le code, pas sur une boutique en production, et sur deux analyseurs seulement. Il ne dit rien du fonctionnement interne de Google.</li>
+            <li>Le brouillon IETF est signé par un auteur affilié à Anthropic, l'éditeur de Claude, outil utilisé pour préparer cet article.</li>
+          </ul>
+
+          <h2>Sources</h2>
+
+          <ul class="article-sources">
+            <li>« Supporting a shared AI training control for websites », Google Search Central, 30/10/2026, consulté le 30/10/2026 : <a href="https://developers.google.com/search/blog/2026/10/ai-training-control">https://developers.google.com/search/blog/2026/10/ai-training-control</a></li>
+            <li>« Google's common crawlers » (section Google-Extended), Google Search Central, mise à jour du 30/10/2026, consulté le 30/10/2026 : <a href="https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers">https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers</a></li>
+            <li>« Machine-Readable Training Preference Signal », draft-kelley-aipref-training-preference-signal-00, IETF Datatracker, 30/10/2026, consulté le 30/10/2026 : <a href="https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal/">https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal/</a></li>
+            <li>PrestaShop 9.2.0, <code>classes/Tools.php</code> et <code>controllers/admin/AdminShopUrlController.php</code>, GitHub, consulté le 30/10/2026 : <a href="https://github.com/PrestaShop/PrestaShop/blob/9.2.0/classes/Tools.php">https://github.com/PrestaShop/PrestaShop/blob/9.2.0/classes/Tools.php</a></li>
+            <li>RFC 9309, Robots Exclusion Protocol, IETF, septembre 2022 : <a href="https://www.rfc-editor.org/rfc/rfc9309.html">https://www.rfc-editor.org/rfc/rfc9309.html</a></li>
+          </ul>
+
+          <p class="article-method-note">
+            <strong>Comment cet article a été produit.</strong> Faits vérifiés dans les sources listées ci-dessus ; lecture de la fonction <code>generateRobotsFile()</code> de PrestaShop 1.7.6.9, 1.7.7.8, 8.2.8 et 9.2.0, et test de quatre variantes de robots.txt avec un analyseur conforme au RFC 9309 et <code>urllib.robotparser</code> de Python, réalisés le 30 octobre 2026 (fichiers conservés). Rédigé avec l'aide de Claude (Anthropic), puis relu et validé par Lefi Abdelmonem avant publication.
+          </p>
+
+          <p>
+            <strong>À lire aussi :</strong> <a href="../google-ai-organized-serp-query-fan-out-ecommerce/">Google déploie les « AI-Organized Search Results »</a>
+          </p>
+
+        </div>
+
+        <div class="article-cta-box">
+          <h3>Besoin d'un diagnostic sur votre boutique ?</h3>
+          <p>
+            Consultant SEO e-commerce et ingénieur PrestaShop, je vérifie votre robots.txt, la façon dont il est régénéré et vos réglages Google-Extended avant qu'une mise à jour ne les efface.
+          </p>
+          <a href="../#contact" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: 9999px; text-decoration: none;">
+            Me contacter
+          </a>
+        </div>
+
+      </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer" style="margin-top: auto; border-top: 1px solid var(--border-color); padding: 32px 0;">
+      <div class="container footer-container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div class="footer-copy">
+          <p>&copy; 2026 Lefi Abdelmonem. Tous droits réservés.</p>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Activateur France Num (GENISOFT). Certification Opquast « Maîtrise de la qualité en projet web ».</p>
+        </div>
+        <div class="footer-links" style="display: flex; gap: 16px;">
+          <a href="../" class="footer-link">Accueil</a>
+          <a href="../#services" class="footer-link">Expertises</a>
+          <a href="../#contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
