@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060913" />
+      <stop offset="50%" stop-color="#0c1222" />
+      <stop offset="100%" stop-color="#080d1a" />
+    </linearGradient>
+
+    <!-- Glowing gradients -->
+    <radialGradient id="cyanGlow" cx="20%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="purpleGlow" cx="80%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#ad00ff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ad00ff" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="greenGlow" cx="50%" cy="85%" r="40%">
+      <stop offset="0%" stop-color="#00ffaa" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#00ffaa" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="textGradCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#d0f7ff" />
+      <stop offset="100%" stop-color="#00f0ff" />
+    </linearGradient>
+
+    <linearGradient id="carbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ffaa" />
+      <stop offset="100%" stop-color="#00b4d8" />
+    </linearGradient>
+
+    <linearGradient id="argonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#ad00ff" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="1200" height="675" fill="url(#bgGrad)" />
+  <rect width="1200" height="675" fill="url(#techGrid)" />
+
+  <!-- Ambient Glow Orbs -->
+  <circle cx="240" cy="220" r="340" fill="url(#cyanGlow)" />
+  <circle cx="980" cy="260" r="360" fill="url(#purpleGlow)" />
+  <circle cx="600" cy="580" r="280" fill="url(#greenGlow)" />
+
+  <!-- Decorative Circuit / Trajectory Lines -->
+  <path d="M 100 520 L 320 520 L 420 420 L 780 420 L 880 320 L 1100 320" fill="none" stroke="rgba(0, 240, 255, 0.2)" stroke-width="2" stroke-dasharray="8 6"/>
+  <path d="M 100 580 L 480 580 L 580 480 L 1100 480" fill="none" stroke="rgba(173, 0, 255, 0.2)" stroke-width="2"/>
+  <path d="M 680 180 L 760 180 L 820 240 L 1050 240" fill="none" stroke="rgba(0, 255, 170, 0.25)" stroke-width="2"/>
+
+  <!-- Top Category Badge -->
+  <g transform="translate(100, 95)">
+    <rect width="320" height="38" rx="19" fill="rgba(0, 240, 255, 0.12)" stroke="rgba(0, 240, 255, 0.4)" stroke-width="1.2" />
+    <circle cx="20" cy="19" r="6" fill="#00f0ff" />
+    <text x="36" y="24" fill="#00f0ff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" letter-spacing="1.5">GOOGLE AI • OCTOBRE 2026</text>
+  </g>
+
+  <!-- Main Title -->
+  <text x="100" y="210" fill="url(#textGradCyan)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="800" letter-spacing="-1">
+    GEMINI 4 ARGON vs CARBON
+  </text>
+  <text x="100" y="275" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" font-weight="600">
+    La Fin de l'IA Conversationnelle
+  </text>
+
+  <!-- Subtitle Tagline -->
+  <text x="100" y="335" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="21" font-weight="400">
+    Raisonnement Abstrait • Ingénierie &amp; Cyberdéfense Active • Search On-Device
+  </text>
+
+  <!-- Pillar Cards (Three floating glass nodes) -->
+  
+  <!-- Pillar 1: Argon -->
+  <g transform="translate(100, 395)">
+    <rect width="300" height="180" rx="14" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(0, 240, 255, 0.35)" stroke-width="1.5"/>
+    <rect x="0" y="0" width="300" height="4" rx="2" fill="url(#argonGrad)" />
+    <text x="24" y="44" fill="#00f0ff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" letter-spacing="1">MODÈLE FRONTIÈRE 01</text>
+    <text x="24" y="80" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="700">Gemini 4 Argon</text>
+    <text x="24" y="112" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14">Raisonnement multi-étape</text>
+    <text x="24" y="134" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14">Droit, finance, physique</text>
+    <text x="24" y="156" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600">→ Déploiement global Studio &amp; API</text>
+  </g>
+
+  <!-- Pillar 2: Carbon -->
+  <g transform="translate(440, 395)">
+    <rect width="300" height="180" rx="14" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(0, 255, 170, 0.4)" stroke-width="1.5"/>
+    <rect x="0" y="0" width="300" height="4" rx="2" fill="url(#carbonGrad)" />
+    <text x="24" y="44" fill="#00ffaa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" letter-spacing="1">MODÈLE FRONTIÈRE 02</text>
+    <text x="24" y="80" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="700">Gemini 4 Carbon</text>
+    <text x="24" y="112" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14">Ingénierie long-horizon</text>
+    <text x="24" y="134" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14">Cyberdéfense autonome</text>
+    <text x="24" y="156" fill="#4ade80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600">→ Protocole Fairwind Défense</text>
+  </g>
+
+  <!-- Pillar 3: EmbeddingGemma 2 -->
+  <g transform="translate(780, 395)">
+    <rect width="320" height="180" rx="14" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(173, 0, 255, 0.4)" stroke-width="1.5"/>
+    <rect x="0" y="0" width="320" height="4" rx="2" fill="url(#argonGrad)" />
+    <text x="24" y="44" fill="#d8b4fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700" letter-spacing="1">PERFORMANCE &amp; SEARCH EDGE</text>
+    <text x="24" y="80" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="22" font-weight="700">EmbeddingGemma 2</text>
+    <text x="24" y="112" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14">740M paramètres on-device</text>
+    <text x="24" y="134" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14">Multimodal (image, audio, texte)</text>
+    <text x="24" y="156" fill="#c084fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600">→ Stockage vectoriel réduit 6x</text>
+  </g>
+
+  <!-- Watermark Author Signature Bottom Right -->
+  <g transform="translate(900, 625)">
+    <text x="200" y="0" text-anchor="end" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="600">
+      Lefi Abdelmonem • Architecture Web &amp; SEO
+    </text>
+  </g>
+</svg>
