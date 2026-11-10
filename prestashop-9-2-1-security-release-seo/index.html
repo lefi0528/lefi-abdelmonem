@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PrestaShop 9.2.1 : 18 failles corrigées, à vérifier pour le SEO | Lefi Abdelmonem</title>
+  <meta name="description" content="PrestaShop 9.2.1 corrige 18 failles, dont 15 notées élevées par l'éditeur. Avant tout travail SEO, vérifiez pages, redirections et accès de votre boutique.">
+  <meta name="author" content="Lefi Abdelmonem">
+  <link rel="canonical" href="https://lefi-abdelmonem.com/prestashop-9-2-1-security-release-seo/">
+  <meta name="robots" content="index, follow">
+
+  <!-- OpenGraph Tags -->
+  <meta property="og:title" content="PrestaShop 9.2.1 : 18 failles corrigées, à vérifier pour le SEO | Lefi Abdelmonem">
+  <meta property="og:description" content="PrestaShop 9.2.1 corrige 18 failles, dont 15 notées élevées par l'éditeur. Avant tout travail SEO, vérifiez pages, redirections et accès de votre boutique.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lefi-abdelmonem.com/prestashop-9-2-1-security-release-seo/">
+  <meta property="og:site_name" content="Lefi Abdelmonem">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://lefi-abdelmonem.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PrestaShop 9.2.1 : 18 failles corrigées, à vérifier pour le SEO">
+  <meta name="twitter:description" content="PrestaShop 9.2.1 corrige 18 failles, dont 15 notées élevées par l'éditeur. Avant tout travail SEO, vérifiez pages, redirections et accès de votre boutique.">
+  <meta name="twitter:image" content="https://lefi-abdelmonem.com/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../style.css?v=6">
+
+  <!-- WebMCP Agentic Web Standard -->
+  <link rel="webmcp" type="application/json" href="../webmcp.json">
+
+  <!-- JSON-LD Structured Data (TechArticle & Breadcrumbs) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://lefi-abdelmonem.com/prestashop-9-2-1-security-release-seo/#article",
+        "isPartOf": {
+          "@id": "https://lefi-abdelmonem.com/#website"
+        },
+        "headline": "PrestaShop 9.2.1 : 18 failles corrigées, à vérifier pour le SEO",
+        "description": "PrestaShop 9.2.1 corrige 18 failles, dont 15 notées élevées par l'éditeur. Avant tout travail SEO, vérifiez pages, redirections et accès de votre boutique.",
+        "url": "https://lefi-abdelmonem.com/prestashop-9-2-1-security-release-seo/",
+        "datePublished": "2026-11-10",
+        "dateModified": "2026-11-10",
+        "inLanguage": "fr",
+        "author": {
+          "@type": "Person",
+          "@id": "https://lefi-abdelmonem.com/#person",
+          "name": "Lefi Abdelmonem",
+          "url": "https://lefi-abdelmonem.com/"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Lefi Abdelmonem",
+          "url": "https://lefi-abdelmonem.com/"
+        },
+        "image": "https://lefi-abdelmonem.com/og-image.jpg",
+        "mainEntityOfPage": "https://lefi-abdelmonem.com/prestashop-9-2-1-security-release-seo/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://lefi-abdelmonem.com/prestashop-9-2-1-security-release-seo/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://lefi-abdelmonem.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Actualités & Veille",
+            "item": "https://lefi-abdelmonem.com/#news"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "PrestaShop 9.2.1 et sécurité"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .article-container {
+      flex-grow: 1;
+      width: 100%;
+      max-width: 880px;
+      margin: 120px auto 80px auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .article-view-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 52px 48px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+    .article-nav-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+    }
+    .article-badge-brand {
+      background: rgba(0, 240, 255, 0.12);
+      color: var(--accent-seo);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .article-title-main {
+      font-family: var(--font-title);
+      font-size: 2.35rem;
+      font-weight: 700;
+      line-height: 1.28;
+      color: var(--text-primary);
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+    .article-subtitle {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+    .article-content-body {
+      color: var(--text-secondary);
+      font-size: 1.08rem;
+      line-height: 1.85;
+      font-family: var(--font-body);
+    }
+    .article-content-body p { margin-bottom: 24px; }
+    .article-content-body h2 {
+      font-family: var(--font-title);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 44px 0 22px 0;
+      border-left: 4px solid var(--accent-seo);
+      padding-left: 16px;
+      line-height: 1.3;
+    }
+    .article-content-body h3 {
+      font-family: var(--font-title);
+      font-size: 1.28rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 30px 0 16px 0;
+    }
+    .article-content-body ul, .article-content-body ol {
+      margin: 20px 0 28px 24px;
+    }
+    .article-content-body li {
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    .article-content-body a {
+      color: var(--accent-seo);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .article-content-body code {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 0.92em;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 1px 6px;
+      border-radius: 5px;
+      overflow-wrap: anywhere;
+    }
+    .article-remark-block {
+      background: rgba(0, 240, 255, 0.05);
+      border-left: 3px solid var(--accent-seo);
+      padding: 22px 26px;
+      border-radius: 0 12px 12px 0;
+      margin: 36px 0;
+      color: var(--text-primary);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+    .article-callout-warning {
+      background: rgba(255, 170, 0, 0.08);
+      border-left: 3px solid #ffaa00;
+      padding: 20px 24px;
+      border-radius: 0 12px 12px 0;
+      margin: 32px 0;
+      color: #ffda79;
+      line-height: 1.7;
+    }
+    .article-table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 32px 0;
+    }
+    .article-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    .article-table th, .article-table td {
+      padding: 14px 16px;
+      border: 1px solid var(--border-color);
+      text-align: left;
+      vertical-align: top;
+    }
+    .article-table th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .article-table td {
+      color: var(--text-secondary);
+    }
+    .article-method-note {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+      margin-top: 40px;
+    }
+    .article-sources li {
+      font-size: 0.95rem;
+      overflow-wrap: anywhere;
+    }
+    .article-cta-box {
+      margin-top: 52px;
+      padding: 36px;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.12), rgba(173, 0, 255, 0.08));
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      text-align: center;
+    }
+    .article-cta-box h3 {
+      font-size: 1.45rem;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .article-cta-box p {
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .article-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      font-family: var(--font-title);
+      font-weight: 500;
+      margin-bottom: 32px;
+      transition: var(--transition-smooth);
+      width: fit-content;
+    }
+    .article-back-link:hover {
+      color: var(--text-primary);
+      transform: translateX(-4px);
+    }
+    @media (max-width: 768px) {
+      .article-container { margin-top: 100px; margin-bottom: 40px; }
+      .article-view-card { padding: 30px 20px; }
+      .article-title-main { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="article-page-wrapper">
+
+    <!-- Navbar (Static Header) -->
+    <header class="main-header" style="position: fixed; top: 0; width: 100%; z-index: 100;">
+      <div class="container header-container" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px;">
+        <a href="../" class="logo">
+          LEFI <span class="logo-accent">.ABDELMONEM</span>
+        </a>
+        <nav class="nav-menu" style="display: flex; gap: 20px; align-items: center;">
+          <a href="../#home" class="nav-link">Accueil</a>
+          <a href="../#services" class="nav-link">Expertises</a>
+          <a href="../#news" class="nav-link active">Actualités</a>
+          <a href="../#contact" class="nav-link nav-btn btn-primary" style="padding: 8px 20px; border-radius: 9999px;">Me Contacter</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Ambient Glowing Orb -->
+    <div class="ambient-glows">
+      <div class="glow-orb" style="width: 520px; height: 520px; top: 12%; left: 50%; transform: translateX(-50%); filter: blur(140px); opacity: 0.12; background: radial-gradient(circle, var(--accent-seo) 0%, rgba(173, 0, 255, 0) 70%);"></div>
+    </div>
+
+    <!-- Article Content Container -->
+    <main class="article-container">
+
+      <a href="../#news" class="article-back-link">
+        &larr; Retour à l'accueil / Actualités
+      </a>
+
+      <article class="article-view-card">
+
+        <header>
+          <div class="article-nav-header">
+            <span class="article-badge-brand">Sécurité PrestaShop</span>
+            <span>📅 10 Novembre 2026</span>
+            <span>⏱️ 8 min de lecture</span>
+            <span>✍️ Par Lefi Abdelmonem</span>
+          </div>
+
+          <h1 class="article-title-main">
+            PrestaShop 9.2.1 : 18 failles corrigées, à vérifier pour le SEO
+          </h1>
+
+          <div class="article-subtitle">
+            PrestaShop 9.2.1 corrige dix-huit failles. Elle ne nettoie pas une boutique déjà touchée, et c'est là que se joue le référencement.
+          </div>
+        </header>
+
+        <div class="article-content-body">
+
+          <p>
+            PrestaShop 9.2.1 est sortie le 9 novembre 2026 avec dix-huit correctifs de sécurité, dont quinze notés élevés par l'éditeur. Pour une boutique, la première action est une mise à jour planifiée. Pour le référencement, la question suivante compte davantage : une boutique touchée avant la mise à jour peut garder des pages, des liens ou des redirections que Google range dans le contenu piraté.
+          </p>
+
+          <h2>1. Ce qui a été annoncé</h2>
+
+          <p>
+            PrestaShop Build <a href="https://build.prestashop-project.org/news/2026/prestashop-9-2-1-security-release/">annonce la version 9.2.1</a> comme une mise à jour de sécurité, à appliquer le plus vite possible. Elle corrige dix-huit vulnérabilités signalées par divulgation coordonnée, dont quinze classées élevées. La version 8.2.9, publiée le même jour, reprend quinze de ces correctifs. Les trois autres (deux liées aux clients de l'API d'administration, une au mode débogage) ne concernent que la branche 9. La <a href="https://github.com/PrestaShop/PrestaShop/releases/tag/9.2.1">balise 9.2.1 sur GitHub</a> porte la date du 9 novembre à 12 h 00 UTC.
+          </p>
+
+          <p>
+            La note couvre aussi deux modules. <code>ps_emailsubscription</code> passe en 3.0.1 pour une injection CSV à l'export des abonnés à la newsletter (score 6,1). <code>psgdpr</code> passe en 1.4.4 : un visiteur pouvait enregistrer un consentement au nom d'un autre client, avec la faille <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-92809">CVE-2026-92809</a> (score 5,3, selon l'éditeur).
+          </p>
+
+          <p>
+            Le tableau reprend les dix-huit correctifs de la note. Les scores sont les CVSS 3.1 publiés dans les avis GitHub du dépôt, identiques à ceux de la note. La dernière colonne reprend la condition d'accès indiquée par l'éditeur.
+          </p>
+
+          <div class="article-table-wrapper">
+            <table class="article-table">
+              <thead>
+                <tr>
+                  <th>Correctif</th>
+                  <th>Score</th>
+                  <th>Accès requis selon l'éditeur</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Client API qui s'attribue n'importe quel droit (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-p292-3rh4-vm4p">GHSA-p292-3rh4-vm4p</a>)</td><td>8,8</td><td>client API avec le droit d'écriture sur les clients API</td></tr>
+                <tr><td>XSS stockée par fichiers SVG, gestionnaire de fichiers et logo (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-99cp-c6mm-p7h5">GHSA-99cp-c6mm-p7h5</a>)</td><td>8,7</td><td>compte employé</td></tr>
+                <tr><td>Traversée de chemin dans les pièces jointes (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-wrmc-gmx5-9hhc">GHSA-wrmc-gmx5-9hhc</a>)</td><td>8,5</td><td>clé webservice avec écriture sur les pièces jointes</td></tr>
+                <tr><td>Accès aux clients d'une autre boutique via le webservice (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-hjwq-7qvv-qxj4">GHSA-hjwq-7qvv-qxj4</a>, CVE-2026-71519)</td><td>8,1</td><td>clé webservice autorisée sur une boutique d'une multiboutique</td></tr>
+                <tr><td>Installateur relançable sur une boutique installée (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-8rxw-79mh-gmm5">GHSA-8rxw-79mh-gmm5</a>)</td><td>8,1</td><td>installateur encore accessible</td></tr>
+                <tr><td>Désérialisation dans le cookie de session de l'installateur (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-h2q4-7fp7-m5jp">GHSA-h2q4-7fp7-m5jp</a>)</td><td>8,1</td><td>installateur encore accessible</td></tr>
+                <tr><td>Périmètre de boutique contourné par <code>id_shop=all</code> (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-3f36-4qv4-vfgh">GHSA-3f36-4qv4-vfgh</a>, CVE-2026-71531)</td><td>8,1</td><td>clé webservice restreinte à certaines boutiques</td></tr>
+                <tr><td>Bon de réduction utilisable plus que sa quantité (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-r246-6gw4-pj3p">GHSA-r246-6gw4-pj3p</a>)</td><td>7,5</td><td>aucun</td></tr>
+                <tr><td>Commandes en double depuis un même panier (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-2676-hc74-gg7v">GHSA-2676-hc74-gg7v</a>)</td><td>7,5</td><td>aucun</td></tr>
+                <tr><td>Traversée de chemin à l'import de thème ou de module (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-7q68-ch46-pxmc">GHSA-7q68-ch46-pxmc</a>)</td><td>7,2</td><td>employé autorisé à importer</td></tr>
+                <tr><td>Inclusion de fichier par le paramètre module des traductions (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-fxq4-2mc8-99pr">GHSA-fxq4-2mc8-99pr</a>)</td><td>7,2</td><td>employé accédant à la page des traductions</td></tr>
+                <tr><td>Thème importé depuis une URL, enregistré dans le dossier d'administration (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-95w6-v2wq-cv8w">GHSA-95w6-v2wq-cv8w</a>)</td><td>7,2</td><td>employé autorisé à importer un thème</td></tr>
+                <tr><td>Écriture hors dossier via les traductions d'e-mails (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-5p6p-mx64-96jf">GHSA-5p6p-mx64-96jf</a>)</td><td>7,2</td><td>employé accédant aux traductions d'e-mails</td></tr>
+                <tr><td>Cookie du mode débogage écrit sans contrôle (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-95f5-jc9c-gg3q">GHSA-95f5-jc9c-gg3q</a>)</td><td>7,2</td><td>employé avec les droits Performance</td></tr>
+                <tr><td>Client API désactivé qui garde ses jetons (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-6c2j-pgwm-95m9">GHSA-6c2j-pgwm-95m9</a>)</td><td>7,1</td><td>client API désactivé ou révoqué</td></tr>
+                <tr><td>Fichier de personnalisation téléchargeable avec la seule référence de commande (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-fg9q-mm4c-h5xc">GHSA-fg9q-mm4c-h5xc</a>)</td><td>5,9</td><td>connaître la référence de commande</td></tr>
+                <tr><td>Employé qui peut ajouter des produits à une commande existante (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-mgcf-mrg4-mcxv">GHSA-mgcf-mrg4-mcxv</a>)</td><td>4,9</td><td>employé avec le droit de création de commandes</td></tr>
+                <tr><td>Jeton de réinitialisation de mot de passe prévisible (<a href="https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-g6p7-cx52-hcrj">GHSA-g6p7-cx52-hcrj</a>)</td><td>4,8</td><td>connaître la clé sécurisée du client</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>2. Ce que cela change pour une boutique PrestaShop</h2>
+
+          <p>Trois points comptent pour une boutique.</p>
+
+          <p>
+            <strong>La plupart des correctifs visent l'administration et les accès techniques.</strong> Douze entrées du tableau demandent un compte employé, un client API ou une clé webservice. Quatre autres dépendent d'un installateur encore accessible, ou d'un client qui connaît une référence ou une clé. Seules deux entrées, des courses sur les bons de réduction et les commandes gratuites, ne demandent aucun accès particulier.
+          </p>
+
+          <p>
+            <strong>La note ne contient aucun changement d'URL, de balisage, de sitemap ni de redirection.</strong> Les deux entrées hors sécurité (ordre des messages sur une fiche commande, clic sur une ligne de grille) concernent le back-office. Il n'y a donc pas de correctif SEO au sens strict.
+          </p>
+
+          <p>
+            <strong>La mise à jour passe par l'Update Assistant,</strong> précédée d'une sauvegarde complète de la base et des fichiers, comme le demande la note. Une boutique en 8.x doit viser la 8.2.9, et une boutique en 9.2.0 la 9.2.1.
+          </p>
+
+          <h2>3. Ce que la comparaison du code montre</h2>
+
+          <p>
+            Nous avons comparé les versions 9.2.0 et 9.2.1 sur GitHub : 59 commits et 117 fichiers modifiés ou créés. Les commits des correctifs sont datés, pour l'essentiel, du 7 au 26 octobre, soit de deux à cinq semaines avant la note. Quelqu'un qui suit le dépôt pouvait donc lire les changements avant l'annonce. Le tableau indique où se trouvent les changements, par famille de correctif.
+          </p>
+
+          <div class="article-table-wrapper">
+            <table class="article-table">
+              <thead>
+                <tr>
+                  <th>Famille de correctifs</th>
+                  <th>Fichiers modifiés ou créés (extrait)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Pièces jointes</td><td><code>classes/Attachment.php</code>, <code>controllers/front/AttachmentController.php</code>, <code>src/Adapter/File/Uploader/AttachmentFileUploader.php</code></td></tr>
+                <tr><td>Webservice (deux entrées)</td><td><code>classes/webservice/WebserviceRequest.php</code> (375 lignes modifiées), <code>classes/webservice/WebserviceSpecificManagementAttachments.php</code></td></tr>
+                <tr><td>Installateur (deux entrées)</td><td><code>install-dev/index.php</code>, <code>install-dev/classes/session.php</code>, <code>src/PrestaShopBundle/Install/InstallationState.php</code> (créé)</td></tr>
+                <tr><td>Bons de réduction et commandes simultanées</td><td><code>src/Adapter/CartRule/CartRuleQuantityReserver.php</code> (créé), <code>src/Adapter/Order/OrderCreationLock.php</code> (créé)</td></tr>
+                <tr><td>Import d'archives</td><td><code>src/Core/Security/SafeZipExtractor.php</code> (créé), <code>src/Core/Security/PharDetector.php</code> (créé), <code>src/Core/Addon/Theme/ThemeZipUploader.php</code></td></tr>
+                <tr><td>Clients API</td><td><code>src/Core/Security/OAuth2/ApiClientScopeDelegationValidator.php</code> (créé), <code>src/PrestaShopBundle/Security/OAuth2/Repository/ClientRepository.php</code></td></tr>
+                <tr><td>Fichiers SVG</td><td><code>src/Core/Shop/LogoUploader.php</code>, <code>admin-dev/filemanager/upload.php</code></td></tr>
+                <tr><td>Mode débogage</td><td><code>src/Adapter/Debug/DebugMode.php</code>, <code>src/Adapter/Debug/DebugModeConfiguration.php</code></td></tr>
+                <tr><td>Réinitialisation de mot de passe</td><td><code>src/PrestaShopBundle/Security/Admin/EmployeePasswordResetter.php</code>, <code>controllers/front/PasswordController.php</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            Le commit <a href="https://github.com/PrestaShop/PrestaShop/commit/eb05379961"><code>eb05379961</code></a>, « Refuse to run the web installer on an already installed shop », est daté du 12 octobre. Il refuse désormais de relancer l'installateur sur une boutique déjà installée. Cette lecture ne prouve pas qu'une boutique a été attaquée. Elle montre seulement à quel endroit le code a changé.
+          </p>
+
+          <div class="article-remark-block">
+            <strong>Lecture de consultant.</strong> Le correctif m'intéresse peu pour le référencement : il ferme des portes. Ce qui compte, c'est ce qui a pu entrer avant. Google range dans le contenu piraté quatre formes qu'un marchand doit connaître : du code injecté, des pages ajoutées, du contenu inséré dans des pages existantes (liens ou textes cachés, cloaking) et des redirections vers des pages douteuses. Ces éléments ne se voient pas forcément depuis le back-office ni sur la page d'accueil. Hypothèse, non vérifiée ici : une boutique dont un compte employé ou une clé webservice a été utilisée avant le 9 novembre peut porter des pages que son propriétaire ignore. La mise à jour ne les retire pas. Il faut les chercher.
+          </div>
+
+          <h2>Que vérifier cette semaine</h2>
+
+          <ol>
+            <li><strong>Sauvegardez, puis mettez à jour.</strong> Sauvegarde complète de la base et des fichiers, puis mise à jour avec l'Update Assistant. Une boutique en 8.x vise la 8.2.9.</li>
+            <li><strong>Ouvrez le rapport Security issues de la Search Console.</strong> Un compteur en haut indique les problèmes ; une coche verte indique un site sans problème. Le libellé peut différer selon la langue de votre interface. S'il reste des problèmes, prenez les URL d'exemple et corrigez-les sur toutes les pages : Google ne rétablit pas un site corrigé seulement en partie.</li>
+            <li><strong>Cherchez les pages que vous n'avez pas créées.</strong> Lancez <code>site:votre-domaine</code> dans Google et lisez votre <code>sitemap.xml</code>. Comparez avec le catalogue et les pages CMS de votre back-office.</li>
+            <li><strong>Relisez votre <code>robots.txt</code>.</strong> PrestaShop régénère ce fichier lors de certaines sauvegardes d'URL de boutique, comme le décrit <a href="../google-shared-ai-training-control-robots-prestashop/">notre article du 31 octobre</a>. Une ligne que vous n'avez pas écrite mérite une vérification.</li>
+            <li><strong>Vérifiez qu'aucun installateur ne répond sur votre domaine.</strong> S'il répond, traitez ce point avant tout le reste.</li>
+            <li><strong>Auditez les accès.</strong> Listez les employés qui peuvent importer des thèmes ou des modules, modifier les traductions, gérer les droits Performance ou créer des commandes. Listez aussi les clés webservice et les clients API, et désactivez ceux qui ne servent plus. Ce sont les profils visés par les entrées du tableau.</li>
+          </ol>
+
+          <h2>Limites</h2>
+
+          <ul>
+            <li>Aucune boutique n'a été testée. Cet article ne mesure ni le nombre de boutiques touchées, ni un effet sur le trafic ou le classement.</li>
+            <li>Les scores viennent des avis GitHub de PrestaShop. Les identifiants CVE-2026-71519 et CVE-2026-71531 ne figuraient pas encore sur NVD à la date de lecture.</li>
+            <li>Les sources ne disent pas qu'une de ces failles est exploitée en ce moment. Les conséquences SEO décrites ici reposent sur la définition de contenu piraté donnée par Google, pas sur un mécanisme interne de son algorithme.</li>
+            <li>Les libellés français du rapport Search Console n'ont pas été vérifiés dans une interface en français.</li>
+          </ul>
+
+          <h2>Sources</h2>
+
+          <ul class="article-sources">
+            <li>PrestaShop Build, « PrestaShop 9.2.1 is now available », 9 novembre 2026, consulté le 9 novembre 2026 : <a href="https://build.prestashop-project.org/news/2026/prestashop-9-2-1-security-release/">build.prestashop-project.org/news/2026/prestashop-9-2-1-security-release/</a></li>
+            <li>GitHub, PrestaShop 9.2.1 (balise publiée le 9 novembre 2026 à 12 h 00 UTC) : <a href="https://github.com/PrestaShop/PrestaShop/releases/tag/9.2.1">github.com/PrestaShop/PrestaShop/releases/tag/9.2.1</a></li>
+            <li>GitHub, avis de sécurité du dépôt PrestaShop, consulté le 9 novembre 2026 : <a href="https://github.com/PrestaShop/PrestaShop/security/advisories">github.com/PrestaShop/PrestaShop/security/advisories</a></li>
+            <li>GitHub, comparaison 9.2.0 → 9.2.1, consultée le 9 novembre 2026 : <a href="https://github.com/PrestaShop/PrestaShop/compare/9.2.0...9.2.1">github.com/PrestaShop/PrestaShop/compare/9.2.0...9.2.1</a></li>
+            <li>NVD, CVE-2026-92809, consulté le 9 novembre 2026 : <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-92809">nvd.nist.gov/vuln/detail/CVE-2026-92809</a></li>
+            <li>Google Search Central, « Spam policies for Google Web Search », section « Hacked content », consultée le 9 novembre 2026 : <a href="https://developers.google.com/search/docs/essentials/spam-policies">developers.google.com/search/docs/essentials/spam-policies</a></li>
+            <li>Aide Search Console, « Security issues report », consultée le 9 novembre 2026 : <a href="https://support.google.com/webmasters/answer/9044101?hl=en">support.google.com/webmasters/answer/9044101</a></li>
+          </ul>
+
+          <p class="article-method-note">
+            <strong>Comment cet article a été produit.</strong> Faits vérifiés dans les sources listées ci-dessus ; lecture de la note de version PrestaShop 9.2.1, des avis GitHub, de la comparaison 9.2.0 → 9.2.1 et des passages utiles des pages Google citées, le 9 novembre 2026 (fichiers conservés). Rédigé avec l'aide de Claude (Anthropic), puis relu et validé par Lefi Abdelmonem avant publication.
+          </p>
+
+          <p>
+            <strong>À lire aussi :</strong> <a href="../google-shared-ai-training-control-robots-prestashop/">Entraînement IA : le robots.txt de PrestaShop face au signal commun</a>
+          </p>
+
+        </div>
+
+        <div class="article-cta-box">
+          <h3>Besoin d'un diagnostic sur votre boutique ?</h3>
+          <p>
+            Consultant SEO e-commerce et ingénieur PrestaShop, je vérifie avec vous si une boutique a été touchée avant sa mise à jour : pages ajoutées, redirections, comptes et clés d'accès.
+          </p>
+          <a href="../#contact" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: 9999px; text-decoration: none;">
+            Me contacter
+          </a>
+        </div>
+
+      </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer" style="margin-top: auto; border-top: 1px solid var(--border-color); padding: 32px 0;">
+      <div class="container footer-container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div class="footer-copy">
+          <p>&copy; 2026 Lefi Abdelmonem. Tous droits réservés.</p>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Activateur France Num (GENISOFT). Certification Opquast « Maîtrise de la qualité en projet web ».</p>
+        </div>
+        <div class="footer-links" style="display: flex; gap: 16px;">
+          <a href="../" class="footer-link">Accueil</a>
+          <a href="../#services" class="footer-link">Expertises</a>
+          <a href="../#contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
