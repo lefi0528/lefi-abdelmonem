@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Search Analytics API : données de marque, multimodales et multi-pays | Lefi Abdelmonem</title>
+  <meta name="description" content="L'API Search Analytics reçoit le filtre des requêtes de marque, les données multimodales et les filtres multi-pays. Ce qu'une boutique doit vérifier.">
+  <meta name="author" content="Lefi Abdelmonem">
+  <link rel="canonical" href="https://lefi-abdelmonem.com/search-analytics-api-branded-multimodal-filters/">
+  <meta name="robots" content="index, follow">
+
+  <!-- OpenGraph Tags -->
+  <meta property="og:title" content="Search Analytics API : données de marque, multimodales et multi-pays | Lefi Abdelmonem">
+  <meta property="og:description" content="L'API Search Analytics reçoit le filtre des requêtes de marque, les données multimodales et les filtres multi-pays. Ce qu'une boutique doit vérifier.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lefi-abdelmonem.com/search-analytics-api-branded-multimodal-filters/">
+  <meta property="og:site_name" content="Lefi Abdelmonem">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://lefi-abdelmonem.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Search Analytics API : données de marque, multimodales et multi-pays">
+  <meta name="twitter:description" content="L'API Search Analytics reçoit le filtre des requêtes de marque, les données multimodales et les filtres multi-pays. Ce qu'une boutique doit vérifier.">
+  <meta name="twitter:image" content="https://lefi-abdelmonem.com/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../style.css?v=6">
+
+  <!-- WebMCP Agentic Web Standard -->
+  <link rel="webmcp" type="application/json" href="../webmcp.json">
+
+  <!-- JSON-LD Structured Data (TechArticle & Breadcrumbs) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://lefi-abdelmonem.com/search-analytics-api-branded-multimodal-filters/#article",
+      "isPartOf": {
+        "@id": "https://lefi-abdelmonem.com/#website"
+      },
+      "headline": "Search Analytics API : données de marque, multimodales et multi-pays",
+      "description": "L'API Search Analytics reçoit le filtre des requêtes de marque, les données multimodales et les filtres multi-pays. Ce qu'une boutique doit vérifier.",
+      "url": "https://lefi-abdelmonem.com/search-analytics-api-branded-multimodal-filters/",
+      "datePublished": "2026-11-18",
+      "dateModified": "2026-11-18",
+      "inLanguage": "fr",
+      "author": {
+        "@type": "Person",
+        "@id": "https://lefi-abdelmonem.com/#person",
+        "name": "Lefi Abdelmonem",
+        "url": "https://lefi-abdelmonem.com/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Lefi Abdelmonem",
+        "url": "https://lefi-abdelmonem.com/"
+      },
+      "image": "https://lefi-abdelmonem.com/og-image.jpg",
+      "mainEntityOfPage": "https://lefi-abdelmonem.com/search-analytics-api-branded-multimodal-filters/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://lefi-abdelmonem.com/search-analytics-api-branded-multimodal-filters/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://lefi-abdelmonem.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Actualités & Veille",
+          "item": "https://lefi-abdelmonem.com/#news"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Search Console et API"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <style>
+    .article-page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .article-container {
+      flex-grow: 1;
+      width: 100%;
+      max-width: 880px;
+      margin: 120px auto 80px auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .article-view-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 52px 48px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      position: relative;
+    }
+    .article-nav-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+    }
+    .article-badge-brand {
+      background: rgba(0, 240, 255, 0.12);
+      color: var(--accent-seo);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .article-title-main {
+      font-family: var(--font-title);
+      font-size: 2.35rem;
+      font-weight: 700;
+      line-height: 1.28;
+      color: var(--text-primary);
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+    .article-subtitle {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+    .article-content-body {
+      color: var(--text-secondary);
+      font-size: 1.08rem;
+      line-height: 1.85;
+      font-family: var(--font-body);
+    }
+    .article-content-body p { margin-bottom: 24px; }
+    .article-content-body h2 {
+      font-family: var(--font-title);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 44px 0 22px 0;
+      border-left: 4px solid var(--accent-seo);
+      padding-left: 16px;
+      line-height: 1.3;
+    }
+    .article-content-body h3 {
+      font-family: var(--font-title);
+      font-size: 1.28rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 30px 0 16px 0;
+    }
+    .article-content-body ul, .article-content-body ol {
+      margin: 20px 0 28px 24px;
+    }
+    .article-content-body li {
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    .article-content-body a {
+      color: var(--accent-seo);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .article-content-body code {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 0.92em;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 1px 6px;
+      border-radius: 5px;
+      overflow-wrap: anywhere;
+    }
+    .article-remark-block {
+      background: rgba(0, 240, 255, 0.05);
+      border-left: 3px solid var(--accent-seo);
+      padding: 22px 26px;
+      border-radius: 0 12px 12px 0;
+      margin: 36px 0;
+      color: var(--text-primary);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+    .article-callout-warning {
+      background: rgba(255, 170, 0, 0.08);
+      border-left: 3px solid #ffaa00;
+      padding: 20px 24px;
+      border-radius: 0 12px 12px 0;
+      margin: 32px 0;
+      color: #ffda79;
+      line-height: 1.7;
+    }
+    .article-table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 32px 0;
+    }
+    .article-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    .article-table th, .article-table td {
+      padding: 14px 16px;
+      border: 1px solid var(--border-color);
+      text-align: left;
+      vertical-align: top;
+    }
+    .article-table th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .article-table td {
+      color: var(--text-secondary);
+    }
+    .article-method-note {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+      margin-top: 40px;
+    }
+    .article-sources li {
+      font-size: 0.95rem;
+      overflow-wrap: anywhere;
+    }
+    .article-cta-box {
+      margin-top: 52px;
+      padding: 36px;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.12), rgba(173, 0, 255, 0.08));
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      text-align: center;
+    }
+    .article-cta-box h3 {
+      font-size: 1.45rem;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .article-cta-box p {
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .article-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      font-family: var(--font-title);
+      font-weight: 500;
+      margin-bottom: 32px;
+      transition: var(--transition-smooth);
+      width: fit-content;
+    }
+    .article-back-link:hover {
+      color: var(--text-primary);
+      transform: translateX(-4px);
+    }
+    @media (max-width: 768px) {
+      .article-container { margin-top: 100px; margin-bottom: 40px; }
+      .article-view-card { padding: 30px 20px; }
+      .article-title-main { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="article-page-wrapper">
+
+    <!-- Navbar (Static Header) -->
+    <header class="main-header" style="position: fixed; top: 0; width: 100%; z-index: 100;">
+      <div class="container header-container" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px;">
+        <a href="../" class="logo">
+          LEFI <span class="logo-accent">.ABDELMONEM</span>
+        </a>
+        <nav class="nav-menu" style="display: flex; gap: 20px; align-items: center;">
+          <a href="../#home" class="nav-link">Accueil</a>
+          <a href="../#services" class="nav-link">Expertises</a>
+          <a href="../#news" class="nav-link active">Actualités</a>
+          <a href="../#contact" class="nav-link nav-btn btn-primary" style="padding: 8px 20px; border-radius: 9999px;">Me Contacter</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Ambient Glowing Orb -->
+    <div class="ambient-glows">
+      <div class="glow-orb" style="width: 520px; height: 520px; top: 12%; left: 50%; transform: translateX(-50%); filter: blur(140px); opacity: 0.12; background: radial-gradient(circle, var(--accent-seo) 0%, rgba(173, 0, 255, 0) 70%);"></div>
+    </div>
+
+    <!-- Article Content Container -->
+    <main class="article-container">
+
+      <a href="../#news" class="article-back-link">
+        &larr; Retour à l'accueil / Actualités
+      </a>
+
+      <article class="article-view-card">
+
+        <header>
+          <div class="article-nav-header">
+            <span class="article-badge-brand">Search Console</span>
+            <span>📅 18 Novembre 2026</span>
+            <span>⏱️ 7 min de lecture</span>
+            <span>✍️ Par Lefi Abdelmonem</span>
+          </div>
+
+          <h1 class="article-title-main">
+            Search Analytics API : données de marque, multimodales et multi-pays
+          </h1>
+
+          <div class="article-subtitle">
+            Ce que l'annonce du 16 novembre 2026 change pour une boutique qui extrait ses données de la Search Console.
+          </div>
+        </header>
+
+        <div class="article-content-body">
+
+          <p>Depuis le 16 novembre 2026, l'API Search Analytics renvoie trois données déjà présentes dans le rapport Performances : les requêtes de marque, les recherches multimodales (Google Lens, Cercle pour rechercher, envois d'images) et les filtres sur plusieurs pays et appareils. Une boutique qui ne lit pas l'API n'a rien à faire cette semaine. Une agence ou un marchand qui automatise ses rapports doit en revanche vérifier trois points avant de comparer deux périodes.</p>
+          <h2>1. Ce qui a été annoncé</h2>
+          <p>Google a publié le 16 novembre 2026, sur le blog Search Central, une annonce de l'équipe Search Console. Elle indique que trois options ajoutées au rapport Performances au cours de l'année précédente arrivent dans l'API : le filtre des requêtes de marque, le rapport de recherche multimodale sur le web et les filtres multi-pays et multi-appareils (<a href="https://developers.google.com/search/blog/2026/11/search-analytics-api-update">billet Search Central, 16/11/2026</a>).</p>
+          <p>La référence de l'API précise les trois ajouts (<a href="https://developers.google.com/webmaster-tools/v1/searchanalytics/query">référence de la méthode query</a>, lue le 18/11/2026) :</p>
+          <ul><li><code>brandedClassification</code> sépare les requêtes en deux valeurs, BRANDED et NON_BRANDED. Seul l'opérateur <code>equals</code> est accepté, et le filtre ne se combine pas avec un filtre <code>query</code> dans la même requête.</li><li>Le type <code>webMultimodal</code> renvoie les données de Google Lens, de Cercle pour rechercher sur Android et des envois d'images dans la recherche Google. Pour les propriétés dont l'export en masse vers BigQuery est actif, ces données figurent aussi dans BigQuery.</li><li><code>filterLists</code> permet de filtrer, dans une seule requête, plusieurs pays (codes ISO 3166-1 alpha-3, comme FRA ou BEL) ou plusieurs appareils (DESKTOP, MOBILE, TABLET). Un même champ ne peut pas figurer à la fois dans <code>filters</code> et dans <code>filterLists</code>.</li></ul>
+          <p>Les données de marque ont une date de départ : le 21 février 2026. Elles ne sont disponibles que pour les propriétés de niveau supérieur qui ont assez de requêtes et d'impressions. Le billet dit la même chose autrement : pour les autres propriétés, la réponse ne contient aucune ligne.</p>
+          <h2>2. Ce que cela change pour une boutique PrestaShop</h2>
+          <p>Le changement touche d'abord le reporting, pas le site. Aucun réglage de la boutique ne modifie ces données. Trois cas se présentent.</p>
+          <p><strong>Une boutique qui consulte seulement l'interface.</strong> Rien à modifier. Les fonctions sont annoncées pour le rapport Performances depuis l'année précédente ; leurs libellés exacts dans l'interface n'ont pas été vérifiés pour cet article.</p>
+          <p><strong>Une boutique dont le nom est une requête fréquente.</strong> Sans filtre, la part de marque et la part hors marque se mélangent. Avec <code>brandedClassification</code>, un script ou un tableau de bord peut afficher les deux séparément, sans maintenir une liste de mots-clés en expression régulière. La part hors marque est celle sur laquelle le contenu des fiches et des catégories agit le plus directement.</p>
+          <p><strong>Une boutique qui vend dans plusieurs pays.</strong> Au lieu d'une requête par pays, un seul appel peut regrouper la France (FRA), la Belgique (BEL) et la Suisse (CHE), ou les appareils MOBILE et TABLET. Le code pays doit être en trois lettres : « FR » n’est pas le format attendu.</p>
+          <p>Ce n'est pas la même donnée que le trafic web. Le type <code>webMultimodal</code> est une valeur distincte du type <code>web</code> : un total qui additionne les deux mélange deux populations de recherche.</p>
+          <h2>3. Apport original : trois corps de requête contrôlés contre la référence</h2>
+          <p>Pour vérifier la lecture de la référence, trois corps de requête ont été écrits en local, puis contrôlés par un script : noms de champs présents dans la référence lue le 18/11/2026, valeurs acceptées, dates, et règles de combinaison. Le script n'envoie rien à Google et n'utilise aucun identifiant.</p>
+          <div class="article-table-wrapper"><table class="article-table"><thead><tr><th>Usage</th><th>Champs utilisés</th><th>Résultat du contrôle</th></tr></thead><tbody><tr><td>Part de marque et hors marque, par jour</td><td><code>dimensions: ["date"]</code>, filtre <code>brandedClassification</code> = NON_BRANDED</td><td>valide</td></tr><tr><td>Pages reçues en recherche multimodale</td><td><code>type: "webMultimodal"</code>, <code>dimensions: ["page"]</code></td><td>valide</td></tr><tr><td>Trois pays et deux appareils en une requête</td><td><code>filterLists</code> sur <code>country</code> (FRA, BEL, CHE) et <code>device</code> (MOBILE, TABLET)</td><td>valide</td></tr></tbody></table></div>
+          <p>Quatre corps volontairement fautifs ont été refusés comme attendu : un opérateur <code>contains</code> sur la marque, une marque combinée à un filtre <code>query</code>, un code pays à deux lettres, et une même dimension dans <code>filters</code> et <code>filterLists</code>. Le script compte 13 contrôles, avec 0 échec (sortie conservée dans <code>preuves/2026-11-18/test/sortie-test-api-requetes.txt</code>).</p>
+          <p>Ce test valide la forme des requêtes. Il ne dit rien des données renvoyées par Google.</p>
+          <div class="article-remark-block"><strong>Lecture de consultant.</strong> Le point utile de cette annonce est la séparation de la marque, plus que le multimodal. Une part de marque élevée reflète surtout la notoriété du nom, pas le travail sur les fiches. Mon conseil : suivre la part hors marque par famille d'URL (fiches, catégories, pages CMS) et ne lire la part de marque qu'à côté, comme contexte. Sur le multimodal, l'annonce ne dit pas comment les images sont associées aux pages. L'API permet de lister les pages qui reçoivent ces impressions : c'est une liste à lire, pas la preuve qu'une photo produit fait venir du trafic. Hypothèse à vérifier sur vos propres données : les pages qui reçoivent des impressions multimodales sont-elles surtout des fiches à forte identité visuelle ? Un export permettra de le voir, pas une lecture de l’interface.</div>
+          <h2>Que vérifier cette semaine</h2>
+          <ol><li><strong>Si vous avez déjà un export ou un tableau de bord :</strong> relevez la date de départ de vos séries de marque. Elles commencent le 21 février 2026 ; ne comparez pas une année pleine avant cette date.</li><li><strong>Testez l'éligibilité de la propriété</strong> avec une requête <code>brandedClassification</code> sur une période récente, avec vos propres identifiants. Une réponse vide signifie que la propriété n'est pas éligible ou que son volume est insuffisant (annonce et référence).</li><li><strong>Vérifiez le type de propriété</strong> (domaine ou préfixe d'URL) dans la Search Console avant de promettre une part de marque à un client. La référence parle de propriétés « de niveau supérieur » sans dire en toutes lettres le cas du préfixe d'URL.</li><li><strong>Remplacez les listes de pays</strong> (une requête par pays, ou des expressions régulières sur le nom de domaine) par un seul <code>filterLists</code> avec des codes à trois lettres.</li><li><strong>Si l'export BigQuery est actif,</strong> cherchez les lignes <code>webMultimodal</code> dans la table d'export et ne les additionnez jamais aux lignes <code>web</code>.</li></ol>
+          <h2>Limites</h2>
+          <ul><li>L'annonce décrit des fonctions. Elle ne mesure aucun effet sur le classement ni sur les clics.</li><li>Le seuil d'éligibilité (« volume suffisant ») n'est pas chiffré par Google dans les textes lus.</li><li>Les libellés de l'interface n'ont pas été vérifiés. Le test porte sur la référence, pas sur une vraie propriété ni sur une vraie réponse de l'API.</li><li>Les données multimodales sont décrites par Google comme une catégorie de recherche. Leur association aux pages produit n'est pas documentée.</li></ul>
+          <p class="article-method-note"><strong>Comment cet article a été produit.</strong> Faits vérifiés dans les sources listées : lecture en entier du billet Search Central et de la référence de la méthode query, consultés le 18/11/2026 ; contrôle local de trois corps de requête (13 contrôles, 0 échec ; sorties conservées dans preuves/2026-11-18/). Rédigé avec l'aide de Claude (Anthropic), puis relu et validé par Lefi Abdelmonem avant publication.</p>
+          <h2>Sources</h2>
+          <ul class="article-sources"><li>Google Search Central Blog, « New filtering and reporting capabilities in the Search Analytics API », 16/11/2026. <a href="https://developers.google.com/search/blog/2026/11/search-analytics-api-update">developers.google.com/search/blog/2026/11/search-analytics-api-update</a> (consulté le 18/11/2026)</li><li>Google Search Central, référence de l'API Search Analytics, méthode query. <a href="https://developers.google.com/webmaster-tools/v1/searchanalytics/query">developers.google.com/webmaster-tools/v1/searchanalytics/query</a> (consulté le 18/11/2026)</li></ul>
+          <p><strong>À lire aussi :</strong> <a href="../google-spam-update-august-2026-ecommerce-gsc-bug/">Google Spam Update Août 2026 &amp; Bug GSC : Autopsie et Stratégie E-Commerce</a> · <a href="../google-shared-ai-training-control-robots-prestashop/">Entraînement IA : le robots.txt de PrestaShop face au signal commun</a></p>
+
+        </div>
+
+        <div class="article-cta-box">
+          <h3>Besoin d'un rapport Search Console par marque, pays et appareil ?</h3>
+          <p>
+            Consultant SEO e-commerce et ingénieur PrestaShop, je prépare ces séries et je contrôle les données avant de conclure à une baisse.
+          </p>
+          <a href="../#contact" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: 9999px; text-decoration: none;">
+            Me contacter
+          </a>
+        </div>
+
+      </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer" style="margin-top: auto; border-top: 1px solid var(--border-color); padding: 32px 0;">
+      <div class="container footer-container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div class="footer-copy">
+          <p>&copy; 2026 Lefi Abdelmonem. Tous droits réservés.</p>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Activateur France Num (GENISOFT). Certification Opquast « Maîtrise de la qualité en projet web ».</p>
+        </div>
+        <div class="footer-links" style="display: flex; gap: 16px;">
+          <a href="../" class="footer-link">Accueil</a>
+          <a href="../#services" class="footer-link">Expertises</a>
+          <a href="../#contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
